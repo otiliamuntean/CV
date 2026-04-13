@@ -77,6 +77,43 @@ setTimeout(typeWriter, 1500);
 
 // Navigation & all original functionality + bulb toggle
 document.addEventListener('DOMContentLoaded', function() {
+    // ===== ASCUNDE SIDEBAR PE PAGINILE UNDE NU TREBUIE SĂ APARĂ =====
+  function handleSidebarVisibility() {
+    const sidebar = document.querySelector('.sidebar');
+    const activeSection = document.querySelector('.section.active');
+    
+    if (window.innerWidth <= 768) {
+      if (sidebar && activeSection) {
+        // Sidebar apare DOAR pe pagina Hello
+        if (activeSection.id === 'hello') {
+          sidebar.style.display = 'block';
+        } else {
+          sidebar.style.display = 'none';
+        }
+      }
+    } else {
+      // Pe desktop, sidebar e mereu vizibil
+      if (sidebar) {
+        sidebar.style.display = 'block';
+      }
+    }
+  }
+  
+  // Rulează la încărcare și la schimbarea secțiunii
+  handleSidebarVisibility();
+  
+  // Observă schimbările de secțiune
+  const observer = new MutationObserver(function() {
+    handleSidebarVisibility();
+  });
+  
+  const sections = document.querySelectorAll('.section');
+  sections.forEach(section => {
+    observer.observe(section, { attributes: true, attributeFilter: ['class'] });
+  });
+  
+  // Rulează și la redimensionare
+  window.addEventListener('resize', handleSidebarVisibility);
   // BULB toggle (instead of lamp)
   const themeToggle = document.getElementById('themeToggle');
   if (themeToggle) {
@@ -112,6 +149,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const activeBtn = document.querySelector(`.nav-btn[data-target="${targetId}"]`);
     if (activeBtn) activeBtn.classList.add('active');
+    
+    // Adaugă această linie:
+    handleSidebarVisibility();
   }
   
   navButtons.forEach(btn => {
