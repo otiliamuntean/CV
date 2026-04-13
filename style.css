@@ -60,8 +60,8 @@ body {
 
 /* ===== LIGHT MODE – DOAR PUȚIN MAI LUMINOS, FĂRĂ ALB ===== */
 body.light-mode {
-  --bg-gradient: linear-gradient(135deg, #1a2a3a, #2d3e52); /* mai luminos decât original, dar păstrează tonurile */
-  --text-primary: #f0f4fa;  /* gri foarte deschis, lizibil */
+  --bg-gradient: linear-gradient(135deg, #1a2a3a, #2d3e52);
+  --text-primary: #f0f4fa;
   --text-secondary: #cbd5e1;
   --card-bg: rgba(45, 55, 75, 0.6);
   --border-light: rgba(255, 255, 255, 0.15);
@@ -84,12 +84,14 @@ body.light-mode {
   --hello-subtitle-color: #eef2f6;
 }
 
+/* ===== THEME TOGGLE OPTIMIZAT PENTRU MOBIL ===== */
 .theme-toggle {
   position: fixed;
-  top: 100px;
-  right: 30px;
-  width: 60px;        /* puțin mai mic */
-  height: 60px;
+  top: auto;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
   z-index: 1500;
   cursor: pointer;
   filter: drop-shadow(0 8px 10px rgba(0,0,0,0.3));
@@ -116,7 +118,7 @@ body.light-mode {
 .sun {
   background: radial-gradient(circle at 30% 30%, #fec84d, #f97316);
   box-shadow: 0 0 30px #fbbf24, 0 0 60px rgba(251, 191, 36, 0.5);
-  opacity: 0;            /* ascuns în mod implicit (dark mode) */
+  opacity: 0;
   transform: scale(0.8);
 }
 
@@ -135,11 +137,11 @@ body.light-mode {
 
 /* Luna: mai realistă */
 .moon {
-  background: #e2e8f0;   /* gri deschis */
+  background: #e2e8f0;
   box-shadow: inset -6px -6px 10px #a0aec0, 0 0 20px #94a3b8;
   border-radius: 50%;
   overflow: hidden;
-  opacity: 1;            /* vizibilă în dark mode */
+  opacity: 1;
   transform: scale(1);
 }
 
@@ -187,6 +189,7 @@ body.light-mode .moon {
   transform: rotate(15deg) scale(0.9);
   transition: transform 0.15s;
 }
+
 /* ===== BACKGROUND EFFECTS ===== */
 .noise-overlay {
   position: fixed;
@@ -199,7 +202,6 @@ body.light-mode .moon {
   z-index: -1;
 }
 
-/* ===== restul CSS-ului tău original (păstrat integral) ===== */
 /* ===== HEADER & NAVIGATION ===== */
 header {
   background: var(--header-bg);
@@ -482,14 +484,14 @@ main {
   top: -70px;
   left: 10px;
   font-size: 8rem;
-  color:  #fad643;
+  color: #fad643;
   font-family: Georgia, serif;
 }
 
 .quote-author {
   display: block;
   margin-top: 1rem;
-  color:#fad643;
+  color: #fad643;
   font-weight: 600;
 }
 
@@ -531,6 +533,7 @@ main {
   color: inherit;
   text-decoration: none;
 }
+
 .education .contact-item,
 .contact-info .contact-item,
 .languages .contact-item {
@@ -614,6 +617,7 @@ main {
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
 }
+
 .content {
   background: var(--card-bg);
   border-radius: var(--radius);
@@ -799,7 +803,7 @@ main {
 .quality-card.green { border-left-color: #a9dbca; }
 .quality-card.orange { border-left-color: #eae8b3; }
 
-/* ===== JOURNEY CARDS - ORIZONTALE, ACCESIBILITATE IMBUNĂTĂȚITĂ ===== */
+/* ===== JOURNEY CARDS ===== */
 #journey h3 {
   font-size: 2.2rem;
   background: linear-gradient(135deg, #766897, #658ea3, #cece6f, #aa708d);
@@ -814,6 +818,7 @@ main {
   display: block;
   margin-bottom: 0;
 }
+
 #journey h3:hover {
   transform: scale(1.02);
   text-shadow: 0 0 20px rgba(139, 92, 246, 0.8), 0 0 40px rgba(14, 165, 233, 0.5);
@@ -838,7 +843,7 @@ main {
   font-size: 1.1rem;
   text-align: left;
   margin-top: 0rem;
-  padding-top: 0; 
+  padding-top: 0;
 }
 
 .journey-cards-container {
@@ -892,7 +897,7 @@ main {
   bottom: 0;
   border-radius: 18px;
   padding: 2px;
-  background: linear-gradient(135deg,  #f59e0b, #ec4899,#0ea5e9, #10b981);
+  background: linear-gradient(135deg, #f59e0b, #ec4899, #0ea5e9, #10b981);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
@@ -1161,7 +1166,7 @@ main {
   transition: background 0.3s ease;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
   min-height: 85px;
   position: relative;
   z-index: 1;
@@ -1275,7 +1280,7 @@ main {
 }
 
 .filter-btn {
-  padding: 0.7rem 1.5rem 0.6rem 1.2rem; 
+  padding: 0.7rem 1.5rem 0.6rem 1.2rem;
   background: var(--filter-btn-bg);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -1284,7 +1289,7 @@ main {
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
-  display:flex;
+  display: flex;
   align-items: center;
   gap: 0.5rem;
   position: relative;
@@ -1357,17 +1362,19 @@ main {
   height: 90%;
 }
 
-.stat-card:nth-child(2) { 
-  background: linear-gradient(145deg, #0ea5e9, #10b981); 
-  animation-delay: 0.2s; 
+.stat-card:nth-child(2) {
+  background: linear-gradient(145deg, #0ea5e9, #10b981);
+  animation-delay: 0.2s;
 }
-.stat-card:nth-child(3) { 
-  background: linear-gradient(145deg, #f59e0b, #ec4899); 
-  animation-delay: 0.4s; 
+
+.stat-card:nth-child(3) {
+  background: linear-gradient(145deg, #f59e0b, #ec4899);
+  animation-delay: 0.4s;
 }
-.stat-card:nth-child(4) { 
-  background: linear-gradient(145deg, #10b981, #0ea5e9); 
-  animation-delay: 0.6s; 
+
+.stat-card:nth-child(4) {
+  background: linear-gradient(145deg, #10b981, #0ea5e9);
+  animation-delay: 0.6s;
 }
 
 @keyframes floatDynamic {
@@ -1388,7 +1395,7 @@ main {
 .stat-card div:last-child {
   font-size: 1rem;
   font-weight: 800;
-  color: rgba(255,255,255,0.95);
+  color: rgba(255, 255, 255, 0.95);
   margin-top: 0.2rem;
 }
 
@@ -1397,8 +1404,8 @@ main {
   display: inline-block;
   color: white;
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-  transform: scale(2.5); 
-  vertical-align: middle
+  transform: scale(2.5);
+  vertical-align: middle;
 }
 
 #projects h3 {
@@ -1414,6 +1421,7 @@ main {
   position: relative;
   display: inline-block;
 }
+
 #projects h3:hover {
   transform: scale(1.02);
   text-shadow: 0 0 20px rgba(139, 92, 246, 0.8), 0 0 40px rgba(14, 165, 233, 0.5);
@@ -1559,7 +1567,7 @@ main {
 
 .request-box p {
   text-align: center;
-  margin-top:0
+  margin-top: 0;
 }
 
 .request-box h3 {
@@ -1954,30 +1962,31 @@ main {
 
 .quotes-grid {
   display: flex;
-  flex-wrap: wrap;       
-  gap: 1rem;             
-  justify-content: center; 
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
   padding: 2rem;
-  max-width: 1000px;  
-  margin: 0 auto;       
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .quote-item {
-  padding: 0.8rem 1.5rem; 
+  padding: 0.8rem 1.5rem;
   border-radius: 40px;
   border-left: 4px solid;
-  display: inline-flex; 
+  display: inline-flex;
   align-items: center;
   gap: 0.8rem;
   transition: all 0.3s ease;
-  min-width: fit-content; 
-  max-width: none;     
-  white-space: nowrap;  
+  min-width: fit-content;
+  max-width: none;
+  white-space: nowrap;
   box-shadow: inset 4px 0 10px -2px rgba(255,255,255,0.1);
   text-align: center;
   justify-content: center;
   color: var(--text-primary);
 }
+
 .quote-item:hover {
   transform: translateY(-5px) scale(1.02);
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
@@ -2161,194 +2170,380 @@ footer {
 }
 
 @media (max-width: 768px) {
-  header { padding: 1rem 0; }
-  nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--header-bg); flex-direction: column; padding: 1.5rem; gap: 0.8rem; }
-  nav.active { display: flex; }
-  .menu-toggle { display: block; }
-  .nav-btn { width: 100%; justify-content: center; min-width: auto; }
-  .typewriter-text { font-size: 1.6rem; height: 100px; }
-  .content { padding: 1.8rem; }
+  header { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    z-index: 1000; 
+    padding: 1rem 0;
+  }
+  
+  body { padding-top: 70px; }
+  
+  .menu-toggle { 
+    display: block; 
+    position: relative; 
+    z-index: 1001; 
+  }
+  
+  nav { 
+    display: none; 
+    position: fixed; 
+    top: 70px; 
+    left: 0; 
+    right: 0; 
+    background: var(--header-bg); 
+    backdrop-filter: blur(15px); 
+    flex-direction: column; 
+    padding: 1rem; 
+    gap: 0.5rem; 
+    max-height: calc(100vh - 70px); 
+    overflow-y: auto; 
+    border-bottom: 1px solid var(--border-light); 
+    z-index: 999; 
+  }
+  
+  nav.active { 
+    display: flex; 
+    animation: slideDown 0.3s ease; 
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .nav-btn { 
+    width: 100%; 
+    justify-content: center; 
+    padding: 0.8rem; 
+    font-size: 0.9rem; 
+  }
+  
+  .tech-badge { display: none; }
+  
+  .container { padding: 0 1rem; }
+  
+  main { padding: 1rem 0; }
+  
+  .content { padding: 1.5rem; }
+  
+  .section h3 { 
+    font-size: 1.4rem; 
+    margin-bottom: 1rem; 
+  }
+  
+  .hero { gap: 1rem; }
+  
+  .sidebar { 
+    position: relative; 
+    top: 0; 
+    padding: 1.2rem; 
+  }
+  
+  .typewriter-container { 
+    min-height: auto; 
+    padding: 1rem; 
+  }
+  
+  .typewriter-text { 
+    font-size: 1.2rem; 
+    height: auto; 
+    min-height: 60px; 
+  }
+  
+  .quote-container { 
+    padding: 1.2rem; 
+    margin: 1rem 0; 
+  }
+  
+  .quote-container::before { 
+    font-size: 5rem; 
+    top: -50px; 
+  }
+  
+  .skills-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 0.5rem; 
+  }
+  
+  .skill-tag { 
+    padding: 0.5rem; 
+    font-size: 0.75rem; 
+    text-align: center; 
+  }
+  
+  .journey-card { 
+    flex-direction: column; 
+    padding: 1rem; 
+  }
+  
+  .card-marker { 
+    width: 60px; 
+    height: 60px; 
+    align-self: center; 
+  }
+  
+  .journey-card-title { 
+    font-size: 1rem; 
+    text-align: center; 
+  }
+  
+  .journey-period { 
+    font-size: 0.7rem; 
+    align-self: center; 
+  }
+  
+  .journey-summary { 
+    font-size: 0.85rem; 
+    padding-left: 0.5rem; 
+  }
+  
+  .journey-toggle { 
+    padding: 0.3rem 0.8rem; 
+    font-size: 0.75rem; 
+    align-self: center; 
+  }
+  
+  .timeline-controls { gap: 0.5rem; }
+  
+  .filter-btn { 
+    padding: 0.5rem 1rem; 
+    font-size: 0.75rem; 
+  }
+  
+  .projects-stats { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 0.5rem; 
+  }
+  
+  .stat-card { padding: 0.5rem; }
+  
+  .stat-number { font-size: 1.5rem; }
+  
+  .stat-card div:last-child { font-size: 0.7rem; }
+  
+  .project-category { padding: 1rem; }
+  
+  .project-category .icon-wrapper { 
+    width: 50px; 
+    height: 50px; 
+  }
+  
+  .exam-certificates-container { 
+    gap: 0.8rem; 
+    padding: 0.8rem; 
+  }
+  
+  .exam-certificate-item { flex: 0 0 140px; }
+  
+  .exam-certificate-img { height: 80px; }
+  
+  .exam-certificate-info { 
+    padding: 0.4rem 0.6rem; 
+    min-height: 70px; 
+  }
+  
+  .exam-certificate-title { font-size: 0.75rem; }
+  
+  .exam-certificate-date { font-size: 0.6rem; }
+  
+  .exam-certificate-grade { 
+    font-size: 0.55rem; 
+    padding: 0.1rem 0.4rem; 
+  }
+  
   .hello-message { font-size: 2rem; }
-  .hello-actions { flex-direction: column; }
-  .hello-action-btn { width: 100%; }
+  
+  .hello-subtitle { 
+    font-size: 0.9rem; 
+    padding: 1rem; 
+    text-align: center; 
+  }
+  
+  .hello-actions { 
+    flex-direction: column; 
+    gap: 1rem; 
+  }
+  
+  .hello-action-btn { 
+    width: 100%; 
+    padding: 0.8rem 1rem; 
+    font-size: 0.9rem; 
+  }
+  
+  .business-card-container { max-width: 280px; }
+  
+  .business-card { height: 260px; }
+  
+  .card-name { font-size: 1.3rem; }
+  
+  .card-detail { font-size: 0.75rem; }
+  
+  .quotes-grid { 
+    gap: 0.5rem; 
+    padding: 1rem; 
+  }
+  
+  .quote-item { 
+    padding: 0.4rem 0.8rem; 
+    font-size: 0.75rem; 
+    white-space: normal; 
+  }
+  
+  footer { 
+    padding: 1.5rem 0; 
+    margin-top: 2rem; 
+  }
+  
+  .footer-content { font-size: 0.8rem; }
+  
+  .toast { 
+    bottom: 80px; 
+    right: 10px; 
+    left: 10px; 
+    padding: 0.8rem 1rem; 
+    text-align: center; 
+  }
+  
+  .toast-content { justify-content: center; }
+  
+  .certificate-modal-content { 
+    width: 95%; 
+    padding: 1rem; 
+  }
+  
+  .certificate-modal-title { font-size: 1.2rem; }
+  
+  .theme-toggle { 
+    bottom: 70px; 
+    width: 45px; 
+    height: 45px; 
+  }
+}
+
+@media (max-width: 600px) and (orientation: portrait) {
+  .hero { gap: 1rem; }
+  
+  .sidebar { padding: 1rem; }
+  
+  .typewriter-container { 
+    padding: 1rem; 
+    min-height: 100px; 
+  }
+  
+  .typewriter-text { 
+    font-size: 1.2rem; 
+    height: auto; 
+    min-height: 70px; 
+  }
+  
+  .contact-item { 
+    font-size: 0.9rem; 
+    padding: 6px 8px; 
+  }
+  
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  
+  .skill-tag { 
+    padding: 0.5rem 0.8rem; 
+    font-size: 0.8rem; 
+  }
+  
+  .journey-card { padding: 1rem; }
+  
+  .card-marker { 
+    width: 50px; 
+    height: 50px; 
+  }
+  
+  .journey-card-title { font-size: 1rem; }
+  
+  .journey-summary { font-size: 0.8rem; }
+  
   .projects-stats { grid-template-columns: 1fr 1fr; }
-  .stat-card { aspect-ratio: 1 / 1; }
+  
+  .stat-number { font-size: 1.8rem; }
+  
+  .hello-subtitle { 
+    padding: 1rem; 
+    font-size: 0.9rem; 
+  }
+  
+  .business-card-container { max-width: 300px; }
+  
+  .business-card { height: 240px; }
+  
+  .card-name { font-size: 1.4rem; }
+  
+  .card-detail { font-size: 0.8rem; }
+  
+  .request-box { padding: 1.5rem; }
+  
+  .request-box h3 { font-size: 1.6rem; }
+  
+  .btn { 
+    padding: 0.8rem 1.2rem; 
+    font-size: 0.9rem; 
+  }
 }
 
 @media (max-width: 480px) {
   .container { padding: 0 1rem; }
   .brand-text h1 { font-size: 1.3rem; }
-  .avatar { width: 50px; height: 50px; font-size: 20px; }
-  .typewriter-text { font-size: 1.4rem; height: 90px; }
-  .hello-avatar { width: 120px; height: 120px; font-size: 36px; }
+  .avatar { 
+    width: 50px; 
+    height: 50px; 
+    font-size: 20px; 
+  }
+  .typewriter-text { 
+    font-size: 1.4rem; 
+    height: 90px; 
+  }
+  .hello-avatar { 
+    width: 120px; 
+    height: 120px; 
+    font-size: 36px; 
+  }
   .projects-stats { grid-template-columns: 1fr; }
   .stat-card { aspect-ratio: 1 / 1; }
 }
 
-/* ===== ÎMBUNĂTĂȚIRI PENTRU PORTRAIT MOBILE ===== */
-@media (max-width: 600px) and (orientation: portrait) {
-  .hero {
-    gap: 1rem;
-  }
-  .sidebar {
-    padding: 1rem;
-  }
-  .typewriter-container {
-    padding: 1rem;
-    min-height: 100px;
-  }
-  .typewriter-text {
-    font-size: 1.2rem;
-    height: auto;
-    min-height: 70px;
-  }
-  .contact-item {
-    font-size: 0.9rem;
-    padding: 6px 8px;
-  }
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .skill-tag {
-    padding: 0.5rem 0.8rem;
-    font-size: 0.8rem;
-  }
-  .journey-card {
-    padding: 1rem;
-  }
-  .card-marker {
-    width: 50px;
-    height: 50px;
-  }
-  .journey-card-title {
-    font-size: 1rem;
-  }
-  .journey-summary {
-    font-size: 0.8rem;
-  }
-  .projects-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-  .stat-number {
-    font-size: 1.8rem;
-  }
-  .hello-subtitle {
-    padding: 1rem;
-    font-size: 0.9rem;
-  }
-  .business-card-container {
-    max-width: 300px;
-  }
-  .business-card {
-    height: 240px;
-  }
-  .card-name {
-    font-size: 1.4rem;
-  }
-  .card-detail {
-    font-size: 0.8rem;
-  }
-  .request-box {
-    padding: 1.5rem;
-  }
-  .request-box h3 {
-    font-size: 1.6rem;
-  }
+/* ===== ÎMBUNĂTĂȚIRI PENTRU TOUCH ===== */
+@media (max-width: 768px) {
+  button, 
+  .nav-btn, 
+  .filter-btn, 
+  .journey-toggle,
+  .contact-item,
+  .social-link,
   .btn {
-    padding: 0.8rem 1.2rem;
-    font-size: 0.9rem;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  button:active, 
+  .nav-btn:active, 
+  .filter-btn:active {
+    transform: scale(0.98);
+    transition: transform 0.05s;
+  }
+  
+  input, 
+  textarea, 
+  button, 
+  select, 
+  a {
+    font-size: 16px;
   }
 }
-@media (max-width: 768px) {
 
-  /* ===== NAV (MOBILE ONLY) ===== */
-  nav {
-    display: none;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: var(--header-bg);
-    flex-direction: column;
-    padding: 1rem;
-    z-index: 2000;
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  .nav-btn {
-    min-width: auto;
-    width: 100%;
-  }
-
-  /* ===== HERO FIX ===== */
-  .hero {
-    grid-template-columns: 1fr;
-  }
-
-  /* ===== TEXT FIX (DOAR UNDE TREBUIE) ===== */
-  .typewriter-text {
-    font-size: 1.2rem;
-    line-height: 1.4;
-    height: auto;
-  }
-
-  .hello-message {
-    font-size: 2rem;
-  }
-
-  .section h3 {
-    font-size: 1.2rem;
-    white-space: normal;
-  }
-
-  /* IMPORTANT: scoatem gradient DOAR pe mobil */
-  .brand-text h1,
-  .section h3,
-  .hello-message {
-    background: none;
-    -webkit-text-fill-color: white;
-  }
-
-  /* ===== SPACING FIX ===== */
-  .content {
-    padding: 1rem;
-  }
-
-  .sidebar {
-    padding: 1rem;
-  }
-
-  .hello-subtitle {
-    font-size: 0.9rem;
-    padding: 0.8rem;
-  }
-
-  /* ===== CARDURI ===== */
-  .journey-card {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card-marker {
-    width: 50px;
-    height: 50px;
-  }
-
-  /* ===== STATS ===== */
-  .stat-card {
-    width: 100%;
-    height: auto;
-  }
-
-  /* ===== BUTON THEME ===== */
-  .theme-toggle {
-    top: auto;
-    bottom: 20px;
-    right: 15px;
-    width: 50px;
-    height: 50px;
+/* ===== REDUCERE ANIMAȚII LA CERERE ===== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
