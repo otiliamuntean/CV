@@ -2368,24 +2368,11 @@ footer {
     font-size: 1rem;
   }
 }
-/* ===== MENIU HAMBURGER FRUMOS ===== */
+/* ===== MODIFICĂRI DOAR PENTRU MOBIL ===== */
 @media (max-width: 768px) {
-  /* Ascunde butonul pătrat din dreapta sus */
+  /* Ascunde butonul theme toggle pe mobil */
   .theme-toggle {
     display: none !important;
-  }
-  
-  header {
-    padding: 0.8rem 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-  }
-  
-  body {
-    padding-top: 70px;
   }
   
   /* Buton hamburger frumos */
@@ -2397,8 +2384,6 @@ footer {
     font-size: 1.5rem;
     cursor: pointer;
     border-radius: 12px;
-    transition: all 0.3s ease;
-    z-index: 1001;
     width: 44px;
     height: 44px;
     align-items: center;
@@ -2406,26 +2391,13 @@ footer {
     box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
   }
   
-  .menu-toggle:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 16px rgba(139, 92, 246, 0.6);
-  }
-  
-  .menu-toggle:active {
-    transform: scale(0.95);
-  }
-  
-  /* Ascunde sidebar-ul pe paginile unde nu trebuie să apară */
-  .hero {
-    display: block !important;
-  }
-  
-  /* Sidebar ascuns complet pe mobil - apare doar pe prima pagină Hello */
+  /* Sidebar ascuns pe toate paginile EXCEPT Hello */
   .sidebar {
     display: none !important;
   }
   
-  /* Arată sidebar doar pe pagina Hello */
+  /* Afișează sidebar doar pe pagina Hello */
+  .section#hello.active ~ .hero .sidebar,
   body:has(#hello.section.active) .sidebar {
     display: block !important;
   }
@@ -2444,71 +2416,23 @@ footer {
     justify-content: center;
     padding: 0.8rem;
     gap: 0.5rem;
-    border-bottom: 1px solid var(--border-light);
     z-index: 999;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    margin: 0 !important;
-    max-width: 100% !important;
   }
   
   nav.active {
     display: flex !important;
-    animation: slideDown 0.3s ease;
-  }
-  
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
   
   .nav-btn {
-    width: auto !important;
-    min-width: auto !important;
     padding: 0.4rem 0.8rem !important;
     font-size: 0.7rem !important;
-    flex: 0 1 auto !important;
-    margin: 0 !important;
   }
   
-  /* Pagina Journey - textul să încapă în container */
-  .journey-card {
-    padding: 0.8rem;
-    margin: 0.5rem 0;
-  }
-  
-  .journey-card-title {
-    font-size: 0.9rem;
-    word-break: break-word;
-  }
-  
-  .journey-summary {
-    font-size: 0.75rem;
-    word-break: break-word;
-    overflow-wrap: break-word;
-  }
-  
-  .journey-details {
-    font-size: 0.75rem;
-    word-break: break-word;
-  }
-  
-  /* Projects stats - 4 patrate pe un rând */
+  /* Projects stats - 4 pe un rând */
   .projects-stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr) !important;
     gap: 0.3rem !important;
-    margin-bottom: 1rem;
-  }
-  
-  .stat-card {
-    padding: 0.3rem !important;
-    border-radius: 10px;
   }
   
   .stat-number {
@@ -2517,69 +2441,24 @@ footer {
   
   .stat-card div:last-child {
     font-size: 0.55rem !important;
-    white-space: nowrap;
   }
   
-  /* Container text general */
-  .content {
-    padding: 1rem;
-    overflow-x: hidden;
-  }
-  
-  .section h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.8rem;
-  }
-  
-  /* Paragrafe */
-  p, .about-content p {
-    font-size: 0.8rem;
-    line-height: 1.4;
+  /* Text journey */
+  .journey-card-title,
+  .journey-summary,
+  .journey-details {
     word-break: break-word;
-  }
-  
-  /* Timeline filters */
-  .timeline-controls {
-    gap: 0.3rem;
-  }
-  
-  .filter-btn {
-    padding: 0.3rem 0.6rem;
-    font-size: 0.65rem;
-  }
-  
-  /* Certificate items */
-  .exam-certificate-item {
-    flex: 0 0 110px;
-  }
-  
-  .exam-certificate-title {
-    font-size: 0.6rem;
-  }
-  
-  /* Hello page */
-  .hello-message {
-    font-size: 1.5rem;
-  }
-  
-  .hello-subtitle {
-    font-size: 0.8rem;
-    padding: 0.8rem;
-  }
-  
-  .business-card-container {
-    max-width: 260px;
-  }
-  
-  .business-card {
-    height: 220px;
   }
 }
 
-/* Mobile foarte mici (sub 480px) */
+/* Mobile foarte mici */
 @media (max-width: 480px) {
-  .projects-stats {
-    gap: 0.2rem !important;
+  .nav-btn span {
+    display: none !important;
+  }
+  
+  .nav-btn {
+    padding: 0.35rem 0.6rem !important;
   }
   
   .stat-number {
@@ -2588,56 +2467,5 @@ footer {
   
   .stat-card div:last-child {
     font-size: 0.5rem !important;
-  }
-  
-  .nav-btn span {
-    display: none !important;
-  }
-  
-  .nav-btn {
-    padding: 0.35rem 0.55rem !important;
-  }
-  
-  .nav-btn i {
-    margin: 0;
-    font-size: 0.9rem;
-  }
-  
-  .brand-text p {
-    display: none;
-  }
-  
-  .avatar {
-    width: 38px;
-    height: 38px;
-    font-size: 16px;
-  }
-  
-  .brand-text h1 {
-    font-size: 0.9rem;
-  }
-}
-
-/* Landscape */
-@media (max-width: 768px) and (orientation: landscape) {
-  nav {
-    top: 60px;
-    padding: 0.4rem;
-  }
-  
-  .nav-btn {
-    padding: 0.3rem 0.6rem !important;
-  }
-  
-  body {
-    padding-top: 60px;
-  }
-  
-  .projects-stats {
-    gap: 0.3rem;
-  }
-  
-  .stat-number {
-    font-size: 0.85rem;
   }
 }
