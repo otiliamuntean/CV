@@ -388,17 +388,52 @@ END:VCARD`;
     });
   });
 
-  // Mobile menu
+  // ===== MENIU HAMBURGER PENTRU MOBIL (ÎMBUNĂTĂȚIT) =====
   const menuToggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('nav');
-  if (menuToggle) {
-    menuToggle.addEventListener('click', () => {
+  
+  if (menuToggle && nav) {
+    // Setează textul inițial pe buton
+    menuToggle.innerHTML = '☰';
+    menuToggle.style.fontSize = '1.5rem';
+    menuToggle.style.fontWeight = 'bold';
+    
+    // Eveniment click pe buton
+    menuToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
       nav.classList.toggle('active');
-      menuToggle.innerHTML = nav.classList.contains('active') ? 
-        '<i class="lucide lucide-x"></i>' : '<i class="lucide lucide-menu"></i>';
+      
+      // Schimbă iconița între hamburger și X
+      if (nav.classList.contains('active')) {
+        menuToggle.innerHTML = '✕';
+        menuToggle.style.transform = 'rotate(90deg)';
+      } else {
+        menuToggle.innerHTML = '☰';
+        menuToggle.style.transform = 'rotate(0deg)';
+      }
+    });
+    
+    // Închide meniul când se dă click pe un link din meniu
+    const navBtns = document.querySelectorAll('.nav-btn');
+    navBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        nav.classList.remove('active');
+        menuToggle.innerHTML = '☰';
+        menuToggle.style.transform = 'rotate(0deg)';
+      });
+    });
+    
+    // Închide meniul când se dă click în afara lui
+    document.addEventListener('click', function(event) {
+      if (nav.classList.contains('active') && 
+          !nav.contains(event.target) && 
+          !menuToggle.contains(event.target)) {
+        nav.classList.remove('active');
+        menuToggle.innerHTML = '☰';
+        menuToggle.style.transform = 'rotate(0deg)';
+      }
     });
   }
-
   // Toast
   function showToast(msg) {
     const toast = document.getElementById('toast');
