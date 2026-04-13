@@ -122,6 +122,17 @@ document.addEventListener('DOMContentLoaded', function() {
       if (targetId === 'hello') showToast("👋 Hello! Thanks for visiting!");
       else if (targetId === 'journey') showToast("📚 Exploring my journey timeline");
       else if (targetId === 'projects') showToast("📁 Exploring my projects");
+      
+      // Închide meniul mobil după click
+      const nav = document.querySelector('nav');
+      const menuToggle = document.querySelector('.menu-toggle');
+      if (nav && nav.classList.contains('active')) {
+        nav.classList.remove('active');
+        if (menuToggle) {
+          menuToggle.innerHTML = '☰';
+          menuToggle.style.transform = 'rotate(0deg)';
+        }
+      }
     });
   });
 
@@ -201,18 +212,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Download CV functional
   document.getElementById('downloadCVHello')?.addEventListener('click', () => {
-  showToast("📄 Preparing CV download...");
+    showToast("📄 Preparing CV download...");
+    const link = document.createElement('a');
+    link.href = 'Muntean Otilia CV (1).pdf';
+    link.download = 'Otilia_Muntean_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setTimeout(() => showToast("✅ CV downloaded! Check your downloads folder."), 500);
+  });
   
-  // Creează link temporar pentru descărcare
-  const link = document.createElement('a');
-  link.href = 'Muntean Otilia CV (1).pdf';   // asigură-te că numele corespunde
-  link.download = 'Otilia_Muntean_CV.pdf';  // numele cu care se salvează (poți pune orice)
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-  
-  setTimeout(() => showToast("✅ CV downloaded! Check your downloads folder."), 500);
-});
   // Business card download
   document.getElementById('downloadBusinessCard')?.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -246,7 +255,7 @@ END:VCARD`;
     }, 500);
   });
 
-  // Detailed request button - MODIFICAT PENTRU A FUNCȚIONA REAL
+  // Detailed request button
   document.getElementById('sendDetailedRequestBtn')?.addEventListener('click', () => {
     const checkboxes = document.querySelectorAll('.detail-option:checked');
     const selected = Array.from(checkboxes).map(cb => cb.value);
@@ -255,7 +264,6 @@ END:VCARD`;
       return;
     }
     
-    // Construim corpul emailului
     let body = "I am interested in receiving detailed information about the following:\n\n";
     selected.forEach(opt => {
       if (opt === 'certificates') body += "📜 Certificates & Achievements\n";
@@ -276,7 +284,7 @@ END:VCARD`;
     openEmail("Question about your work", "Hi Otilia,\n\nI have a specific question about...");
   });
 
-  // Exam certificates data (for IT Step) - păstrat
+  // Exam certificates data (for IT Step)
   const stepCertificates = [
     { title: 'Application Development on Python', date: '2024', grade: '100%', image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDIwMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIxMjAiIHJ4PSI4IiBmaWxsPSJ1cmwoI2dyYWQpIi8+CjxjaXJjbGUgY3g9IjQwIiBjeT0iMzAiIHI9IjIwIiBmaWxsPSIjRkZGOEY1IiBvcGFjaXR5PSIwLjYiPjxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9ImN5IiB2YWx1ZXM9IjMwOzI1OzMwOzM1OzMwIiBkdXI9IjhzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIvPjxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9ImN4IiB2YWx1ZXM9IjQwOzM1OzQwOzQ1OzQwIiBkdXI9IjEycyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz48L2NpcmNsZT4KPGNpcmNsZSBjeD0iMTcwIiBjeT0iOTAiIHI9IjMwIiBmaWxsPSIjRTZGM0Q3IiBvcGFjaXR5PSIwLjUiPjxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9ImN5IiB2YWx1ZXM9IjkwOzg1OzkwOzk1OzkwIiBkdXI9IjEwcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz48YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJyIiB2YWx1ZXM9IjMwOzI4OzMwOzMyOzMwIiBkdXI9IjE1cyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz48L2NpcmNsZT4KPGNpcmNsZSBjeD0iMTUwIiBjeT0iMjAiIHI9IjE1IiBmaWxsPSIjRkZEQUI5IiBvcGFjaXR5PSIwLjciPjxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9ImN5IiB2YWx1ZXM9IjIwOzE1OzIwOzI1OzIwIiBkdXI9IjZzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIvPjxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9Im9wYWNpdHkiIHZhbHVlcz0iMC43OzAuNTswLjc7MC44OzAuNyIgZHVyPSI4cyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz48L2NpcmNsZT4KPHBhdGggZD0iTTAgNjBMMTIwIDExME0xODAgNDBMNjAgODAiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIwLjIiPjxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9Im9wYWNpdHkiIHZhbHVlcz0iMC4yOzAuMTswLjI7MC4zOzAuMiIgZHVyPSI3cyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz48L3BhdGg+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZCIgeDE9IjAiIHkxPSIwIiB4Mj0iMjAwIiB5Mj0iMTIwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0ZGREJCOCIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjQkJFMEZGIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjRDhDRkNDIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+Cjwvc3ZnPg=='},
     { title: '3D Design', date: '2024', grade: '96%', image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDIwMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIxMjAiIHJ4PSI4IiBmaWxsPSJ1cmwoI2dyYWQpIi8+CjxjaXJjbGUgY3g9IjE2MCIgY3k9IjMwIiByPSIyNSIgZmlsbD0iI0ZGQzREOSIgb3BhY2l0eT0iMC41Ij4KICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJjeCIgdmFsdWVzPSIxNjA7MTU1OzE2MDsxNjU7MTYwIiBkdXI9IjEwcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz4KICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJjeSIgdmFsdWVzPSIzMDsyNTszMDszNTszMCIgZHVyPSIxMnMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+CiAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iciIgdmFsdWVzPSIyNTsyMzsyNTsyNzsyNSIgZHVyPSI4cyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz4KPC9jaXJjbGU+CjxjaXJjbGUgY3g9IjUwIiBjeT0iOTAiIHI9IjM1IiBmaWxsPSIjRTVDOUZGIiBvcGFjaXR5PSIwLjYiPgogIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9ImN4IiB2YWx1ZXM9IjUwOzQ1OzUwOzU1OzUwIiBkdXI9IjE1cyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz4KICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJjeSIgdmFsdWVzPSI5MDs4NTs5MDs5NTs5MCIgZHVyPSIxM3MiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+CiAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iciIgdmFsdWVzPSIzNTszMjszNTszODszNSIgZHVyPSIxMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+CjwvY2lyY2xlPgo8Y2lyY2xlIGN4PSIxODAiIGN5PSIxMDAiIHI9IjEwIiBmaWxsPSIjRkZFQkM2IiBvcGFjaXR5PSIwLjgiPgogIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9ImN4IiB2YWx1ZXM9IjE4MDsxNzU7MTgwOzE4NTsxODAiIGR1cj0iN3MiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+CiAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iY3kiIHZhbHVlcz0iMTAwOzk1OzEwMDsxMDU7MTAwIiBkdXI9IjZzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIvPgogIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9InIiIHZhbHVlcz0iMTA7ODsxMDsxMjsxMCIgZHVyPSI5cyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz4KICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJvcGFjaXR5IiB2YWx1ZXM9IjAuODswLjY7MC44OzAuOTswLjgiIGR1cj0iMTBzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIvPgo8L2NpcmNsZT4KPHJlY3QgeD0iMjAiIHk9IjIwIiB3aWR0aD0iMTUiIGhlaWdodD0iMTUiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuMiIgcng9IjQiPgogIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9IngiIHZhbHVlcz0iMjA7MTU7MjA7MjU7MjAiIGR1cj0iMTBzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIvPgogIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9InkiIHZhbHVlcz0iMjA7MTU7MjA7MjU7MjAiIGR1cj0iMTJzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIvPgogIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9Im9wYWNpdHkiIHZhbHVlcz0iMC4yOzAuMTswLjI7MC4zOzAuMiIgZHVyPSI4cyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz4KPC9yZWN0Pgo8cmVjdCB4PSIxNjAiIHk9IjcwIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuMTUiIHJ4PSIxMCI+CiAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0ieCIgdmFsdWVzPSIxNjA7MTU1OzE2MDsxNjU7MTYwIiBkdXI9IjE0cyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz4KICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJ5IiB2YWx1ZXM9IjcwOzY1OzcwOzc1OzcwIiBkdXI9IjE2cyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz4KICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJ3aWR0aCIgdmFsdWVzPSIyMDsxODsyMDsyMjsyMCIgZHVyPSIxMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+CiAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iaGVpZ2h0IiB2YWx1ZXM9IjIwOzE4OzIwOzIyOzIwIiBkdXI9IjEzcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz4KICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJvcGFjaXR5IiB2YWx1ZXM9IjAuMTU7MC4xOzAuMTU7MC4yOzAuMTUiIGR1cj0iOXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+CjwvcmVjdD4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiB4MT0iMCIgeTE9IjAiIHgyPSIyMDAiIHkyPSIxMjAiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjRTdDOUZGIi8+PHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiNGRkM0RTAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNGRkU4QjYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz4KPC9zdmc+' },
@@ -323,11 +331,13 @@ END:VCARD`;
       modal.classList.remove('active');
     });
   }
-  modal.addEventListener('click', function(e) {
-    if (e.target === modal) {
-      modal.classList.remove('active');
-    }
-  });
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+      }
+    });
+  }
 
   // Toggle exam certificates for IT Step
   const viewCertBtn = document.getElementById('viewStepCertificates');
@@ -335,14 +345,18 @@ END:VCARD`;
     viewCertBtn.addEventListener('click', function() {
       const slider = document.getElementById('stepCertificatesSlider');
       const icon = this.querySelector('.lucide:last-child');
-      slider.classList.toggle('expanded');
-      this.classList.toggle('expanded');
-      if (slider.classList.contains('expanded')) {
-        icon.className = 'lucide lucide-chevron-up';
-        this.querySelector('span').textContent = 'Hide Exam Certificates';
-      } else {
-        icon.className = 'lucide lucide-chevron-down';
-        this.querySelector('span').textContent = 'View Exam Certificates';
+      if (slider) {
+        slider.classList.toggle('expanded');
+        this.classList.toggle('expanded');
+        if (slider.classList.contains('expanded')) {
+          if (icon) icon.className = 'lucide lucide-chevron-up';
+          const span = this.querySelector('span');
+          if (span) span.textContent = 'Hide Exam Certificates';
+        } else {
+          if (icon) icon.className = 'lucide lucide-chevron-down';
+          const span = this.querySelector('span');
+          if (span) span.textContent = 'View Exam Certificates';
+        }
       }
     });
   }
@@ -355,16 +369,18 @@ END:VCARD`;
       const icon = this.querySelector('i');
       const textSpan = this.querySelector('span');
       
-      card.classList.toggle('expanded');
-      this.classList.toggle('expanded');
-      details.classList.toggle('expanded');
-      
-      if (card.classList.contains('expanded')) {
-        icon.className = 'lucide lucide-chevron-up';
-        textSpan.textContent = 'Hide Details';
-      } else {
-        icon.className = 'lucide lucide-chevron-down';
-        textSpan.textContent = 'View Details';
+      if (card && details) {
+        card.classList.toggle('expanded');
+        this.classList.toggle('expanded');
+        details.classList.toggle('expanded');
+        
+        if (card.classList.contains('expanded')) {
+          if (icon) icon.className = 'lucide lucide-chevron-up';
+          if (textSpan) textSpan.textContent = 'Hide Details';
+        } else {
+          if (icon) icon.className = 'lucide lucide-chevron-down';
+          if (textSpan) textSpan.textContent = 'View Details';
+        }
       }
     });
   });
@@ -388,23 +404,33 @@ END:VCARD`;
     });
   });
 
-  // ===== MENIU HAMBURGER PENTRU MOBIL (ÎMBUNĂTĂȚIT) =====
+  // ===== MENIU HAMBURGER PENTRU MOBIL (VERSIUNE COMPLETĂ) =====
   const menuToggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('nav');
+  const navMenu = document.querySelector('nav');
   
-  if (menuToggle && nav) {
-    // Setează textul inițial pe buton
+  if (menuToggle && navMenu) {
+    // Setează butonul
     menuToggle.innerHTML = '☰';
     menuToggle.style.fontSize = '1.5rem';
     menuToggle.style.fontWeight = 'bold';
+    menuToggle.style.background = 'linear-gradient(135deg, var(--primary), var(--secondary))';
+    menuToggle.style.border = 'none';
+    menuToggle.style.color = 'white';
+    menuToggle.style.borderRadius = '10px';
+    menuToggle.style.width = '40px';
+    menuToggle.style.height = '40px';
+    menuToggle.style.display = 'flex';
+    menuToggle.style.alignItems = 'center';
+    menuToggle.style.justifyContent = 'center';
+    menuToggle.style.cursor = 'pointer';
+    menuToggle.style.transition = 'all 0.3s ease';
     
-    // Eveniment click pe buton
+    // Eveniment click
     menuToggle.addEventListener('click', function(e) {
       e.stopPropagation();
-      nav.classList.toggle('active');
+      navMenu.classList.toggle('active');
       
-      // Schimbă iconița între hamburger și X
-      if (nav.classList.contains('active')) {
+      if (navMenu.classList.contains('active')) {
         menuToggle.innerHTML = '✕';
         menuToggle.style.transform = 'rotate(90deg)';
       } else {
@@ -413,11 +439,11 @@ END:VCARD`;
       }
     });
     
-    // Închide meniul când se dă click pe un link din meniu
-    const navBtns = document.querySelectorAll('.nav-btn');
-    navBtns.forEach(btn => {
+    // Închide meniul când se dă click pe un link
+    const allNavBtns = document.querySelectorAll('.nav-btn');
+    allNavBtns.forEach(btn => {
       btn.addEventListener('click', function() {
-        nav.classList.remove('active');
+        navMenu.classList.remove('active');
         menuToggle.innerHTML = '☰';
         menuToggle.style.transform = 'rotate(0deg)';
       });
@@ -425,21 +451,35 @@ END:VCARD`;
     
     // Închide meniul când se dă click în afara lui
     document.addEventListener('click', function(event) {
-      if (nav.classList.contains('active') && 
-          !nav.contains(event.target) && 
+      if (navMenu.classList.contains('active') && 
+          !navMenu.contains(event.target) && 
           !menuToggle.contains(event.target)) {
-        nav.classList.remove('active');
+        navMenu.classList.remove('active');
         menuToggle.innerHTML = '☰';
         menuToggle.style.transform = 'rotate(0deg)';
       }
     });
   }
-  // Toast
+
+  // Toast function
+  window.showToast = function(msg) {
+    const toast = document.getElementById('toast');
+    const toastMessage = document.getElementById('toast-message');
+    if (toast && toastMessage) {
+      toastMessage.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+  };
+  
   function showToast(msg) {
     const toast = document.getElementById('toast');
-    document.getElementById('toast-message').textContent = msg;
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 3000);
+    const toastMessage = document.getElementById('toast-message');
+    if (toast && toastMessage) {
+      toastMessage.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    }
   }
 
   // Progress bars with random durations
