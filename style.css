@@ -2259,45 +2259,96 @@ footer {
     font-size: 0.9rem;
   }
 }
-/* ===== MOBILE FIX PACK ===== */
 @media (max-width: 768px) {
 
-  .hero {
-    grid-template-columns: 1fr !important;
+  /* ===== NAV (MOBILE ONLY) ===== */
+  nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--header-bg);
+    flex-direction: column;
+    padding: 1rem;
+    z-index: 2000;
   }
 
-  .theme-toggle {
-    bottom: 20px;
-    top: auto;
-    right: 15px;
-    width: 50px;
-    height: 50px;
+  nav.active {
+    display: flex;
   }
 
   .nav-btn {
     min-width: auto;
-  }
-
-  .stat-card {
     width: 100%;
-    height: auto;
   }
 
+  /* ===== HERO FIX ===== */
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  /* ===== TEXT FIX (DOAR UNDE TREBUIE) ===== */
   .typewriter-text {
+    font-size: 1.2rem;
+    line-height: 1.4;
     height: auto;
   }
 
-  .content,
+  .hello-message {
+    font-size: 2rem;
+  }
+
+  .section h3 {
+    font-size: 1.2rem;
+    white-space: normal;
+  }
+
+  /* IMPORTANT: scoatem gradient DOAR pe mobil */
+  .brand-text h1,
+  .section h3,
+  .hello-message {
+    background: none;
+    -webkit-text-fill-color: white;
+  }
+
+  /* ===== SPACING FIX ===== */
+  .content {
+    padding: 1rem;
+  }
+
   .sidebar {
     padding: 1rem;
   }
 
+  .hello-subtitle {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+
+  /* ===== CARDURI ===== */
   .journey-card {
     flex-direction: column;
     align-items: center;
   }
 
-  * {
-    white-space: normal !important;
+  .card-marker {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* ===== STATS ===== */
+  .stat-card {
+    width: 100%;
+    height: auto;
+  }
+
+  /* ===== BUTON THEME ===== */
+  .theme-toggle {
+    top: auto;
+    bottom: 20px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
   }
 }
