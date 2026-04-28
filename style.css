@@ -277,11 +277,19 @@ header {
   text-align: left;
 }
 
+/* ===== TEXT SUBTITLU MARIT ===== */
 .brand-text p {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   color: #94a3b8;
-  font-size: 0.9rem;
-  font-weight: 500;
   text-align: left;
+}
+
+@media (min-width: 992px) {
+  .brand-text p {
+    font-size: 1.1rem;
+  }
 }
 
 nav {
@@ -567,7 +575,7 @@ main {
   transform: translateY(-8px);
 }
 
-/* ===== SKILLS GRID - VERSIUNE ROBUSTĂ (nu mai iese din container) ===== */
+/* ===== SKILLS GRID - VERSIUNE ROBUSTĂ ===== */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -2216,6 +2224,11 @@ footer {
     backdrop-filter: blur(5px);
   }
   
+  /* Text subtitlu pe mobil */
+  .brand-text p {
+    font-size: 0.85rem !important;
+  }
+  
   .typewriter-text { 
     font-size: 1.6rem; 
     height: auto;
@@ -2242,21 +2255,11 @@ footer {
     width: 100%; 
   }
   
-  .projects-stats { 
-    grid-template-columns: 1fr 1fr; 
-  }
-  
-  .stat-card { 
-    aspect-ratio: 1 / 1; 
-    width: 100%;
-    height: auto;
-  }
-  
   .quote-item {
     white-space: normal;
   }
   
-  /* Skills grid pe mobil - 2 coloane, nu mai iese din container */
+  /* Skills grid pe mobil - 2 coloane */
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.6rem;
@@ -2342,6 +2345,93 @@ footer {
     font-size: 4rem;
     top: -40px;
   }
+  
+  /* PROJECTS PAGE - MOBILE ADAPTARE */
+  .projects-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .stat-card {
+    width: 100%;
+    padding: 0.8rem 0.5rem;
+    aspect-ratio: auto;
+    min-height: 100px;
+  }
+  
+  .stat-number {
+    font-size: 1.6rem;
+  }
+  
+  .stat-card div:last-child {
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+  }
+  
+  .tech-horizons {
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .horizon-item {
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .project-category {
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    border-radius: 20px;
+  }
+  
+  .project-category .icon-wrapper {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.8rem;
+  }
+  
+  .project-category h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .project-category p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+  
+  .project-category span {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.8rem;
+    white-space: normal;
+    display: inline-block;
+  }
+  
+  .featured-project {
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+  
+  .request-box {
+    padding: 1.2rem;
+    margin: 2rem 0;
+  }
+  
+  .request-box h3 {
+    font-size: 1.3rem !important;
+    margin-bottom: 0.5rem;
+  }
+  
+  #projects h3 {
+    font-size: 1.6rem;
+    white-space: normal;
+    text-align: center;
+    display: block;
+    margin-bottom: 1rem;
+  }
 }
 
 /* Mobile mici (sub 480px) */
@@ -2355,7 +2445,7 @@ footer {
   }
   
   .brand-text p {
-    font-size: 0.7rem;
+    font-size: 0.75rem !important;
   }
   
   .avatar { 
@@ -2379,17 +2469,56 @@ footer {
     font-size: 1.5rem;
   }
   
-  .projects-stats { 
-    grid-template-columns: 1fr; 
+  /* Projects pe ecran foarte mic */
+  .projects-stats {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
   }
   
-  .stat-card { 
-    aspect-ratio: auto; 
-    padding: 0.8rem;
+  .stat-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1.2rem;
+    min-height: auto;
   }
   
   .stat-number {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+  }
+  
+  .stat-card div:last-child {
+    margin-top: 0;
+    font-size: 0.85rem;
+  }
+  
+  .project-category {
+    padding: 1rem;
+  }
+  
+  .project-category .icon-wrapper {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .project-category .icon-wrapper i {
+    font-size: 1.3rem;
+  }
+  
+  .project-category h4 {
+    font-size: 1rem;
+  }
+  
+  .project-category p {
+    font-size: 0.8rem;
+  }
+  
+  .project-category span {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.6rem;
+    margin-right: 0.3rem;
+    margin-bottom: 0.3rem;
   }
   
   .journey-card {
