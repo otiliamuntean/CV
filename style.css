@@ -58,7 +58,7 @@ body {
   transition: background 0.3s ease, color 0.2s ease;
 }
 
-/* ===== LIGHT MODE – DOAR PUȚIN MAI LUMINOS, FĂRĂ ALB ===== */
+/* ===== LIGHT MODE ===== */
 body.light-mode {
   --bg-gradient: linear-gradient(135deg, #1a2a3a, #2d3e52);
   --text-primary: #f0f4fa;
@@ -84,6 +84,7 @@ body.light-mode {
   --hello-subtitle-color: #eef2f6;
 }
 
+/* ===== THEME TOGGLE (Luna/Soare) ===== */
 .theme-toggle {
   position: fixed;
   top: 100px;
@@ -566,16 +567,19 @@ main {
   transform: translateY(-8px);
 }
 
+/* ===== SKILLS GRID - VERSIUNE ROBUSTĂ (nu mai iese din container) ===== */
 .skills-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 0.75rem;
+  width: 100%;
+  overflow: hidden;
 }
 
 .skill-tag {
   background: var(--skill-tag-bg);
   color: var(--skill-tag-color);
-  padding: 0.7rem 2rem;
+  padding: 0.7rem 0.5rem;
   border-radius: 40px;
   font-size: 0.9rem;
   font-weight: 600;
@@ -586,6 +590,9 @@ main {
   position: relative;
   overflow: hidden;
   width: 100%;
+  white-space: normal;
+  word-break: break-word;
+  box-sizing: border-box;
 }
 
 .skill-tag::before {
@@ -2144,7 +2151,7 @@ footer {
   display: none;
 }
 
-/* ===== RESPONSIVE MEDIA QUERIES (ADAUGATE LA SFARSIT) ===== */
+/* ===== RESPONSIVE MEDIA QUERIES ===== */
 
 /* Tablete si ecrane medii */
 @media (max-width: 1100px) {
@@ -2163,7 +2170,7 @@ footer {
   .projects-stats { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* Mobile (sub 768px) - aici apare meniul hamburger */
+/* Mobile (sub 768px) - meniu hamburger + ajustari */
 @media (max-width: 768px) {
   header { padding: 1rem 0; }
   
@@ -2195,6 +2202,20 @@ footer {
     min-width: auto; 
   }
   
+  /* Theme toggle mutat in SUS pe mobil */
+  .theme-toggle {
+    position: fixed;
+    top: 15px !important;
+    right: 15px !important;
+    bottom: auto !important;
+    width: 45px;
+    height: 45px;
+    z-index: 2000;
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+  }
+  
   .typewriter-text { 
     font-size: 1.6rem; 
     height: auto;
@@ -2203,6 +2224,10 @@ footer {
   
   .content { 
     padding: 1.5rem; 
+  }
+  
+  .sidebar {
+    padding: 1.2rem;
   }
   
   .hello-message { 
@@ -2227,161 +2252,31 @@ footer {
     height: auto;
   }
   
-  .theme-toggle {
-    top: auto;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-  }
-  
   .quote-item {
     white-space: normal;
   }
   
+  /* Skills grid pe mobil - 2 coloane, nu mai iese din container */
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Mobile mici (sub 480px) */
-@media (max-width: 480px) {
-  .container { 
-    padding: 0 1rem; 
+    gap: 0.6rem;
   }
   
-  .brand-text h1 { 
-    font-size: 1.2rem; 
+  .skill-tag {
+    font-size: 0.8rem;
+    padding: 0.6rem 0.4rem;
+    white-space: normal;
+    word-break: break-word;
   }
   
-  .avatar { 
-    width: 45px; 
-    height: 45px; 
-    font-size: 18px; 
-  }
-  
-  .typewriter-text { 
-    font-size: 1.3rem; 
-    min-height: 80px;
-  }
-  
-  .hello-avatar { 
-    width: 120px; 
-    height: 120px; 
-    font-size: 36px; 
-  }
-  
-  .projects-stats { 
-    grid-template-columns: 1fr; 
-  }
-  
-  .stat-card { 
-    aspect-ratio: auto; 
-    padding: 1rem;
-  }
-  
-  .stat-number {
-    font-size: 1.8rem;
-  }
-  
-  .journey-card {
-    padding: 1rem;
-  }
-  
-  .card-marker {
-    width: 55px;
-    height: 55px;
-  }
-  
-  .journey-card-title {
-    font-size: 1rem;
-  }
-  
-  .hello-subtitle {
-    padding: 1rem;
-    font-size: 0.9rem;
-  }
-  
-  .business-card-container {
-    max-width: 300px;
-  }
-  
-  .business-card {
-    height: 250px;
-  }
-  
-  .card-name {
-    font-size: 1.3rem;
-  }
-  
-  .btn {
-    padding: 0.7rem 1.2rem;
-    font-size: 0.85rem;
-  }
-  
-  .filter-btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.75rem;
-  }
-  
-  .request-box h3 {
-    font-size: 1.5rem;
-  }
-  
-  .request-box {
-    padding: 1.2rem;
-  }
-}
-
-/* Prevenire overflow orizontal pe toate dispozitivele */
-* {
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-img, svg, video, iframe {
-  max-width: 100%;
-  height: auto;
-}
-
-body {
-  overflow-x: hidden;
-}
-
-/* Scroll orizontal pentru certificate doar unde e necesar */
-.exam-certificates-container {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-/* Ajustari pentru ecrane foarte mari */
-@media (min-width: 1400px) {
-  .container {
-    max-width: 1400px;
-  }
-  
-  .hero {
-    gap: 3rem;
-  }
-  
-  .journey-cards-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-/* ===== REPARAȚII MOBILE - ALINIERE ȘI TEXT CURAT ===== */
-
-/* Textul de pe About să fie lizibil și aerisit */
-@media (max-width: 768px) {
-  /* About page - text curat și aliniat */
+  /* About page text curat */
   #about .about-content p {
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1.2rem;
     text-align: left;
-    padding: 0 0.5rem;
   }
   
-  /* Generatorul de calități - mai compact */
   .candidate-generator {
     padding: 1.2rem;
     margin-bottom: 2rem;
@@ -2391,7 +2286,6 @@ body {
     gap: 0.8rem;
     flex-wrap: wrap;
     justify-content: center;
-    text-align: center;
   }
   
   .generator-header i {
@@ -2407,8 +2301,6 @@ body {
     font-size: 1rem;
     padding: 1rem;
     min-height: auto;
-    text-align: center;
-    word-wrap: break-word;
   }
   
   .generator-buttons {
@@ -2420,7 +2312,6 @@ body {
     font-size: 0.85rem;
   }
   
-  /* Cardurile cu calități */
   .qualities-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -2432,323 +2323,150 @@ body {
     padding: 1rem;
   }
   
-  .quality-card h4 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .quality-card p {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-  
-  /* Hero section - text mai curat */
-  .hero {
-    gap: 1rem;
-  }
-  
-  /* Sidebar - text aliniat frumos */
-  .sidebar {
-    padding: 1.2rem;
+  .section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
   }
   
   .contact-item {
     font-size: 0.9rem;
     padding: 6px 8px;
     width: 100%;
-    justify-content: flex-start;
   }
   
-  .contact-item span {
-    word-break: break-word;
-  }
-  
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.6rem;
-  }
-  
-  .skill-tag {
-    font-size: 0.8rem;
-    padding: 0.5rem 0.8rem;
-  }
-  
-  /* Typewriter text - mai compact */
-  .typewriter-container {
-    padding: 1rem;
-    min-height: auto;
-  }
-  
-  .typewriter-text {
-    font-size: 1.3rem;
-    line-height: 1.4;
-    min-height: auto;
-    height: auto;
-    padding: 0.5rem;
-  }
-  
-  /* Quotes section */
   .quote-container {
     padding: 1.2rem;
-    margin: 1.5rem 0;
   }
   
   .quote-container::before {
     font-size: 4rem;
     top: -40px;
-    left: 5px;
+  }
+}
+
+/* Mobile mici (sub 480px) */
+@media (max-width: 480px) {
+  .container { 
+    padding: 0 1rem; 
   }
   
-  .quote-container p {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-  
-  .quote-author {
-    font-size: 0.85rem;
-    margin-top: 0.8rem;
-  }
-  
-  /* Buton de meniu mai vizibil */
-  .menu-toggle {
-    font-size: 1.5rem;
-    padding: 0.4rem;
-  }
-  
-  /* Header mai curat */
-  .brand-text h1 {
-    font-size: 1.1rem;
+  .brand-text h1 { 
+    font-size: 1.1rem; 
   }
   
   .brand-text p {
     font-size: 0.7rem;
   }
   
-  /* Titluri sectiuni */
-  .section h3 {
-    font-size: 1.4rem;
-    margin-bottom: 1.2rem;
-    gap: 0.6rem;
+  .avatar { 
+    width: 40px; 
+    height: 40px; 
+    font-size: 16px; 
   }
   
-  .section h3 i {
-    font-size: 1.3rem;
+  .typewriter-text { 
+    font-size: 1.2rem; 
+    min-height: 70px;
   }
   
-  /* Journey cards pe mobil */
-  .journey-card {
-    padding: 1rem;
+  .hello-avatar { 
+    width: 100px; 
+    height: 100px; 
+    font-size: 32px; 
   }
   
-  .card-marker {
-    width: 60px;
-    height: 60px;
+  .hello-message {
+    font-size: 1.5rem;
   }
   
-  .journey-card-title {
-    font-size: 1rem;
+  .projects-stats { 
+    grid-template-columns: 1fr; 
   }
   
-  .journey-period {
-    font-size: 0.65rem;
-  }
-  
-  .journey-summary {
-    font-size: 0.85rem;
-    padding-left: 0.6rem;
-  }
-  
-  .journey-details {
-    font-size: 0.85rem;
-  }
-  
-  .journey-toggle {
-    padding: 0.3rem 0.8rem 0.3rem 1.5rem;
-    font-size: 0.8rem;
-  }
-  
-  /* Filtre timeline */
-  .timeline-controls {
-    gap: 0.6rem;
-    margin: 1.2rem 0;
-  }
-  
-  .filter-btn {
-    padding: 0.4rem 1rem;
-    font-size: 0.75rem;
-  }
-  
-  /* Projects stats */
-  .projects-stats {
-    gap: 0.8rem;
+  .stat-card { 
+    aspect-ratio: auto; 
+    padding: 0.8rem;
   }
   
   .stat-number {
     font-size: 1.5rem;
   }
   
-  .stat-card div:last-child {
-    font-size: 0.8rem;
+  .journey-card {
+    padding: 0.8rem;
   }
   
-  /* Hello page */
-  .hello-message {
-    font-size: 1.8rem;
+  .card-marker {
+    width: 50px;
+    height: 50px;
   }
   
-  .hello-subtitle {
+  .journey-card-title {
     font-size: 0.9rem;
-    padding: 0.8rem 1rem;
-    line-height: 1.5;
   }
   
-  .hello-info-grid {
-    grid-template-columns: 1fr;
-    gap: 0.8rem;
-  }
-  
-  .hello-info-item {
-    padding: 0.6rem;
-  }
-  
-  .hello-info-value {
-    font-size: 0.85rem;
-  }
-  
-  /* Social links */
-  .social-links {
-    gap: 0.8rem;
-    margin-top: 2rem;
-  }
-  
-  .social-link {
-    width: 42px;
-    height: 42px;
-  }
-  
-  .social-link svg {
-    width: 20px;
-    height: 20px;
-  }
-  
-  /* Toast notifications */
-  .toast {
-    bottom: 70px;
-    right: 15px;
-    left: 15px;
-    padding: 0.8rem 1rem;
-  }
-  
-  .toast-content {
-    font-size: 0.85rem;
-  }
-}
-
-/* Pentru ecrane ultra mici (sub 400px) */
-@media (max-width: 400px) {
+  /* Skills pe o coloana pe ecran foarte mic */
   .skills-grid {
     grid-template-columns: 1fr;
   }
   
-  .typewriter-text {
-    font-size: 1.1rem;
+  .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
   }
   
-  .brand-text h1 {
-    font-size: 1rem;
+  .filter-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
   }
   
-  .avatar {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-  }
-  
-  .section h3 {
-    font-size: 1.2rem;
-  }
-  
-  .generator-header {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .generator-header i {
-    margin: 0 auto;
-  }
-  
-  .generator-buttons {
-    flex-direction: column;
-  }
-  
-  .generator-buttons .btn {
-    width: 100%;
-  }
-  
+  /* Ascunde textul de pe butoanele de filtrare pe ecran foarte mic */
   .filter-btn span {
     display: none;
   }
   
   .filter-btn i {
     margin: 0;
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   
   .filter-btn {
     padding: 0.5rem;
     min-width: 40px;
   }
-  
-  .stat-card div:last-child {
-    font-size: 0.7rem;
-  }
-  
-  .stat-number {
-    font-size: 1.3rem;
-  }
 }
 
-/* Asigură-te că textul nu iese din container */
-.about-content p,
-.hello-subtitle,
-.quote-container p,
-.journey-summary,
-.journey-details,
-.contact-item span,
-.skill-tag {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
-}
-
-/* Aliniere perfectă pentru toate cardurile */
-.journey-card-content,
-.quality-card,
-.candidate-generator,
-.generator-display {
-  width: 100%;
+/* Preventie overflow */
+* {
+  max-width: 100%;
   box-sizing: border-box;
 }
 
-/* Spațiere uniformă pe mobil */
-@media (max-width: 768px) {
-  body {
-    padding: 0;
-  }
-  
+img, svg, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.exam-certificates-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ecrane foarte mari */
+@media (min-width: 1400px) {
   .container {
-    padding: 0 0.8rem;
-  }
-  
-  main {
-    padding: 1.5rem 0;
-  }
-  
-  .content {
-    padding: 1.2rem;
+    max-width: 1400px;
   }
   
   .hero {
-    margin-bottom: 0;
+    gap: 3rem;
+  }
+  
+  .journey-cards-container {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
