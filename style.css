@@ -2368,3 +2368,387 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+/* ===== REPARAȚII MOBILE - ALINIERE ȘI TEXT CURAT ===== */
+
+/* Textul de pe About să fie lizibil și aerisit */
+@media (max-width: 768px) {
+  /* About page - text curat și aliniat */
+  #about .about-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+    text-align: left;
+    padding: 0 0.5rem;
+  }
+  
+  /* Generatorul de calități - mai compact */
+  .candidate-generator {
+    padding: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .generator-header {
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .generator-header i {
+    font-size: 1.8rem;
+    padding: 0.8rem;
+  }
+  
+  .generator-header h3 {
+    font-size: 1.3rem;
+  }
+  
+  .generator-display {
+    font-size: 1rem;
+    padding: 1rem;
+    min-height: auto;
+    text-align: center;
+    word-wrap: break-word;
+  }
+  
+  .generator-buttons {
+    gap: 0.8rem;
+  }
+  
+  .generator-buttons .btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.85rem;
+  }
+  
+  /* Cardurile cu calități */
+  .qualities-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .quality-card {
+    padding: 1rem;
+  }
+  
+  .quality-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .quality-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  /* Hero section - text mai curat */
+  .hero {
+    gap: 1rem;
+  }
+  
+  /* Sidebar - text aliniat frumos */
+  .sidebar {
+    padding: 1.2rem;
+  }
+  
+  .contact-item {
+    font-size: 0.9rem;
+    padding: 6px 8px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .contact-item span {
+    word-break: break-word;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+  
+  .skill-tag {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.8rem;
+  }
+  
+  /* Typewriter text - mai compact */
+  .typewriter-container {
+    padding: 1rem;
+    min-height: auto;
+  }
+  
+  .typewriter-text {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    min-height: auto;
+    height: auto;
+    padding: 0.5rem;
+  }
+  
+  /* Quotes section */
+  .quote-container {
+    padding: 1.2rem;
+    margin: 1.5rem 0;
+  }
+  
+  .quote-container::before {
+    font-size: 4rem;
+    top: -40px;
+    left: 5px;
+  }
+  
+  .quote-container p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .quote-author {
+    font-size: 0.85rem;
+    margin-top: 0.8rem;
+  }
+  
+  /* Buton de meniu mai vizibil */
+  .menu-toggle {
+    font-size: 1.5rem;
+    padding: 0.4rem;
+  }
+  
+  /* Header mai curat */
+  .brand-text h1 {
+    font-size: 1.1rem;
+  }
+  
+  .brand-text p {
+    font-size: 0.7rem;
+  }
+  
+  /* Titluri sectiuni */
+  .section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+    gap: 0.6rem;
+  }
+  
+  .section h3 i {
+    font-size: 1.3rem;
+  }
+  
+  /* Journey cards pe mobil */
+  .journey-card {
+    padding: 1rem;
+  }
+  
+  .card-marker {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .journey-card-title {
+    font-size: 1rem;
+  }
+  
+  .journey-period {
+    font-size: 0.65rem;
+  }
+  
+  .journey-summary {
+    font-size: 0.85rem;
+    padding-left: 0.6rem;
+  }
+  
+  .journey-details {
+    font-size: 0.85rem;
+  }
+  
+  .journey-toggle {
+    padding: 0.3rem 0.8rem 0.3rem 1.5rem;
+    font-size: 0.8rem;
+  }
+  
+  /* Filtre timeline */
+  .timeline-controls {
+    gap: 0.6rem;
+    margin: 1.2rem 0;
+  }
+  
+  .filter-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.75rem;
+  }
+  
+  /* Projects stats */
+  .projects-stats {
+    gap: 0.8rem;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+  }
+  
+  .stat-card div:last-child {
+    font-size: 0.8rem;
+  }
+  
+  /* Hello page */
+  .hello-message {
+    font-size: 1.8rem;
+  }
+  
+  .hello-subtitle {
+    font-size: 0.9rem;
+    padding: 0.8rem 1rem;
+    line-height: 1.5;
+  }
+  
+  .hello-info-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  .hello-info-item {
+    padding: 0.6rem;
+  }
+  
+  .hello-info-value {
+    font-size: 0.85rem;
+  }
+  
+  /* Social links */
+  .social-links {
+    gap: 0.8rem;
+    margin-top: 2rem;
+  }
+  
+  .social-link {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .social-link svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Toast notifications */
+  .toast {
+    bottom: 70px;
+    right: 15px;
+    left: 15px;
+    padding: 0.8rem 1rem;
+  }
+  
+  .toast-content {
+    font-size: 0.85rem;
+  }
+}
+
+/* Pentru ecrane ultra mici (sub 400px) */
+@media (max-width: 400px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .typewriter-text {
+    font-size: 1.1rem;
+  }
+  
+  .brand-text h1 {
+    font-size: 1rem;
+  }
+  
+  .avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  
+  .section h3 {
+    font-size: 1.2rem;
+  }
+  
+  .generator-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .generator-header i {
+    margin: 0 auto;
+  }
+  
+  .generator-buttons {
+    flex-direction: column;
+  }
+  
+  .generator-buttons .btn {
+    width: 100%;
+  }
+  
+  .filter-btn span {
+    display: none;
+  }
+  
+  .filter-btn i {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+  
+  .filter-btn {
+    padding: 0.5rem;
+    min-width: 40px;
+  }
+  
+  .stat-card div:last-child {
+    font-size: 0.7rem;
+  }
+  
+  .stat-number {
+    font-size: 1.3rem;
+  }
+}
+
+/* Asigură-te că textul nu iese din container */
+.about-content p,
+.hello-subtitle,
+.quote-container p,
+.journey-summary,
+.journey-details,
+.contact-item span,
+.skill-tag {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Aliniere perfectă pentru toate cardurile */
+.journey-card-content,
+.quality-card,
+.candidate-generator,
+.generator-display {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Spațiere uniformă pe mobil */
+@media (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+  
+  .container {
+    padding: 0 0.8rem;
+  }
+  
+  main {
+    padding: 1.5rem 0;
+  }
+  
+  .content {
+    padding: 1.2rem;
+  }
+  
+  .hero {
+    margin-bottom: 0;
+  }
+}
