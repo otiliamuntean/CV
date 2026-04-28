@@ -821,7 +821,7 @@ main {
 .quality-card.green { border-left-color: #a9dbca; }
 .quality-card.orange { border-left-color: #eae8b3; }
 
-/* ===== JOURNEY CARDS ===== */
+/* ===== JOURNEY CARDS - REARANJATE PE CALCULATOR ===== */
 #journey h3 {
   font-size: 1.8rem;
   background: linear-gradient(135deg, #766897, #658ea3, #cece6f, #aa708d);
@@ -864,10 +864,11 @@ main {
   padding-top: 0;
 }
 
+/* Pe desktop - 2 coloane pentru carduri */
 .journey-cards-container {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
   margin: 1.5rem 0;
 }
 
@@ -1605,7 +1606,7 @@ main {
   font-size: 0.75rem;
 }
 
-/* ===== REQUEST BOX - TEXT PE 2 RÂNDURI CENTRAT ===== */
+/* ===== REQUEST BOX ===== */
 .request-box {
   background: linear-gradient(135deg, #8b5cf6, #0ea5e9, #ec4899);
   border-radius: 20px;
@@ -1675,7 +1676,7 @@ main {
   text-align: left;
 }
 
-/* ===== HELLO PAGE - AVATAR ADAPTAT ===== */
+/* ===== HELLO PAGE - SOCIAL LINKS MAI MARI ===== */
 .hello-container {
   text-align: center;
   padding: 1.5rem 0.5rem;
@@ -2070,17 +2071,18 @@ main {
   filter: brightness(1.2);
 }
 
+/* ===== SOCIAL LINKS - MAI MARI ===== */
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.2rem;
   margin-top: 2.5rem;
   flex-wrap: wrap;
 }
 
 .social-link {
-  width: 42px;
-  height: 42px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -2108,14 +2110,14 @@ main {
 }
 
 .social-link svg {
-  width: 20px;
-  height: 20px;
+  width: 26px;
+  height: 26px;
   fill: white;
 }
 
 .social-link.figma svg {
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
 }
 
 /* ===== FOOTER ===== */
@@ -2125,6 +2127,7 @@ footer {
   margin-top: 3rem;
   border-top: 1px solid var(--footer-border);
   font-size: 0.75rem;
+  width: 100%;
 }
 
 .footer-content {
@@ -2250,13 +2253,9 @@ footer {
     min-height: 80px;
   }
   
+  /* Pe tableta, journey cards devin pe 1 coloana */
   .journey-cards-container {
     grid-template-columns: 1fr;
-  }
-  
-  #journey h3 {
-    font-size: 1.6rem;
-    white-space: normal;
   }
   
   .journey-card {
@@ -2311,7 +2310,6 @@ footer {
     font-size: 0.85rem;
   }
   
-  /* Theme toggle mutat in SUS pe mobil */
   .theme-toggle {
     position: fixed;
     top: 12px !important;
@@ -2366,7 +2364,6 @@ footer {
     font-size: 1.5rem;
   }
   
-  /* Skills grid pe mobil */
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
@@ -2377,7 +2374,6 @@ footer {
     padding: 0.45rem 0.3rem;
   }
   
-  /* Projects page mobil */
   .projects-stats {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
@@ -2430,7 +2426,6 @@ footer {
     font-size: 0.8rem;
   }
   
-  /* Request box mobil */
   .request-box {
     padding: 1rem;
   }
@@ -2498,7 +2493,6 @@ footer {
     font-size: 0.85rem;
   }
   
-  /* SAY HELLO - mobil adaptare avatar */
   .hello-animation {
     width: 110px;
     height: 110px;
@@ -2541,14 +2535,15 @@ footer {
     white-space: normal;
   }
   
+  /* Social links pe mobil - putin mai mici dar vizibile */
   .social-link {
-    width: 38px;
-    height: 38px;
+    width: 45px;
+    height: 45px;
   }
   
   .social-link svg {
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
   }
   
   #projects h3 {
@@ -2652,7 +2647,6 @@ footer {
     white-space: normal;
   }
   
-  /* SAY HELLO - avatar foarte mic */
   .hello-animation {
     width: 90px;
     height: 90px;
@@ -2684,6 +2678,16 @@ footer {
   
   .request-option span {
     width: 100%;
+  }
+  
+  .social-link {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .social-link svg {
+    width: 20px;
+    height: 20px;
   }
 }
 
