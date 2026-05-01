@@ -3374,4 +3374,24 @@ footer {
     pointer-events: none !important;
   }
 }
+/* ===== PROJECTS DESKTOP - 2 x 2 CATEGORY CARDS ===== */
+@media (min-width: 769px) {
+  #projects .project-categories,
+  #projects .projects-grid,
+  #projects .categories-grid,
+  #projects .project-category-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 1.2rem !important;
+    align-items: stretch;
+  }
+
+  #projects .project-category {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    min-height: 220px;
+  }
+}
+
 
