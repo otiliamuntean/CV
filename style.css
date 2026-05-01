@@ -3210,3 +3210,15 @@ footer {
     max-width: 100%;
   }
 }
+/* ===== MOBILE THEME TOGGLE ABOVE MENU ===== */
+@media (max-width: 768px) {
+  .theme-toggle {
+    position: fixed !important;
+    top: 8px !important;
+    right: 56px !important;
+    width: 38px;
+    height: 38px;
+    z-index: 5200 !important;
+    pointer-events: auto;
+  }
+}
