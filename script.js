@@ -296,31 +296,80 @@ END:VCARD`;
   });
 
   // Exam certificates data
-  const stepCertificates = [
-    { title: 'Application Development on Python', date: '2024', grade: '100%', image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDIwMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIxMjAiIHJ4PSI4IiBmaWxsPSJ1cmwoI2dyYWQpIi8+CjxjaXJjbGUgY3g9IjQwIiBjeT0iMzAiIHI9IjIwIiBmaWxsPSIjRkZGOEY1IiBvcGFjaXR5PSIwLjYiPjxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9ImN5IiB2YWx1ZXM9IjMwOzI1OzMwOzM1OzMwIiBkdXI9IjhzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIvPjxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9ImN4IiB2YWx1ZXM9IjQwOzM1OzQwOzQ1OzQwIiBkdXI9IjEycyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz48L2NpcmNsZT4KPGNpcmNsZSBjeD0iMTcwIiBjeT0iOTAiIHI9IjMwIiBmaWxsPSIjRTZGM0Q3IiBvcGFjaXR5PSIwLjUiPjxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9ImN5IiB2YWx1ZXM9IjkwOzg1OzkwOzk1OzkwIiBkdXI9IjEwcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz48YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJyIiB2YWx1ZXM9IjMwOzI4OzMwOzMyOzMwIiBkdXI9IjE1cyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz48L2NpcmNsZT4KPGNpcmNsZSBjeD0iMTUwIiBjeT0iMjAiIHI9IjE1IiBmaWxsPSIjRkZEQUI5IiBvcGFjaXR5PSIwLjciPjxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9ImN5IiB2YWx1ZXM9IjIwOzE1OzIwOzI1OzIwIiBkdXI9IjZzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIvPjxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9Im9wYWNpdHkiIHZhbHVlcz0iMC43OzAuNTswLjc7MC44OzAuNyIgZHVyPSI4cyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz48L2NpcmNsZT4KPHBhdGggZD0iTTAgNjBMMTIwIDExME0xODAgNDBMNjAgODAiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIwLjIiPjxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9Im9wYWNpdHkiIHZhbHVlcz0iMC4yOzAuMTswLjI7MC4zOzAuMiIgZHVyPSI3cyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz48L3BhdGg+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZCIgeDE9IjAiIHkxPSIwIiB4Mj0iMjAwIiB5Mj0iMTIwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0ZGREJCOCIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjQkJFMEZGIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjRDhDRkNDIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+Cjwvc3ZnPg=='},
-    { title: 'Kodu Game Lab',  date: '2024',  grade: '98%',  image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDIwMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIxMjAiIHJ4PSI4IiBmaWxsPSJ1cmwoI2dyYWQpIi8+PGNpcmNsZSBjeD0iNDIiIGN5PSIzOCIgcj0iMjIiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuMjUiLz48Y2lyY2xlIGN4PSIxNjUiIGN5PSI4MiIgcj0iMzAiIGZpbGw9IiNGRkQxNjYiIG9wYWNpdHk9IjAuNDUiLz48cGF0aCBkPSJNNjAgNzBMMTAwIDQ1TDE0MCA3MEwxMDAgOTVaIiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjM1Ii8+PGNpcmNsZSBjeD0iODUiIGN5PSI2OCIgcj0iNiIgZmlsbD0iIzEwYjk4MSIvPjxjaXJjbGUgY3g9IjExNSIgY3k9IjY4IiByPSI2IiBmaWxsPSIjZWY0NDQ0Ii8+PHBhdGggZD0iTTQwIDEwMEgxNjAiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIwLjI1Ii8+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiB4MT0iMCIgeTE9IjAiIHgyPSIyMDAiIHkyPSIxMjAiPjxzdG9wIHN0b3AtY29sb3I9IiMxMGI5ODEiLz48c3RvcCBvZmZzZXQ9IjAuNTUiIHN0b3AtY29sb3I9IiMzYjgyZjYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmNTllMGIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48L3N2Zz4='},
-    {title: 'Construct 3',  date: '2024',  grade: '97%',  image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDIwMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIxMjAiIHJ4PSI4IiBmaWxsPSJ1cmwoI2dyYWQpIi8+PHJlY3QgeD0iMzAiIHk9IjI4IiB3aWR0aD0iNDQiIGhlaWdodD0iNDQiIHJ4PSIxMCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC4yNSIvPjxyZWN0IHg9Ijg0IiB5PSI0OCIgd2lkdGg9IjQ0IiBoZWlnaHQ9IjQ0IiByeD0iMTAiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuMzUiLz48cmVjdCB4PSIxMzgiIHk9IjI4IiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHJ4PSI4IiBmaWxsPSIjZmRlNjhiIiBvcGFjaXR5PSIwLjY1Ii8+PHBhdGggZD0iTTUyIDUwSDExMEwxNTQgNDQiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIwLjM1Ii8+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiB4MT0iMCIgeTE9IjAiIHgyPSIyMDAiIHkyPSIxMjAiPjxzdG9wIHN0b3AtY29sb3I9IiMxNGI4YTYiLz48c3RvcCBvZmZzZXQ9IjAuNSIgc3RvcC1jb2xvcj0iIzIyYzU1ZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzg0Y2M0NyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjwvc3ZnPg=='},
-{
-  title: 'WordPress',
-  date: '2024',
-  grade: '99%',
-  image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDIwMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIxMjAiIHJ4PSI4IiBmaWxsPSJ1cmwoI2dyYWQpIi8+PGNpcmNsZSBjeD0iMTAwIiBjeT0iNjAiIHI9IjM2IiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjIyIi8+PGNpcmNsZSBjeD0iMTAwIiBjeT0iNjAiIHI9IjI2IiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgb3BhY2l0eT0iMC4zNSIvPjx0ZXh0IHg9IjEwMCIgeT0iNzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMzAiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuNzUiPldQPC90ZXh0PjxjaXJjbGUgY3g9IjQ1IiBjeT0iMzUiIHI9IjIwIiBmaWxsPSIjOTNkNWZmIiBvcGFjaXR5PSIwLjM1Ii8+PGNpcmNsZSBjeD0iMTYwIiBjeT0iODUiIHI9IjI1IiBmaWxsPSIjYmZkN2ZmIiBvcGFjaXR5PSIwLjM1Ii8+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiB4MT0iMCIgeTE9IjAiIHgyPSIyMDAiIHkyPSIxMjAiPjxzdG9wIHN0b3AtY29sb3I9IiMyMTc1OWIiLz48c3RvcCBvZmZzZXQ9IjAuNSIgc3RvcC1jb2xvcj0iIzI1NjNlYiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzBjNGE2ZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjwvc3ZnPg=='
-},
-{
-  title: 'Blender',
-  date: '2024',
-  grade: '95%',
-  image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDIwMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIxMjAiIHJ4PSI4IiBmaWxsPSJ1cmwoI2dyYWQpIi8+PGNpcmNsZSBjeD0iMTA1IiBjeT0iNjAiIHI9IjMzIiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjI1Ii8+PGNpcmNsZSBjeD0iMTA1IiBjeT0iNjAiIHI9IjE0IiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjU1Ii8+PHBhdGggZD0iTTcwIDQyTDM1IDMwTDY4IDU4TDQwIDgzTDgyIDc4IiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iOCIgY2FwPSJyb3VuZCIgb3BhY2l0eT0iMC41NSIvPjxjaXJjbGUgY3g9IjE1NSIgY3k9IjM1IiByPSIyMCIgZmlsbD0iI2ZmYjQ1NCIgb3BhY2l0eT0iMC40Ii8+PGNpcmNsZSBjeD0iNDUiIGN5PSI5NSIgcj0iMTgiIGZpbGw9IiNmZmVlOTMiIG9wYWNpdHk9IjAuMyIvPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZCIgeDE9IjAiIHkxPSIwIiB4Mj0iMjAwIiB5Mj0iMTIwIj48c3RvcCBzdG9wLWNvbG9yPSIjZjU3MzE2Ii8+PHN0b3Agb2Zmc2V0PSIwLjU1IiBzdG9wLWNvbG9yPSIjZmE5NTAwIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMzY3NGI1Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PC9zdmc+'
-},
-{
-  title: 'Android',
-  date: '2024',
-  grade: '96%',
-  image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDIwMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIxMjAiIHJ4PSI4IiBmaWxsPSJ1cmwoI2dyYWQpIi8+PHJlY3QgeD0iNzAiIHk9IjM4IiB3aWR0aD0iNjAiIGhlaWdodD0iNDgiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC4zNSIvPjxjaXJjbGUgY3g9Ijg4IiBjeT0iNTYiIHI9IjQiIGZpbGw9IiMzNGQzOTkiLz48Y2lyY2xlIGN4PSIxMTIiIGN5PSI1NiIgcj0iNCIgZmlsbD0iIzM0ZDM5OSIvPjxwYXRoIGQ9Ik04MiAzOEw3MiAyMk0xMTggMzhMMTI4IDIyIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBvcGFjaXR5PSIwLjYiLz48cGF0aCBkPSJNNjIgNTBINTBNMTM4IDUwSDE1ME02MiA3NEg1ME0xMzggNzRIMTUwIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBvcGFjaXR5PSIwLjQ1Ii8+PGNpcmNsZSBjeD0iMzgiIGN5PSI5MiIgcj0iMjQiIGZpbGw9IiNiYmY3ZDQiIG9wYWNpdHk9IjAuMzUiLz48Y2lyY2xlIGN4PSIxNjAiIGN5PSIzMiIgcj0iMjgiIGZpbGw9IiNkOWZjYjUiIG9wYWNpdHk9IjAuMzUiLz48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImdyYWQiIHgxPSIwIiB5MT0iMCIgeDI9IjIwMCIgeTI9IjEyMCI+PHN0b3Agc3RvcC1jb2xvcj0iIzIyYzU1ZSIvPjxzdG9wIG9mZnNldD0iMC41NSIgc3RvcC1jb2xvcj0iIzM0ZDM5OSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzE0Yjg2YSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjwvc3ZnPg=='
-},
-    {title: '3Ds Max', date: '2024', grade: '94%', image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDIwMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIxMjAiIHJ4PSI4IiBmaWxsPSJ1cmwoI2dyYWQpIi8+PHBhdGggZD0iTTEwMCAyMEwxNDUgNDZWOTRMMTAwIDExNkw1NSA5NFY0NkwxMDAgMjBaIiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjIyIi8+PHBhdGggZD0iTTEwMCAzOEwxMjggNTVWMODJMMTAwIDk4TDcyIDgyVjU1TDEwMCAzOFoiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIwLjU1Ii8+PHBhdGggZD0iTTEwMCAzOFY5OE03MiA1NUwxMjggODJNNTIgODJMMTI4IDU1IiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgb3BhY2l0eT0iMC4yNSIvPjxjaXJjbGUgY3g9IjQwIiBjeT0iMzAiIHI9IjIyIiBmaWxsPSIjYzRjNGZmIiBvcGFjaXR5PSIwLjM1Ii8+PGNpcmNsZSBjeD0iMTYyIiBjeT0iOTAiIHI9IjI4IiBmaWxsPSIjOTNhM2ZmIiBvcGFjaXR5PSIwLjM1Ii8+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiB4MT0iMCIgeTE9IjAiIHgyPSIyMDAiIHkyPSIxMjAiPjxzdG9wIHN0b3AtY29sb3I9IiMyNTYzZWIiLz48c3RvcCBvZmZzZXQ9IjAuNTUiIHN0b3AtY29sb3I9IiM3YzNhZWQiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwZWE1ZTkiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48L3N2Zz4='},
-    { title: '3D Design', date: '2024', grade: '96%', image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDIwMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIxMjAiIHJ4PSI4IiBmaWxsPSJ1cmwoI2dyYWQpIi8+CjxjaXJjbGUgY3g9IjE2MCIgY3k9IjMwIiByPSIyNSIgZmlsbD0iI0ZGQzREOSIgb3BhY2l0eT0iMC41Ij4KICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJjeCIgdmFsdWVzPSIxNjA7MTU1OzE2MDsxNjU7MTYwIiBkdXI9IjEwcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz4KICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJjeSIgdmFsdWVzPSIzMDsyNTszMDszNTszMCIgZHVyPSIxMnMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+CiAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iciIgdmFsdWVzPSIyNTsyMzsyNTsyNzsyNSIgZHVyPSI4cyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz4KPC9jaXJjbGU+CjxjaXJjbGUgY3g9IjUwIiBjeT0iOTAiIHI9IjM1IiBmaWxsPSIjRTVDOUZGIiBvcGFjaXR5PSIwLjYiPgogIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9ImN4IiB2YWx1ZXM9IjUwOzQ1OzUwOzU1OzUwIiBkdXI9IjE1cyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz4KICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJjeSIgdmFsdWVzPSI5MDs4NTs5MDs5NTs5MCIgZHVyPSIxM3MiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+CiAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iciIgdmFsdWVzPSIzNTszMjszNTszODszNSIgZHVyPSIxMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+CjwvY2lyY2xlPgo8Y2lyY2xlIGN4PSIxODAiIGN5PSIxMDAiIHI9IjEwIiBmaWxsPSIjRkZFQkM2IiBvcGFjaXR5PSIwLjgiPgogIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9ImN4IiB2YWx1ZXM9IjE4MDsxNzU7MTgwOzE4NTsxODAiIGR1cj0iN3MiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+CiAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iY3kiIHZhbHVlcz0iMTAwOzk1OzEwMDsxMDU7MTAwIiBkdXI9IjZzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIvPgogIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9InIiIHZhbHVlcz0iMTA7ODsxMDsxMjsxMCIgZHVyPSI5cyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz4KICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJvcGFjaXR5IiB2YWx1ZXM9IjAuODswLjY7MC44OzAuOTswLjgiIGR1cj0iMTBzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIvPgo8L2NpcmNsZT4KPHJlY3QgeD0iMjAiIHk9IjIwIiB3aWR0aD0iMTUiIGhlaWdodD0iMTUiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuMiIgcng9IjQiPgogIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9IngiIHZhbHVlcz0iMjA7MTU7MjA7MjU7MjAiIGR1cj0iMTBzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIvPgogIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9InkiIHZhbHVlcz0iMjA7MTU7MjA7MjU7MjAiIGR1cj0iMTJzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIvPgogIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9Im9wYWNpdHkiIHZhbHVlcz0iMC4yOzAuMTswLjI7MC4zOzAuMiIgZHVyPSI4cyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz4KPC9yZWN0Pgo8cmVjdCB4PSIxNjAiIHk9IjcwIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuMTUiIHJ4PSIxMCI+CiAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0ieCIgdmFsdWVzPSIxNjA7MTU1OzE2MDsxNjU7MTYwIiBkdXI9IjE0cyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz4KICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJ5IiB2YWx1ZXM9IjcwOzY1OzcwOzc1OzcwIiBkdXI9IjE2cyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz4KICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJ3aWR0aCIgdmFsdWVzPSIyMDsxODsyMDsyMjsyMCIgZHVyPSIxMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+CiAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iaGVpZ2h0IiB2YWx1ZXM9IjIwOzE4OzIwOzIyOzIwIiBkdXI9IjEzcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz4KICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJvcGFjaXR5IiB2YWx1ZXM9IjAuMTU7MC4xOzAuMTU7MC4yOzAuMTUiIGR1cj0iOXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+CjwvcmVjdD4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiB4MT0iMCIgeTE9IjAiIHgyPSIyMDAiIHkyPSIxMjAiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjRTdDOUZGIi8+PHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiNGRkM0RTAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNGRkU4QjYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz4KPC9zdmc+'}
-  ];
+// Exam certificates data
+function certificateImage(colors, label) {
+  const svg = `
+    <svg width="200" height="120" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="200" height="120" rx="8" fill="url(#grad)"/>
+      <circle cx="42" cy="34" r="22" fill="white" opacity="0.22"/>
+      <circle cx="160" cy="86" r="30" fill="white" opacity="0.16"/>
+      <path d="M35 88L88 42L118 72L164 35" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
+      <rect x="50" y="42" width="100" height="42" rx="14" fill="white" opacity="0.18"/>
+      <text x="100" y="70" text-anchor="middle" font-size="20" font-weight="900" fill="white" font-family="Arial, sans-serif">${label}</text>
+      <defs>
+        <linearGradient id="grad" x1="0" y1="0" x2="200" y2="120">
+          <stop offset="0%" stop-color="${colors[0]}"/>
+          <stop offset="55%" stop-color="${colors[1]}"/>
+          <stop offset="100%" stop-color="${colors[2]}"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  `;
+
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+}
+
+const stepCertificates = [
+  {
+    title: 'Application Development on Python',
+    date: '2024',
+    grade: '100%',
+    image: certificateImage(['#facc15', '#60a5fa', '#a78bfa'], 'PY')
+  },
+  {
+    title: '3D Design',
+    date: '2024',
+    grade: '96%',
+    image: certificateImage(['#e879f9', '#f9a8d4', '#fde68a'], '3D')
+  },
+  {
+    title: 'Kodu Game Lab',
+    date: '2024',
+    grade: '98%',
+    image: certificateImage(['#10b981', '#3b82f6', '#f59e0b'], 'KODU')
+  },
+  {
+    title: 'Construct 3',
+    date: '2024',
+    grade: '97%',
+    image: certificateImage(['#14b8a6', '#22c55e', '#84cc16'], 'C3')
+  },
+  {
+    title: 'WordPress',
+    date: '2024',
+    grade: '99%',
+    image: certificateImage(['#21759b', '#2563eb', '#0c4a6e'], 'WP')
+  },
+  {
+    title: 'Blender',
+    date: '2024',
+    grade: '95%',
+    image: certificateImage(['#f97316', '#f59e0b', '#2563eb'], 'BL')
+  },
+  {
+    title: 'Android',
+    date: '2024',
+    grade: '96%',
+    image: certificateImage(['#22c55e', '#34d399', '#14b8a6'], 'AND')
+  },
+  {
+    title: '3Ds Max',
+    date: '2024',
+    grade: '94%',
+    image: certificateImage(['#2563eb', '#7c3aed', '#0ea5e9'], 'MAX')
+  }
+];
+
 
   const stepContainer = document.getElementById('stepCertificatesContainer');
   if (stepContainer) {
