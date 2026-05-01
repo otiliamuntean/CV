@@ -324,49 +324,91 @@ const stepCertificates = [
     title: 'Application Development on Python',
     date: '2024',
     grade: '100%',
-    image: certificateImage(['#facc15', '#60a5fa', '#a78bfa'], 'PY')
+    image: certificateImage(['#fde68a', '#bfdbfe', '#ddd6fe'], 'PY')
+  },
+  {
+    title: 'Python',
+    date: '2024',
+    grade: '98%',
+    image: certificateImage(['#dbeafe', '#fef3c7', '#bfdbfe'], 'PY')
+  },
+  {
+    title: 'HTML',
+    date: '2024',
+    grade: '99%',
+    image: certificateImage(['#fed7aa', '#fee2e2', '#fef3c7'], 'HTML')
+  },
+  {
+    title: 'CSS',
+    date: '2024',
+    grade: '99%',
+    image: certificateImage(['#bfdbfe', '#dbeafe', '#e0e7ff'], 'CSS')
   },
   {
     title: '3D Design',
     date: '2024',
     grade: '96%',
-    image: certificateImage(['#e879f9', '#f9a8d4', '#fde68a'], '3D')
+    image: certificateImage(['#fbcfe8', '#ddd6fe', '#fde68a'], '3D')
   },
   {
     title: 'Kodu Game Lab',
     date: '2024',
     grade: '98%',
-    image: certificateImage(['#10b981', '#3b82f6', '#f59e0b'], 'KODU')
+    image: certificateImage(['#bbf7d0', '#bfdbfe', '#fde68a'], 'KODU')
   },
   {
     title: 'Construct 3',
     date: '2024',
     grade: '97%',
-    image: certificateImage(['#14b8a6', '#22c55e', '#84cc16'], 'C3')
+    image: certificateImage(['#ccfbf1', '#dcfce7', '#ecfccb'], 'C3')
   },
   {
     title: 'WordPress',
     date: '2024',
     grade: '99%',
-    image: certificateImage(['#21759b', '#2563eb', '#0c4a6e'], 'WP')
+    image: certificateImage(['#dbeafe', '#e0f2fe', '#c7d2fe'], 'WP')
   },
   {
     title: 'Blender',
     date: '2024',
     grade: '95%',
-    image: certificateImage(['#f97316', '#f59e0b', '#2563eb'], 'BL')
+    image: certificateImage(['#fed7aa', '#fde68a', '#bfdbfe'], 'BL')
   },
   {
     title: 'Android',
     date: '2024',
     grade: '96%',
-    image: certificateImage(['#22c55e', '#34d399', '#14b8a6'], 'AND')
+    image: certificateImage(['#bbf7d0', '#d9f99d', '#ccfbf1'], 'AND')
   },
   {
     title: '3Ds Max',
     date: '2024',
     grade: '94%',
-    image: certificateImage(['#2563eb', '#7c3aed', '#0ea5e9'], 'MAX')
+    image: certificateImage(['#c7d2fe', '#ddd6fe', '#bae6fd'], 'MAX')
+  },
+  {
+    title: 'Photoshop',
+    date: '2024',
+    grade: '97%',
+    image: certificateImage(['#bfdbfe', '#dbeafe', '#c7d2fe'], 'PS')
+  },
+  {
+    title: 'Adobe Illustrator',
+    date: '2024',
+    grade: '96%',
+    image: certificateImage(['#fed7aa', '#fde68a', '#fee2e2'], 'AI')
+  },
+  {
+    title: 'Adobe Premiere Pro',
+    date: '2024',
+    grade: '95%',
+    image: certificateImage(['#ddd6fe', '#e9d5ff', '#c7d2fe'], 'PR')
+  },
+  {
+    title: 'Arduino Electronics',
+    date: '2024',
+    grade: '97%',
+    image: certificateImage(['#ccfbf1', '#bfdbfe', '#dcfce7'], 'ARD')
   }
 ];
 
