@@ -1593,6 +1593,25 @@ main {
   margin-right: 0.4rem;
   margin-bottom: 0.3rem;
 }
+.project-categories {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.project-categories .project-category {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .project-categories {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
 
 .featured-project {
   background: rgba(255, 255, 255, 0.03);
