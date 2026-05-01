@@ -56,6 +56,8 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   transition: background 0.3s ease, color 0.2s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ===== LIGHT MODE ===== */
@@ -388,7 +390,9 @@ nav {
 main {
   padding: 2rem 0;
   position: relative;
-  min-height: calc(100vh - 200px);
+  flex: 1 0 auto;
+  width: 100%;
+  min-height: auto;
 }
 
 .hero {
@@ -582,10 +586,12 @@ main {
 /* ===== SKILLS GRID - CONTAINERE MAI MICI ===== */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 0.1fr));
+  grid-template-columns: repeat(auto-fit, minmax(130px, 130px));
+  justify-content: center;
+  justify-items: center;
   gap: 0.5rem;
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .skill-tag {
@@ -601,10 +607,15 @@ main {
   transition: var(--transition);
   position: relative;
   overflow: hidden;
-  width: 70%;
+  width: 130px;
+  min-height: 34px;
   white-space: normal;
-  word-break: break-word;
+  word-break: normal;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
 }
 
 .skill-tag::before {
@@ -2125,12 +2136,13 @@ main {
 footer {
   background: var(--footer-bg);
   padding: 2rem 0;
-  margin-top: 3rem;
+  margin-top: auto;
   border-top: 1px solid var(--footer-border);
   font-size: 0.8rem;
   width: 100%;
-  position: relative;
-  bottom: 0;
+  position: static;
+  bottom: auto;
+  flex-shrink: 0;
 }
 
 .footer-content {
@@ -2366,15 +2378,32 @@ footer {
     font-size: 1.5rem;
   }
   
-  /* Skills pe mobil - containere mici */
+  /* Skills pe mobil - dimensiuni initiale, centrate */
   .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.4rem;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 130px));
+    justify-content: center;
+    justify-items: center;
+    gap: 0.5rem;
+    overflow: visible;
   }
   
   .skill-tag {
-    font-size: 0.7rem;
-    padding: 0.35rem 0.25rem;
+    width: 130px;
+    min-height: 34px;
+    font-size: 0.75rem;
+    padding: 0.4rem 0.4rem;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .skill-tag:hover {
+    background: var(--skill-tag-bg);
+    transform: none;
+    box-shadow: none;
+  }
+
+  .skill-tag::before {
+    display: none;
   }
   
   .projects-stats {
@@ -2628,7 +2657,9 @@ footer {
   }
   
   .skills-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 130px);
+    justify-content: center;
+    justify-items: center;
   }
   
   .filter-btn span {
@@ -2734,5 +2765,56 @@ body {
   
   .journey-cards-container {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== PAGE LAYOUT FIXES ===== */
+
+/* Sidebar-ul ramane doar cand sectiunea About este activa */
+.hero:has(.content .section.active:not(#about)) {
+  grid-template-columns: 1fr;
+}
+
+.hero:has(.content .section.active:not(#about)) .sidebar {
+  display: none;
+}
+
+/* Journey pe laptop: carduri mai curate pe toata latimea */
+@media (min-width: 993px) {
+  .hero:has(#journey.active) .content {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .hero:has(#journey.active) .journey-cards-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.4rem;
+  }
+
+  .hero:has(#journey.active) .journey-card {
+    flex-direction: row;
+    align-items: flex-start;
+    min-height: 190px;
+  }
+
+  .hero:has(#journey.active) .card-marker {
+    width: 82px;
+    height: 82px;
+    align-self: flex-start;
+  }
+
+  .hero:has(#journey.active) .journey-card-title {
+    font-size: 1.15rem;
+  }
+}
+
+/* Journey pe tableta si telefon ramane pe o coloana */
+@media (max-width: 992px) {
+  .hero:has(#journey.active) .journey-cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero:has(#journey.active) .journey-card {
+    flex-direction: column;
   }
 }
