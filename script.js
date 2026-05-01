@@ -477,27 +477,32 @@ if (stepContainer) {
         this.classList.toggle('expanded');
       }
     });
-  }
 
 // Journey toggles
 document.querySelectorAll('.journey-toggle').forEach(toggle => {
+  const icon = toggle.querySelector('i');
+  const originalIconClass = icon ? icon.className : 'fas fa-chevron-down';
+
   toggle.addEventListener('click', function() {
     const card = this.closest('.journey-card');
-    const details = card.querySelector('.journey-details');
+    const details = card?.querySelector('.journey-details');
 
-    if (card && details) {
-      card.classList.toggle('expanded');
-      this.classList.toggle('expanded');
-      details.classList.toggle('expanded');
+    if (!card || !details) return;
 
-      const isExpanded = details.classList.contains('expanded');
+    card.classList.toggle('expanded');
+    this.classList.toggle('expanded');
+    details.classList.toggle('expanded');
 
-      this.innerHTML = isExpanded
-        ? 'Hide Details <i class="fas fa-chevron-up"></i>'
-        : 'View Details <i class="fas fa-chevron-down"></i>';
-    }
+    const isExpanded = details.classList.contains('expanded');
+
+    this.textContent = isExpanded ? 'Hide' : 'View Details';
+
+    const newIcon = document.createElement('i');
+    newIcon.className = isExpanded ? 'fas fa-chevron-up' : originalIconClass;
+    this.appendChild(newIcon);
   });
 });
+
 
 
   // Filter buttons
