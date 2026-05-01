@@ -3057,3 +3057,108 @@ footer {
     border-top: none;
   }
 }
+
+/* ===== MOBILE WIDTH CONSTRAINT FIX ===== */
+@media (max-width: 768px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  main,
+  .container,
+  .hero,
+  .content,
+  .section,
+  #projects,
+  #journey,
+  #hello {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+  }
+
+  .content {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+
+  #projects *,
+  #journey *,
+  #hello * {
+    max-width: 100%;
+  }
+
+  #projects h3,
+  #journey h3,
+  .hello-message {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  #projects .project-categories,
+  #projects .projects-grid,
+  #projects .categories-grid,
+  #projects .project-category-grid,
+  #projects .projects-stats,
+  #journey .journey-cards-container,
+  #hello .hello-info-grid {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    width: 100%;
+    max-width: 100%;
+    gap: 0.85rem;
+  }
+
+  #projects .project-category,
+  #projects .stat-card,
+  #journey .journey-card,
+  #hello .hello-info-item,
+  .tech-horizons,
+  .request-box,
+  .hello-info-container,
+  .business-card-container,
+  .quotes-grid {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .project-category span,
+  .quote-item,
+  .hello-action-btn,
+  .btn,
+  .filter-btn,
+  .journey-toggle,
+  .view-certificates-btn {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .timeline-controls,
+  .exam-certificates-container {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .business-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .container {
+    padding-left: 0.65rem;
+    padding-right: 0.65rem;
+  }
+}
