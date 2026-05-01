@@ -582,7 +582,7 @@ main {
 /* ===== SKILLS GRID - CONTAINERE MAI MICI ===== */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(130px, 0.1fr));
   gap: 0.5rem;
   width: 100%;
   overflow: hidden;
@@ -601,7 +601,7 @@ main {
   transition: var(--transition);
   position: relative;
   overflow: hidden;
-  width: 100%;
+  width: 70%;
   white-space: normal;
   word-break: break-word;
   box-sizing: border-box;
