@@ -2904,7 +2904,6 @@ body {
   }
 }
 
-
 /* ===== MY JOURNEY LAPTOP CARD FIX ===== */
 @media (min-width: 993px) {
   .hero:has(#journey.active) .journey-cards-container {
@@ -2929,59 +2928,107 @@ body {
     margin-top: 0.4rem;
   }
 }
-/* ===== FINAL RESPONSIVE STRUCTURE FIX ===== */
 
-/* Header + footer full width pe telefon, indiferent de sectiune */
+/* ===== GLOBAL PAGE WIDTH FIX ===== */
+html,
+body {
+  width: 100%;
+  min-width: 100%;
+  max-width: none;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+  width: 100%;
+  max-width: none;
+}
+
+/* Header si footer mereu pe toata latimea ecranului */
+header,
+footer {
+  width: 100%;
+  max-width: none;
+  flex-shrink: 0;
+}
+
+footer {
+  margin-top: auto;
+  position: static;
+  bottom: auto;
+}
+
+/* Pe telefon: ocupa exact viewport-ul, indiferent de sectiune */
 @media (max-width: 768px) {
-  html,
-  body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
   header,
   footer {
     width: 100vw !important;
     max-width: 100vw !important;
-    min-width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw !important;
-    margin-right: -50vw !important;
-    box-sizing: border-box;
-  }
-
-  header {
-    top: 0;
+    min-width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
   }
 
   header .container,
   footer .container {
-    width: 100%;
+    width: 100% !important;
     max-width: none !important;
-    margin: 0;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-  }
-
-  .header-content,
-  .footer-content {
-    width: 100%;
-    max-width: none;
-  }
-
-  main,
-  .hero,
-  .content {
-    width: 100%;
-    max-width: 100%;
   }
 }
 
 
-/* ===== MY JOURNEY DESKTOP - CARDURI MAI ORDONATE ===== */
+/* ===== PROJECTS: 2 CARDURI PE LINIE PE LAPTOP ===== */
+@media (min-width: 993px) {
+  .hero:has(#projects.active) {
+    grid-template-columns: 1fr;
+  }
+
+  .hero:has(#projects.active) .sidebar {
+    display: none;
+  }
+
+  /* Pentru containerul care tine cardurile colorate */
+  #projects .project-categories,
+  #projects .projects-grid,
+  #projects .categories-grid,
+  #projects .project-category-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 1.2rem !important;
+    align-items: start;
+  }
+
+  #projects .project-category {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    min-height: 230px;
+  }
+}
+
+/* Daca project-category sunt direct in #projects, foloseste tot 2 coloane */
+@media (min-width: 993px) {
+  #projects:has(> .project-category) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem;
+  }
+
+  #projects:has(> .project-category) > h3,
+  #projects:has(> .project-category) > .projects-stats,
+  #projects:has(> .project-category) > .tech-horizons,
+  #projects:has(> .project-category) > .request-box {
+    grid-column: 1 / -1;
+  }
+}
+
+
+/* ===== MY JOURNEY: CARDURI MAI COMPACTE PE LAPTOP ===== */
 @media (min-width: 993px) {
   .hero:has(#journey.active) {
     grid-template-columns: 1fr;
@@ -2992,61 +3039,21 @@ body {
   }
 
   .hero:has(#journey.active) .journey-cards-container {
-    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: start;
     gap: 1.2rem;
   }
 
   .hero:has(#journey.active) .journey-card {
-    height: fit-content;
-    min-height: unset;
+    height: auto !important;
+    min-height: 0 !important;
     align-self: start;
-    padding: 1.1rem;
-  }
-
-  .hero:has(#journey.active) .journey-card-content {
-    min-height: 0;
-  }
-
-  .hero:has(#journey.active) .journey-summary {
-    margin-bottom: 0.45rem;
   }
 
   .hero:has(#journey.active) .journey-details:not(.expanded) {
     max-height: 0;
-    padding: 0;
     margin: 0;
+    padding: 0;
     border-top: none;
   }
-
-  .hero:has(#journey.active) .card-marker {
-    width: 72px;
-    height: 72px;
-  }
 }
-
-
-/* ===== PROJECTS DESKTOP - 4 CADRANE IN 2x2 ===== */
-@media (min-width: 993px) {
-  .hero:has(#projects.active) {
-    grid-template-columns: 1fr;
-  }
-
-  .hero:has(#projects.active) .sidebar {
-    display: none;
-  }
-
-  .hero:has(#projects.active) .projects-stats {
-    grid-template-columns: repeat(2, minmax(220px, 1fr));
-    max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
-    gap: 1rem;
-  }
-
-  .hero:has(#projects.active) .stat-card {
-    min-height: 105px;
-  }
-}
-
