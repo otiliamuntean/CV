@@ -2818,3 +2818,116 @@ body {
     flex-direction: column;
   }
 }
+
+/* ===== MOBILE HEADER FIX ===== */
+@media (max-width: 768px) {
+  header {
+    padding: 0.25rem 0;
+  }
+
+  .header-content {
+    min-height: 42px;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .brand {
+    align-items: flex-start;
+    padding-top: 0;
+    padding-right: 5.5rem;
+  }
+
+  .avatar {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+  }
+
+  .brand-text h1 {
+    font-size: 1rem;
+    line-height: 1.1;
+  }
+
+  .brand-text p {
+    font-size: 0.62rem !important;
+    line-height: 1.1;
+  }
+
+  .menu-toggle {
+    position: fixed;
+    top: 8px;
+    right: 10px;
+    width: 38px;
+    height: 38px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    z-index: 2200;
+    background: var(--btn-bg);
+    border: 1px solid var(--btn-border);
+    border-radius: 10px;
+  }
+
+  .theme-toggle {
+    top: 8px !important;
+    right: 56px !important;
+    width: 38px;
+    height: 38px;
+  }
+
+  nav {
+    top: 48px;
+  }
+
+  main {
+    padding-top: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand {
+    padding-right: 5rem;
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+
+  .brand-text h1 {
+    font-size: 0.9rem;
+  }
+
+  .brand-text p {
+    font-size: 0.56rem !important;
+  }
+}
+
+
+/* ===== MY JOURNEY LAPTOP CARD FIX ===== */
+@media (min-width: 993px) {
+  .hero:has(#journey.active) .journey-cards-container {
+    align-items: start;
+  }
+
+  .hero:has(#journey.active) .journey-card {
+    height: auto;
+    min-height: 0;
+    align-self: start;
+  }
+
+  .hero:has(#journey.active) .journey-card-content {
+    min-height: 0;
+  }
+
+  .hero:has(#journey.active) .journey-summary {
+    margin-bottom: 0.5rem;
+  }
+
+  .hero:has(#journey.active) .journey-toggle {
+    margin-top: 0.4rem;
+  }
+}
+
+\
