@@ -411,29 +411,34 @@ const stepCertificates = [
     image: certificateImage(['#ccfbf1', '#bfdbfe', '#dcfce7'], 'ARD')
   }
 ];
-  const stepContainer = document.getElementById('stepCertificatesContainer');
-  if (stepContainer) {
-    stepCertificates.forEach(cert => {
-      const item = document.createElement('div');
-      item.className = 'exam-certificate-item';
-      item.setAttribute('data-title', cert.title);
-      item.innerHTML = `
-        <img src="${cert.image}" alt="${cert.title}" class="exam-certificate-img">
-        <div class="exam-certificate-info">
-          <div class="exam-certificate-title">${cert.title}</div>
-          <div class="exam-certificate-date">${cert.date}</div>
-          <div class="exam-certificate-grade">${cert.grade}</div>
-        </div>
-      `;
-      item.addEventListener('click', function() {
-        const modal = document.getElementById('certificateModal');
-        const modalTitle = document.getElementById('modalTitle');
+const stepContainer = document.getElementById('stepCertificatesContainer');
+if (stepContainer) {
+  stepContainer.innerHTML = '';
+
+  stepCertificates.forEach(cert => {
+    const item = document.createElement('div');
+    item.className = 'exam-certificate-item';
+    item.setAttribute('data-title', cert.title);
+    item.innerHTML = `
+      <img src="${cert.image}" alt="${cert.title}" class="exam-certificate-img">
+      <div class="exam-certificate-info">
+        <div class="exam-certificate-title">${cert.title}</div>
+        <div class="exam-certificate-date">${cert.date}</div>
+        <div class="exam-certificate-grade">${cert.grade}</div>
+      </div>
+    `;
+    item.addEventListener('click', function() {
+      const modal = document.getElementById('certificateModal');
+      const modalTitle = document.getElementById('modalTitle');
+      if (modal && modalTitle) {
         modalTitle.textContent = cert.title;
         modal.classList.add('active');
-      });
-      stepContainer.appendChild(item);
+      }
     });
-  }
+    stepContainer.appendChild(item);
+  });
+}
+
 
   // Close modal
   const modal = document.getElementById('certificateModal');
