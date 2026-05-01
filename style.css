@@ -3374,35 +3374,3 @@ footer {
     pointer-events: none !important;
   }
 }
-/* ===== FORCE PROJECT CATEGORY CARDS 2 x 2 ON LAPTOP ===== */
-@media (min-width: 769px) {
-  #projects {
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 1.2rem !important;
-    align-items: start;
-  }
-
-  #projects > h3,
-  #projects > .projects-stats,
-  #projects > .tech-horizons,
-  #projects > .request-box,
-  #projects > .featured-projects-title,
-  #projects > h4 {
-    grid-column: 1 / -1 !important;
-  }
-
-  #projects > .project-category {
-    width: 100% !important;
-    max-width: none !important;
-    margin: 0 !important;
-    min-height: 220px;
-  }
-
-  #projects > .featured-project {
-    width: 100% !important;
-    max-width: none !important;
-    margin: 0 !important;
-  }
-}
-
