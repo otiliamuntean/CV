@@ -1,5 +1,10 @@
-// Set current year
-document.getElementById('year').textContent = new Date().getFullYear();
+document.addEventListener('DOMContentLoaded', function() {
+  const yearEl = document.getElementById('year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+});
+
 
 // Typewriter Effect
 const texts = [
@@ -73,7 +78,12 @@ function typeWriter() {
   setTimeout(typeWriter, speed);
 }
 
-setTimeout(typeWriter, 1500);
+document.addEventListener('DOMContentLoaded', function() {
+  if (typingTextElement && typewriterContainer) {
+    setTimeout(typeWriter, 1500);
+  }
+});
+
 
 // Navigation & all original functionality
 document.addEventListener('DOMContentLoaded', function() {
