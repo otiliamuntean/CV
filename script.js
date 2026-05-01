@@ -479,18 +479,26 @@ if (stepContainer) {
     });
   }
 
-  // Journey toggles
-  document.querySelectorAll('.journey-toggle').forEach(toggle => {
-    toggle.addEventListener('click', function() {
-      const card = this.closest('.journey-card');
-      const details = card.querySelector('.journey-details');
-      if (card && details) {
-        card.classList.toggle('expanded');
-        this.classList.toggle('expanded');
-        details.classList.toggle('expanded');
-      }
-    });
+// Journey toggles
+document.querySelectorAll('.journey-toggle').forEach(toggle => {
+  toggle.addEventListener('click', function() {
+    const card = this.closest('.journey-card');
+    const details = card.querySelector('.journey-details');
+
+    if (card && details) {
+      card.classList.toggle('expanded');
+      this.classList.toggle('expanded');
+      details.classList.toggle('expanded');
+
+      const isExpanded = details.classList.contains('expanded');
+
+      this.innerHTML = isExpanded
+        ? 'Hide Details <i class="fas fa-chevron-up"></i>'
+        : 'View Details <i class="fas fa-chevron-down"></i>';
+    }
   });
+});
+
 
   // Filter buttons
   const filterButtons = document.querySelectorAll('.filter-btn');
