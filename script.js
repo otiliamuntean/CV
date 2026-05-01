@@ -411,8 +411,6 @@ const stepCertificates = [
     image: certificateImage(['#ccfbf1', '#bfdbfe', '#dcfce7'], 'ARD')
   }
 ];
-
-
   const stepContainer = document.getElementById('stepCertificatesContainer');
   if (stepContainer) {
     stepCertificates.forEach(cert => {
