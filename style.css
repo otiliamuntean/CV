@@ -3222,3 +3222,16 @@ footer {
     pointer-events: auto;
   }
 }
+/* ===== MOBILE BRAND LOWER SLIGHTLY ===== */
+@media (max-width: 768px) {
+  .brand {
+    padding-top: 0.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand {
+    padding-top: 0.3rem;
+  }
+}
+
