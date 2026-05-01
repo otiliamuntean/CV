@@ -296,16 +296,26 @@ END:VCARD`;
   });
 
   // Exam certificates data
-// Exam certificates data
 function certificateImage(colors, label) {
   const svg = `
     <svg width="200" height="120" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="200" height="120" rx="8" fill="url(#grad)"/>
-      <circle cx="42" cy="34" r="22" fill="white" opacity="0.22"/>
-      <circle cx="160" cy="86" r="30" fill="white" opacity="0.16"/>
-      <path d="M35 88L88 42L118 72L164 35" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
-      <rect x="50" y="42" width="100" height="42" rx="14" fill="white" opacity="0.18"/>
-      <text x="100" y="70" text-anchor="middle" font-size="20" font-weight="900" fill="#1e293b" font-family="Arial, sans-serif">${label}</text>
+      <circle cx="42" cy="34" r="22" fill="#ffffff" opacity="0.18"/>
+      <circle cx="160" cy="86" r="30" fill="#ffffff" opacity="0.12"/>
+      <path d="M35 88L88 42L118 72L164 35" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity="0.18"/>
+      <rect x="50" y="42" width="100" height="42" rx="14" fill="#ffffff" opacity="0.28"/>
+      <text 
+        x="100" 
+        y="70" 
+        text-anchor="middle" 
+        font-size="20" 
+        font-weight="900" 
+        fill="#172033" 
+        stroke="#ffffff" 
+        stroke-width="0.8" 
+        paint-order="stroke" 
+        font-family="Arial, sans-serif"
+      >${label}</text>
       <defs>
         <linearGradient id="grad" x1="0" y1="0" x2="200" y2="120">
           <stop offset="0%" stop-color="${colors[0]}"/>
@@ -318,6 +328,7 @@ function certificateImage(colors, label) {
 
   return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
 }
+
 
 const stepCertificates = [
   {
