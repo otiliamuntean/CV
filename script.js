@@ -422,34 +422,42 @@ const stepCertificates = [
     image: certificateImage(['#ccfbf1', '#bfdbfe', '#dcfce7'], 'ARD')
   }
 ];
-const stepContainer = document.getElementById('stepCertificatesContainer');
-if (stepContainer) {
-  stepContainer.innerHTML = '';
+// Toggle exam certificates
+const viewCertBtn = document.getElementById('viewStepCertificates');
 
-  stepCertificates.forEach(cert => {
-    const item = document.createElement('div');
-    item.className = 'exam-certificate-item';
-    item.setAttribute('data-title', cert.title);
-    item.innerHTML = `
-      <img src="${cert.image}" alt="${cert.title}" class="exam-certificate-img">
-      <div class="exam-certificate-info">
-        <div class="exam-certificate-title">${cert.title}</div>
-        <div class="exam-certificate-date">${cert.date}</div>
-        <div class="exam-certificate-grade">${cert.grade}</div>
-      </div>
-    `;
-    item.addEventListener('click', function() {
-      const modal = document.getElementById('certificateModal');
-      const modalTitle = document.getElementById('modalTitle');
-      if (modal && modalTitle) {
-        modalTitle.textContent = cert.title;
-        modal.classList.add('active');
-      }
-    });
-    stepContainer.appendChild(item);
+if (viewCertBtn) {
+  viewCertBtn.addEventListener('click', function() {
+    const slider = document.getElementById('stepCertificatesSlider');
+
+    if (slider) {
+      slider.classList.toggle('expanded');
+      this.classList.toggle('expanded');
+    }
   });
 }
 
+// Journey toggles
+document.querySelectorAll('.journey-toggle').forEach(toggle => {
+  const icon = toggle.querySelector('i');
+  const originalIconClass = icon ? icon.className : 'fas fa-chevron-down';
+
+  toggle.addEventListener('click', function() {
+    const card = this.closest('.journey-card');
+    const details = card ? card.querySelector('.journey-details') : null;
+
+    if (!card || !details) return;
+
+    card.classList.toggle('expanded');
+    this.classList.toggle('expanded');
+    details.classList.toggle('expanded');
+
+    const isExpanded = details.classList.contains('expanded');
+
+    this.innerHTML = isExpanded
+      ? 'Hide <i class="fas fa-chevron-up"></i>'
+      : `View Details <i class="${originalIconClass}"></i>`;
+  });
+});
 
   // Close modal
   const modal = document.getElementById('certificateModal');
