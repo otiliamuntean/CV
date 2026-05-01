@@ -305,7 +305,7 @@ function certificateImage(colors, label) {
       <circle cx="160" cy="86" r="30" fill="white" opacity="0.16"/>
       <path d="M35 88L88 42L118 72L164 35" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
       <rect x="50" y="42" width="100" height="42" rx="14" fill="white" opacity="0.18"/>
-      <text x="100" y="70" text-anchor="middle" font-size="20" font-weight="900" fill="#1e293b" stroke="white" stroke-width="0.7" paint-order="stroke" font-family="Arial, sans-serif">${label}</text>
+      <text x="100" y="70" text-anchor="middle" font-size="20" font-weight="900" fill="#1e293b" font-family="Arial, sans-serif">${label}</text>
       <defs>
         <linearGradient id="grad" x1="0" y1="0" x2="200" y2="120">
           <stop offset="0%" stop-color="${colors[0]}"/>
