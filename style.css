@@ -2929,5 +2929,34 @@ body {
     margin-top: 0.4rem;
   }
 }
+/* ===== FULL WIDTH HEADER & FOOTER ON MOBILE ===== */
+@media (max-width: 768px) {
+  header,
+  footer {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
 
-\
+  header .container,
+  footer .container {
+    width: 100%;
+    max-width: none;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .header-content,
+  .footer-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  header .container,
+  footer .container {
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+  }
+}
