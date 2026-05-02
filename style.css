@@ -3523,3 +3523,11 @@ footer {
   border-radius: 30px !important;
   line-height: normal !important;
 }
+#projects .featured-projects-grid .featured-project h5 {
+  margin-top: -3rem !important;
+  padding-right: 6rem !important;
+  min-height: 2rem !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
