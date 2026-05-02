@@ -3482,167 +3482,117 @@ footer {
 }
 /* ===== FINAL CLEAN FEATURED PROJECTS FIX ===== */
 
-/* Structura de bază */
-.featured-projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2rem;
-  width: 100%;
+/* Desktop/laptop: 2x2 cadrane */
+#projects .featured-projects-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 2rem !important;
+  width: 100% !important;
 }
 
-.featured-project {
-  position: relative;
+#projects .featured-projects-grid .featured-project {
   width: 100%;
   min-height: 220px;
-  margin: 0;
-  padding: 1.5rem;
+  margin-bottom: 0;
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
   border-radius: 18px;
   overflow: hidden;
-  border: none;
-  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.24);
-  display: flex;
-  flex-direction: column;
+  background: linear-gradient(145deg, #8b5cf6, #6d28d9);
+  box-shadow: 0 15px 30px rgba(139, 92, 246, 0.3);
 }
 
-/* Culori moderne și armonioase */
+/* Culori pentru fiecare card */
 #projects .featured-projects-grid .featured-project:nth-child(1) {
-  background: linear-gradient(145deg, #6366f1, #8b5cf6);
+  background: linear-gradient(145deg, #4f46e5, #6d5dfc) !important;
 }
 
 #projects .featured-projects-grid .featured-project:nth-child(2) {
-  background: linear-gradient(145deg, #06b6d4, #3b82f6);
+  background: linear-gradient(145deg, #0891b2, #22b8cf) !important;
 }
 
 #projects .featured-projects-grid .featured-project:nth-child(3) {
-  background: linear-gradient(145deg, #10b981, #14b8a6);
+  background: linear-gradient(145deg, #0f766e, #2dd4bf) !important;
 }
 
-/* Cardul Figma Projects - culoare ROȘU-VIȘINIU */
+/* Cardul Figma Projects - culoare nouă */
 #projects .featured-projects-grid .featured-project:nth-child(4) {
-  background: linear-gradient(145deg, #dc2626, #991b1b);
+  background: linear-gradient(145deg, #dc2626, #991b1b) !important;
 }
 
-/* Container pentru titlu și badge - PE ACELAȘI RÂND */
-.featured-project > div:first-child {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-  gap: 1rem;
-  width: 100%;
+/* Primul div - TITLUL ȘI BADGE-UL PE ACELAȘI RÂND, SUS */
+#projects .featured-projects-grid .featured-project > div:first-child {
+  height: auto !important;
+  min-height: 0 !important;
+  border-radius: 0 !important;
+  margin-bottom: 1rem !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  padding: 0 !important;
+  background: transparent !important;
 }
 
-/* Titlul cardului - RIDICAT SUS */
-.featured-project h5 {
-  margin: 0;
-  padding: 0;
-  color: #ffffff;
-  font-size: 1.2rem;
-  font-weight: 800;
-  line-height: 1.2;
-  order: 1;
-  flex: 1;
+/* Titlul - RIDICAT SUS */
+#projects .featured-projects-grid .featured-project h5 {
+  font-size: 1.1rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex: 1 !important;
+  text-align: left !important;
 }
 
 /* Badge-ul din colț */
-.featured-project > div:first-child > div {
-  order: 2;
-  flex-shrink: 0;
-  background: rgba(255, 255, 255, 0.22);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  padding: 0.3rem 0.8rem;
-  border-radius: 30px;
-  font-size: 0.7rem;
-  font-weight: 700;
-  white-space: nowrap;
-  line-height: 1.2;
+#projects .featured-projects-grid .featured-project > div:first-child > div {
+  flex-shrink: 0 !important;
+  background: rgba(255, 255, 255, 0.22) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+  padding: 0.3rem 0.8rem !important;
+  border-radius: 30px !important;
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  white-space: nowrap !important;
 }
 
 /* Descrierea */
-.featured-project p {
-  color: #ffffff;
-  opacity: 0.95;
-  font-size: 0.85rem;
-  line-height: 1.5;
-  margin-bottom: 1rem;
-  flex: 1;
+#projects .featured-projects-grid .featured-project > div:last-child {
+  padding: 0 !important;
 }
 
-/* Container pentru tehnologii */
-.featured-project > div:last-child {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+#projects .featured-projects-grid .featured-project p {
+  font-size: 0.8rem;
+  line-height: 1.4;
   margin-bottom: 1rem;
-}
-
-/* Hashtagurile de tehnologii */
-.featured-project span {
-  background: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  font-size: 0.7rem;
-  padding: 0.3rem 0.75rem;
-  border-radius: 30px;
-  line-height: normal;
-  font-weight: 600;
 }
 
 /* Butonul */
-.featured-project a.btn {
-  background: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 0.5rem 1rem;
-  font-size: 0.8rem;
-  box-shadow: none;
-  align-self: flex-start;
-  margin-top: auto;
+#projects .featured-projects-grid .featured-project .btn {
+  padding: 0.45rem 0.9rem !important;
+  font-size: 0.75rem !important;
 }
 
-.featured-project a.btn:hover {
-  background: rgba(255, 255, 255, 0.3);
+/* Span-uri */
+#projects .featured-projects-grid .featured-project span {
+  background: rgba(255, 255, 255, 0.18) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-weight: 700;
 }
 
-/* ===== VERSIUNEA MOBILĂ: CARDURI UNA SUB ALTA ===== */
+/* ===== VERSIUNEA MOBILĂ ===== */
 @media (max-width: 768px) {
   .featured-projects-grid {
     grid-template-columns: 1fr;
-    gap: 1.2rem;
+    gap: 1rem;
   }
-
-  .featured-project {
+  
+  #projects .featured-projects-grid .featured-project {
     min-height: auto;
     padding: 1.2rem;
   }
-
-  .featured-project > div:first-child {
-    gap: 0.8rem;
-  }
-
-  .featured-project h5 {
-    font-size: 1.1rem;
-  }
-
-  .featured-project > div:first-child > div {
-    font-size: 0.65rem;
-    padding: 0.25rem 0.7rem;
-  }
-
-  .featured-project p {
-    font-size: 0.8rem;
-  }
-}
-
-/* Pentru ecrane foarte mici */
-@media (max-width: 480px) {
-  .featured-project {
-    padding: 1rem;
-  }
-
-  .featured-project h5 {
-    font-size: 1rem;
+  
+  #projects .featured-projects-grid .featured-project h5 {
+    font-size: 1rem !important;
   }
 }
