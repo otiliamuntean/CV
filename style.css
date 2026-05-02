@@ -1685,23 +1685,42 @@ main {
   }
 }
 #projects .featured-projects-grid .featured-project:nth-child(1) {
-  background: linear-gradient(145deg, #7c6df2, #9b8cff) !important;
+  background: linear-gradient(145deg, #4f46e5, #6d5dfc) !important;
 }
 
 #projects .featured-projects-grid .featured-project:nth-child(2) {
-  background: linear-gradient(145deg, #37a9d9, #6cc7e8) !important;
+  background: linear-gradient(145deg, #0891b2, #22b8cf) !important;
 }
 
 #projects .featured-projects-grid .featured-project:nth-child(3) {
-  background: linear-gradient(145deg, #36b6a1, #70d0bd) !important;
+  background: linear-gradient(145deg, #0f766e, #2dd4bf) !important;
 }
 
 #projects .featured-projects-grid .featured-project:nth-child(4) {
-  background: linear-gradient(145deg, #f59e7a, #e879a4) !important;
+  background: linear-gradient(145deg, #ea580c, #f43f5e) !important;
+}
+#projects .featured-projects-grid .featured-project span {
+  background: rgba(255, 255, 255, 0.18) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-weight: 700;
 }
 
+#projects .featured-projects-grid .featured-project:nth-child(1) span {
+  color: #eef2ff !important;
+}
 
+#projects .featured-projects-grid .featured-project:nth-child(2) span {
+  color: #ecfeff !important;
+}
 
+#projects .featured-projects-grid .featured-project:nth-child(3) span {
+  color: #ecfdf5 !important;
+}
+
+#projects .featured-projects-grid .featured-project:nth-child(4) span {
+  color: #fff7ed !important;
+}
 
 
 
