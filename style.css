@@ -1684,21 +1684,23 @@ main {
     gap: 1rem;
   }
 }
-.featured-projects-grid .featured-project:nth-child(1) {
-  background: linear-gradient(145deg, #8b5cf6, #6d28d9);
+#projects .featured-projects-grid .featured-project:nth-child(1) {
+  background: linear-gradient(145deg, #7c6df2, #9b8cff) !important;
 }
 
-.featured-projects-grid .featured-project:nth-child(2) {
-  background: linear-gradient(145deg, #0ea5e9, #0284c7);
+#projects .featured-projects-grid .featured-project:nth-child(2) {
+  background: linear-gradient(145deg, #37a9d9, #6cc7e8) !important;
 }
 
-.featured-projects-grid .featured-project:nth-child(3) {
-  background: linear-gradient(145deg, #10b981, #0ea5e9);
+#projects .featured-projects-grid .featured-project:nth-child(3) {
+  background: linear-gradient(145deg, #36b6a1, #70d0bd) !important;
 }
 
-.featured-projects-grid .featured-project:nth-child(4) {
-  background: linear-gradient(145deg, #f97316, #dc2626);
+#projects .featured-projects-grid .featured-project:nth-child(4) {
+  background: linear-gradient(145deg, #f59e7a, #e879a4) !important;
 }
+
+
 
 
 
