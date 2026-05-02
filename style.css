@@ -3480,52 +3480,6 @@ footer {
     pointer-events: none !important;
   }
 }
-
-
-#projects .featured-projects-grid .featured-project {
-  position: relative !important;
-  padding-top: 1rem !important;
-}
-
-#projects .featured-projects-grid .featured-project > div:first-child {
-  height: 38px !important;
-  min-height: 38px !important;
-  margin-bottom: 0.65rem !important;
-  background: transparent !important;
-}
-
-#projects .featured-projects-grid .featured-project > div:first-child > div {
-  top: 0 !important;
-  right: 0 !important;
-}
-
-#projects .featured-projects-grid .featured-project h5 {
-  margin-top: -2.7rem !important;
-  padding-right: 6rem !important;
-  min-height: 2rem;
-  display: flex;
-  align-items: center;
-}
-#projects .featured-projects-grid .featured-project span {
-  font-size: 0.58rem !important;
-  padding: 0.14rem 0.45rem !important;
-  line-height: 1.1 !important;
-  border-radius: 999px !important;
-}
-
-#projects .featured-projects-grid .featured-project div p {
-  color: #ffffff !important;
-  opacity: 0.9;
-}
-#projects .featured-projects-grid .featured-project:nth-child(2) a.btn {
-  background: rgba(255, 255, 255, 0.18) !important;
-  color: #ffffff !important;
-  border: 1px solid rgba(255, 255, 255, 0.28) !important;
-}
-
-#projects .featured-projects-grid .featured-project:nth-child(2) a.btn:hover {
-  background: rgba(255, 255, 255, 0.28) !important;
-}
 /* ===== FINAL FEATURED PROJECTS OVERRIDES ===== */
 #projects .featured-projects-grid {
   display: grid !important;
@@ -3631,5 +3585,4 @@ footer {
     gap: 1rem !important;
   }
 }
-
 
