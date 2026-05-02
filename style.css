@@ -1483,6 +1483,44 @@ main {
   }
 }
 
+/* ===== PROGRESS BAR DIFERIT PENTRU FIECARE HORIZON ITEM ===== */
+.horizon-item:nth-child(1) .progress-fill {
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa) !important;
+  width: 75%;
+}
+.horizon-item:nth-child(2) .progress-fill {
+  background: linear-gradient(90deg, #0ea5e9, #38bdf8) !important;
+  width: 60%;
+}
+.horizon-item:nth-child(3) .progress-fill {
+  background: linear-gradient(90deg, #ec4899, #f472b6) !important;
+  width: 45%;
+}
+.horizon-item:nth-child(4) .progress-fill {
+  background: linear-gradient(90deg, #10b981, #34d399) !important;
+  width: 70%;
+}
+.horizon-item:nth-child(5) .progress-fill {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24) !important;
+  width: 50%;
+}
+.horizon-item:nth-child(6) .progress-fill {
+  background: linear-gradient(90deg, #ef4444, #f87171) !important;
+  width: 85%;
+}
+.horizon-item:nth-child(7) .progress-fill {
+  background: linear-gradient(90deg, #06b6d4, #22d3ee) !important;
+  width: 55%;
+}
+.horizon-item:nth-child(8) .progress-fill {
+  background: linear-gradient(90deg, #84cc16, #a3e635) !important;
+  width: 40%;
+}
+.horizon-item:nth-child(9) .progress-fill {
+  background: linear-gradient(90deg, #8b5cf6, #c084fc) !important;
+  width: 80%;
+}
+
 .rotate-logo {
   background: linear-gradient(135deg, #8b5cf6, #ec4899);
   width: 40px;
@@ -1510,6 +1548,7 @@ main {
 .horizon-item h4 {
   font-size: 0.9rem;
   margin-bottom: 0.4rem;
+  color: white;
 }
 
 .progress-bar {
@@ -1521,15 +1560,14 @@ main {
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #8b5cf6, #0ea5e9);
   border-radius: 3px;
   animation: loading 2s infinite;
 }
 
 @keyframes loading {
-  0% { opacity: 0.7; width: 75%; }
-  50% { opacity: 1; width: 80%; }
-  100% { opacity: 0.7; width: 75%; }
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
 }
 
 @keyframes dynamicIconVerySlow {
@@ -1624,8 +1662,7 @@ main {
 }
 
 
-/* ===== FEATURED PROJECTS - CORECTAT COMPLET ===== */
-
+/* ===== FEATURED PROJECTS - CORECTAT ===== */
 .featured-projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1641,7 +1678,6 @@ main {
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
-  position: relative;
 }
 
 .featured-projects-grid .featured-project:hover {
@@ -1649,27 +1685,19 @@ main {
 }
 
 /* ===== CULORILE CERUTE ===== */
-/* Card 1 - ROȘU */
 #projects .featured-projects-grid .featured-project:nth-child(1) {
   background: linear-gradient(145deg, #dc2626, #b91c1c) !important;
 }
-
-/* Card 2 - PORTOCALIU (Figma Projects) */
 #projects .featured-projects-grid .featured-project:nth-child(2) {
   background: linear-gradient(145deg, #f97316, #ea580c) !important;
 }
-
-/* Card 3 - ALBASTRU */
 #projects .featured-projects-grid .featured-project:nth-child(3) {
   background: linear-gradient(145deg, #3b82f6, #2563eb) !important;
 }
-
-/* Card 4 - VIOLET */
 #projects .featured-projects-grid .featured-project:nth-child(4) {
   background: linear-gradient(145deg, #8b5cf6, #7c3aed) !important;
 }
 
-/* ===== STRUCTURA CARDULUI ===== */
 .featured-projects-grid .featured-project > div:first-child {
   display: none;
 }
@@ -1678,10 +1706,9 @@ main {
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 100%;
 }
 
-/* Titlul - plasat în stânga sus, fără suprapunere */
+/* Titlul în colțul sus */
 .featured-projects-grid .featured-project h4,
 .featured-projects-grid .featured-project h5 {
   font-size: 1.15rem !important;
@@ -1690,39 +1717,31 @@ main {
   padding: 0 !important;
   color: white !important;
   text-align: left !important;
-  word-break: break-word !important;
-  display: block !important;
-  width: 100% !important;
 }
 
-/* Badge-urile - plasate imediat sub titlu (nu se mai suprapun) */
+/* Badge-urile - la fel ca la cardurile de mai sus (jos, nu în dreapta sus) */
 .featured-projects-grid .featured-project > div:last-child > div:first-of-type {
   display: flex !important;
   flex-wrap: wrap !important;
   justify-content: flex-start !important;
   gap: 0.5rem !important;
-  margin: 0 0 0.75rem 0 !important;
-  padding: 0 !important;
-  clear: both !important;
+  margin: 0.5rem 0 0.75rem 0 !important;
 }
 
-/* Badge-uri individuale */
 #projects .featured-projects-grid .featured-project span {
-  background: rgba(0, 0, 0, 0.45) !important;
+  background: rgba(0, 0, 0, 0.4) !important;
   backdrop-filter: blur(4px) !important;
   border: 1px solid rgba(255, 255, 255, 0.25) !important;
   padding: 0.25rem 0.7rem !important;
-  font-size: 0.65rem !important;
-  font-weight: 600 !important;
-  border-radius: 20px !important;
+  font-size: 0.7rem !important;
+  border-radius: 30px !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   color: white !important;
-  white-space: nowrap !important;
+  font-weight: 500 !important;
 }
 
-/* Descrierea */
 .featured-projects-grid .featured-project p {
   font-size: 0.8rem !important;
   line-height: 1.45 !important;
@@ -1731,19 +1750,17 @@ main {
   text-align: left !important;
 }
 
-/* Butonul */
 .featured-projects-grid .featured-project .btn {
   padding: 0.45rem 1rem !important;
   font-size: 0.7rem !important;
   align-self: flex-start !important;
+  margin-top: auto !important;
   background: rgba(255, 255, 255, 0.2) !important;
   border: 1px solid rgba(255, 255, 255, 0.3) !important;
   border-radius: 10px !important;
   color: white !important;
   cursor: pointer !important;
   transition: all 0.2s ease !important;
-  width: auto !important;
-  margin-top: auto !important;
 }
 
 .featured-projects-grid .featured-project .btn:hover {
@@ -1751,145 +1768,40 @@ main {
   transform: translateY(-2px);
 }
 
-/* ===== LAPTOP (≥ 993px) ===== */
+/* ===== RESPONSIVE ===== */
 @media (min-width: 993px) {
   .featured-projects-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
-  
   .featured-projects-grid .featured-project {
     min-height: 260px;
     padding: 1.5rem;
   }
-  
   .featured-projects-grid .featured-project h4,
   .featured-projects-grid .featured-project h5 {
     font-size: 1.2rem !important;
-    margin-bottom: 0.6rem !important;
-  }
-  
-  .featured-projects-grid .featured-project span {
-    padding: 0.25rem 0.8rem !important;
-    font-size: 0.7rem !important;
   }
 }
 
-/* ===== MOBIL (max 768px) ===== */
 @media (max-width: 768px) {
   .featured-projects-grid {
     grid-template-columns: 1fr !important;
     gap: 1rem !important;
   }
-  
   .featured-projects-grid .featured-project {
     padding: 1rem !important;
   }
-  
   .featured-projects-grid .featured-project h4,
   .featured-projects-grid .featured-project h5 {
     font-size: 1rem !important;
-    margin-bottom: 0.4rem !important;
   }
-  
-  .featured-projects-grid .featured-project > div:last-child > div:first-of-type {
-    gap: 0.35rem !important;
-    margin-bottom: 0.5rem !important;
-  }
-  
-  .featured-projects-grid .featured-project span {
+  #projects .featured-projects-grid .featured-project span {
     padding: 0.15rem 0.5rem !important;
-    font-size: 0.55rem !important;
-  }
-  
-  .featured-projects-grid .featured-project p {
-    font-size: 0.75rem !important;
-    margin-bottom: 0.75rem !important;
-  }
-  
-  .featured-projects-grid .featured-project .btn {
-    padding: 0.35rem 0.8rem !important;
-    font-size: 0.65rem !important;
-  }
-}
-
-/* ===== TABLETĂ (769px - 992px) ===== */
-@media (min-width: 769px) and (max-width: 992px) {
-  .featured-projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.2rem;
-  }
-  
-  .featured-projects-grid .featured-project {
-    padding: 1.2rem;
-  }
-  
-  .featured-projects-grid .featured-project h4,
-  .featured-projects-grid .featured-project h5 {
-    font-size: 1.05rem !important;
-  }
-}
-
-/* ===== ECRANE FOARTE MICI (max 480px) ===== */
-@media (max-width: 480px) {
-  .featured-projects-grid .featured-project {
-    padding: 0.8rem !important;
-  }
-  
-  .featured-projects-grid .featured-project h4,
-  .featured-projects-grid .featured-project h5 {
-    font-size: 0.9rem !important;
-  }
-  
-  .featured-projects-grid .featured-project span {
-    padding: 0.1rem 0.4rem !important;
-    font-size: 0.5rem !important;
-  }
-  
-  .featured-projects-grid .featured-project p {
-    font-size: 0.7rem !important;
-  }
-  
-  .featured-projects-grid .featured-project .btn {
-    padding: 0.3rem 0.7rem !important;
     font-size: 0.6rem !important;
   }
-}
-
-/* Text alb pentru toate elementele */
-.featured-projects-grid .featured-project h4,
-.featured-projects-grid .featured-project h5,
-.featured-projects-grid .featured-project p,
-.featured-projects-grid .featured-project span,
-.featured-projects-grid .featured-project .btn {
-  color: #ffffff !important;
-}
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .featured-projects-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  .featured-projects-grid .featured-project {
-    min-height: auto;
-  }
-  
-  .featured-projects-grid .featured-project h4 {
-    font-size: 1rem !important;
-    top: 10px !important;
-    left: 12px !important;
-  }
-  
-  #projects .featured-projects-grid .featured-project span {
-    min-height: 20px !important;
-    font-size: 0.55rem !important;
-    padding: 0.15rem 0.45rem !important;
-  }
-  
-  .featured-projects-grid .featured-project > div:last-child > div:first-of-type {
-    top: 10px !important;
-    right: 12px !important;
+  .featured-projects-grid .featured-project p {
+    font-size: 0.75rem !important;
   }
 }
 
@@ -1897,6 +1809,9 @@ main {
   .featured-projects-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.2rem;
+  }
+  .featured-projects-grid .featured-project {
+    padding: 1.2rem;
   }
 }
 
@@ -2414,7 +2329,7 @@ main {
   height: 30px;
 }
 
-/* ===== FOOTER - MAI LUNG (PADDING MĂRIT) ===== */
+/* ===== FOOTER ===== */
 footer {
   background: var(--footer-bg);
   padding: 2rem 0;
@@ -2533,57 +2448,44 @@ footer {
 }
 
 /* ===== RESPONSIVE MEDIA QUERIES ===== */
-
-/* Tablete si ecrane medii (sub 992px) */
 @media (max-width: 992px) {
   .hero {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
   .sidebar {
     position: static;
   }
-  
   .typewriter-text {
     font-size: 1.5rem;
     min-height: 80px;
   }
-  
   .journey-cards-container {
     grid-template-columns: 1fr;
   }
-  
   .journey-card {
     flex-direction: column;
   }
-  
   .card-marker {
     width: 65px;
     height: 65px;
     align-self: center;
   }
-  
   .projects-stats {
     grid-template-columns: repeat(2, 1fr);
   }
-  
-  /* Tech Horizons pe tableta - 2 coloane */
   #horizons-container {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 }
 
-/* Mobile (sub 768px) - meniu hamburger */
 @media (max-width: 768px) {
   header {
     padding: 0.6rem 0;
   }
-  
   .menu-toggle {
     display: block !important;
   }
-  
   nav {
     display: none;
     position: absolute;
@@ -2597,11 +2499,9 @@ footer {
     gap: 0.5rem;
     z-index: 1000;
   }
-  
   nav.active {
     display: flex;
   }
-  
   .nav-btn {
     width: 100%;
     justify-content: center;
@@ -2610,7 +2510,6 @@ footer {
     padding: 0.6rem;
     font-size: 0.85rem;
   }
-  
   .theme-toggle {
     position: fixed;
     top: 12px !important;
@@ -2623,49 +2522,35 @@ footer {
     border-radius: 50%;
     backdrop-filter: blur(5px);
   }
-  
   .brand-text h1 {
     font-size: 1.2rem;
   }
-  
   .brand-text p {
     font-size: 0.7rem !important;
   }
-  
   .avatar {
     width: 42px;
     height: 42px;
     font-size: 18px;
   }
-  
   .typewriter-text {
     font-size: 1.2rem;
     min-height: 65px;
   }
-  
   .typewriter-container {
     padding: 0.8rem;
     min-height: auto;
   }
-  
   .content {
     padding: 1.2rem;
   }
-  
   .sidebar {
     padding: 1rem;
   }
-  
   .section h3 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
   }
-  
-  .section h3 i {
-    font-size: 1.5rem;
-  }
-  
-  /* Skills pe mobil - dimensiuni initiale, centrate */
   .skills-grid {
     grid-template-columns: repeat(auto-fit, minmax(130px, 130px));
     justify-content: center;
@@ -2673,7 +2558,6 @@ footer {
     gap: 0.5rem;
     overflow: visible;
   }
-  
   .skill-tag {
     width: 130px;
     min-height: 34px;
@@ -2682,254 +2566,182 @@ footer {
     transform: none;
     box-shadow: none;
   }
-
   .skill-tag:hover {
     background: var(--skill-tag-bg);
     transform: none;
     box-shadow: none;
   }
-
   .skill-tag::before {
     display: none;
   }
-  
   .projects-stats {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
   }
-  
   .stat-card {
     min-height: 70px;
     padding: 0.4rem;
   }
-  
   .stat-number {
     font-size: 1.3rem;
   }
-  
   .stat-card div:last-child {
     font-size: 0.65rem;
   }
-  
-  .stat-number .infinity-symbol {
-    font-size: 1rem;
-  }
-  
   .project-category {
     padding: 0.8rem;
   }
-  
   .project-category .icon-wrapper {
     width: 38px;
     height: 38px;
   }
-  
   .project-category h4 {
     font-size: 0.9rem;
   }
-  
   .project-category p {
     font-size: 0.75rem;
   }
-  
   .project-category span {
     font-size: 0.6rem;
     padding: 0.2rem 0.55rem;
   }
-  
   .tech-horizons {
     padding: 0.8rem;
   }
-  
   .horizon-item h4 {
     font-size: 0.8rem;
   }
-  
   .request-box {
     padding: 1rem;
   }
-  
   .request-box h3 {
     font-size: 1.1rem !important;
   }
-  
   .request-box p {
     font-size: 0.75rem;
   }
-  
-  .request-box p:last-of-type {
-    font-size: 0.85rem;
-  }
-  
   .request-option {
     padding: 0.6rem 0.8rem;
     gap: 0.6rem;
   }
-  
-  .request-option span {
-    font-size: 0.75rem;
-  }
-  
-  .request-option input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-  }
-  
   .btn {
     padding: 0.6rem 1rem;
     font-size: 0.8rem;
     white-space: nowrap;
   }
-  
   .filter-btn {
     padding: 0.4rem 1rem;
     font-size: 0.75rem;
   }
-  
   .journey-card {
     padding: 0.8rem;
   }
-  
   .card-marker {
     width: 55px;
     height: 55px;
   }
-  
   .journey-card-title {
     font-size: 0.95rem;
   }
-  
   .journey-summary {
     font-size: 0.75rem;
   }
-  
   .quote-container::before {
     font-size: 3.5rem;
     top: -35px;
   }
-  
-  .quote-container p {
-    font-size: 0.85rem;
-  }
-  
   .hello-animation {
     width: 110px;
     height: 110px;
   }
-  
   .hello-avatar {
     font-size: 36px;
   }
-  
   .orbit-particles {
     width: 140px;
     height: 140px;
   }
-  
   .particle {
     width: 5px;
     height: 5px;
   }
-  
   @keyframes orbitParticle {
     0% { transform: rotate(0deg) translateX(50px) rotate(0deg); }
     100% { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
   }
-  
   .hello-message {
     font-size: 1.8rem;
   }
-  
   .hello-subtitle {
     font-size: 0.85rem;
     padding: 0.8rem 1rem;
   }
-  
   .hello-actions {
     flex-direction: column;
   }
-  
   .hello-action-btn {
     width: 100%;
     white-space: normal;
   }
-  
   .social-link {
     width: 45px;
     height: 45px;
   }
-  
   .social-link svg {
     width: 22px;
     height: 22px;
   }
-  
   #projects h3 {
     font-size: 1.4rem;
     white-space: normal;
     text-align: center;
     display: block;
   }
-  
   .generator-header {
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
   }
-  
   .business-card-container {
     max-width: 300px;
   }
-  
   .business-card {
     height: 220px;
   }
-  
   .card-name {
     font-size: 1.2rem;
   }
-  
-  /* Footer pe mobil */
   footer {
     padding: 1.5rem 0;
   }
-  
-  /* Tech Horizons pe mobil - 1 coloană */
   #horizons-container {
     grid-template-columns: 1fr !important;
   }
 }
 
-/* Mobile mici (sub 480px) */
 @media (max-width: 480px) {
   .container {
     padding: 0 0.8rem;
   }
-  
   .brand-text h1 {
     font-size: 1rem;
   }
-  
   .brand-text p {
     font-size: 0.6rem !important;
   }
-  
   .avatar {
     width: 35px;
     height: 35px;
     font-size: 14px;
   }
-  
   .typewriter-text {
     font-size: 1rem;
     min-height: 55px;
   }
-  
   .projects-stats {
     grid-template-columns: 1fr;
     gap: 0.4rem;
   }
-  
   .stat-card {
     display: flex;
     flex-direction: row;
@@ -2938,88 +2750,70 @@ footer {
     padding: 0.5rem 0.8rem;
     min-height: auto;
   }
-  
   .stat-number {
     font-size: 1.1rem;
   }
-  
   .stat-card div:last-child {
     margin-top: 0;
     font-size: 0.7rem;
   }
-  
   .skills-grid {
     grid-template-columns: repeat(2, 130px);
     justify-content: center;
     justify-items: center;
   }
-  
   .filter-btn span {
     display: none;
   }
-  
   .filter-btn i {
     margin: 0;
     font-size: 0.8rem;
   }
-  
   .filter-btn {
     padding: 0.35rem;
     min-width: 35px;
   }
-  
   .generator-buttons {
     flex-direction: column;
   }
-  
   .generator-buttons .btn {
     width: 100%;
     white-space: normal;
   }
-  
   .hello-animation {
     width: 90px;
     height: 90px;
   }
-  
   .hello-avatar {
     font-size: 28px;
   }
-  
   .orbit-particles {
     width: 120px;
     height: 120px;
   }
-  
   @keyframes orbitParticle {
     0% { transform: rotate(0deg) translateX(40px) rotate(0deg); }
     100% { transform: rotate(360deg) translateX(40px) rotate(-360deg); }
   }
-  
   .hello-message {
     font-size: 1.4rem;
   }
-  
   .request-option {
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
   }
-  
   .request-option span {
     width: 100%;
   }
-  
   .social-link {
     width: 40px;
     height: 40px;
   }
-  
   .social-link svg {
     width: 20px;
     height: 20px;
   }
-  
   footer {
     padding: 1rem 0;
   }
@@ -3045,106 +2839,87 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
-/* Ecrane foarte mari */
 @media (min-width: 1400px) {
   .container {
     max-width: 1400px;
   }
-  
   .hero {
     gap: 2.5rem;
   }
-  
   .journey-cards-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* ===== PAGE LAYOUT FIXES ===== */
-
-/* Sidebar-ul ramane doar cand sectiunea About este activa */
+/* Page layout fixes */
 .hero:has(.content .section.active:not(#about)) {
   grid-template-columns: 1fr;
 }
-
 .hero:has(.content .section.active:not(#about)) .sidebar {
   display: none;
 }
 
-/* Journey pe laptop: carduri mai curate pe toata latimea */
 @media (min-width: 993px) {
   .hero:has(#journey.active) .content {
     width: 100%;
     padding: 2rem;
   }
-
   .hero:has(#journey.active) .journey-cards-container {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.4rem;
   }
-
   .hero:has(#journey.active) .journey-card {
     flex-direction: row;
     align-items: flex-start;
     min-height: 190px;
   }
-
   .hero:has(#journey.active) .card-marker {
     width: 82px;
     height: 82px;
     align-self: flex-start;
   }
-
   .hero:has(#journey.active) .journey-card-title {
     font-size: 1.15rem;
   }
 }
 
-/* Journey pe tableta si telefon ramane pe o coloana */
 @media (max-width: 992px) {
   .hero:has(#journey.active) .journey-cards-container {
     grid-template-columns: 1fr;
   }
-
   .hero:has(#journey.active) .journey-card {
     flex-direction: column;
   }
 }
 
-/* ===== MOBILE HEADER FIX ===== */
+/* Mobile header fix */
 @media (max-width: 768px) {
   header {
     padding: 0.25rem 0;
   }
-
   .header-content {
     min-height: 42px;
     align-items: flex-start;
     position: relative;
   }
-
   .brand {
     align-items: flex-start;
     padding-top: 0;
     padding-right: 5.5rem;
   }
-
   .avatar {
     width: 34px;
     height: 34px;
     font-size: 14px;
   }
-
   .brand-text h1 {
     font-size: 1rem;
     line-height: 1.1;
   }
-
   .brand-text p {
     font-size: 0.62rem !important;
     line-height: 1.1;
   }
-
   .menu-toggle {
     position: fixed;
     top: 8px;
@@ -3159,18 +2934,15 @@ body {
     border: 1px solid var(--btn-border);
     border-radius: 10px;
   }
-
   .theme-toggle {
     top: 8px !important;
     right: 56px !important;
     width: 38px;
     height: 38px;
   }
-
   nav {
     top: 48px;
   }
-
   main {
     padding-top: 0.8rem;
   }
@@ -3180,50 +2952,21 @@ body {
   .brand {
     padding-right: 5rem;
   }
-
   .avatar {
     width: 32px;
     height: 32px;
     font-size: 13px;
   }
-
   .brand-text h1 {
     font-size: 0.9rem;
   }
-
   .brand-text p {
     font-size: 0.56rem !important;
   }
 }
 
-/* ===== MY JOURNEY LAPTOP CARD FIX ===== */
-@media (min-width: 993px) {
-  .hero:has(#journey.active) .journey-cards-container {
-    align-items: start;
-  }
-
-  .hero:has(#journey.active) .journey-card {
-    height: auto;
-    min-height: 0;
-    align-self: start;
-  }
-
-  .hero:has(#journey.active) .journey-card-content {
-    min-height: 0;
-  }
-
-  .hero:has(#journey.active) .journey-summary {
-    margin-bottom: 0.5rem;
-  }
-
-  .hero:has(#journey.active) .journey-toggle {
-    margin-top: 0.4rem;
-  }
-}
-
-/* ===== GLOBAL PAGE WIDTH FIX ===== */
-html,
-body {
+/* Global width fix */
+html, body {
   width: 100%;
   min-width: 100%;
   max-width: none;
@@ -3241,9 +2984,7 @@ main {
   max-width: none;
 }
 
-/* Header si footer mereu pe toata latimea ecranului */
-header,
-footer {
+header, footer {
   width: 100%;
   max-width: none;
   flex-shrink: 0;
@@ -3255,46 +2996,34 @@ footer {
   bottom: auto;
 }
 
-/* Pe telefon: ocupa exact viewport-ul, indiferent de sectiune */
 @media (max-width: 768px) {
-  header,
-  footer {
+  header, footer {
     width: 100vw !important;
     max-width: 100vw !important;
     min-width: 100vw !important;
     margin-left: calc(50% - 50vw) !important;
     margin-right: calc(50% - 50vw) !important;
   }
-
-  header .container,
-  footer .container {
+  header .container, footer .container {
     width: 100% !important;
     max-width: none !important;
   }
 }
 
-
-/* ===== PROJECTS: 2 CARDURI PE LINIE PE LAPTOP ===== */
+/* Projects 2 cards per row on laptop */
 @media (min-width: 993px) {
   .hero:has(#projects.active) {
     grid-template-columns: 1fr;
   }
-
   .hero:has(#projects.active) .sidebar {
     display: none;
   }
-
-  /* Pentru containerul care tine cardurile colorate */
-  #projects .project-categories,
-  #projects .projects-grid,
-  #projects .categories-grid,
-  #projects .project-category-grid {
+  #projects .project-categories {
     display: grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 1.2rem !important;
     align-items: start;
   }
-
   #projects .project-category {
     width: 100% !important;
     max-width: none !important;
@@ -3303,175 +3032,82 @@ footer {
   }
 }
 
-/* Daca project-category sunt direct in #projects, foloseste tot 2 coloane */
-@media (min-width: 993px) {
-  #projects:has(> .project-category) {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.2rem;
-  }
-
-  #projects:has(> .project-category) > h3,
-  #projects:has(> .project-category) > .projects-stats,
-  #projects:has(> .project-category) > .tech-horizons,
-  #projects:has(> .project-category) > .request-box {
-    grid-column: 1 / -1;
-  }
-}
-
-
-/* ===== MY JOURNEY: CARDURI MAI COMPACTE PE LAPTOP ===== */
+/* Journey cards on laptop */
 @media (min-width: 993px) {
   .hero:has(#journey.active) {
     grid-template-columns: 1fr;
   }
-
   .hero:has(#journey.active) .sidebar {
     display: none;
   }
-
   .hero:has(#journey.active) .journey-cards-container {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: start;
     gap: 1.2rem;
   }
-
   .hero:has(#journey.active) .journey-card {
     height: auto !important;
     min-height: 0 !important;
     align-self: start;
   }
-
-  .hero:has(#journey.active) .journey-details:not(.expanded) {
-    max-height: 0;
-    margin: 0;
-    padding: 0;
-    border-top: none;
-  }
 }
 
-/* ===== MOBILE WIDTH CONSTRAINT FIX ===== */
+/* Mobile width constraint fix */
 @media (max-width: 768px) {
-  html,
-  body {
+  html, body {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
   }
-
-  main,
-  .container,
-  .hero,
-  .content,
-  .section,
-  #projects,
-  #journey,
-  #hello {
+  main, .container, .hero, .content, .section, #projects, #journey, #hello {
     width: 100%;
     max-width: 100%;
     min-width: 0;
     overflow-x: hidden;
   }
-
   .content {
     padding-left: 0.85rem;
     padding-right: 0.85rem;
   }
-
-  #projects *,
-  #journey *,
-  #hello * {
-    max-width: 100%;
-  }
-
-  #projects h3,
-  #journey h3,
-  .hello-message {
-    white-space: normal;
-    overflow-wrap: anywhere;
-    word-break: normal;
-  }
-
   #projects .project-categories,
-  #projects .projects-grid,
-  #projects .categories-grid,
-  #projects .project-category-grid,
   #projects .projects-stats,
-  #journey .journey-cards-container,
-  #hello .hello-info-grid {
+  #journey .journey-cards-container {
     display: grid;
     grid-template-columns: 1fr !important;
     width: 100%;
     max-width: 100%;
     gap: 0.85rem;
   }
-
   #projects .project-category,
   #projects .stat-card,
   #journey .journey-card,
-  #hello .hello-info-item,
   .tech-horizons,
-  .request-box,
-  .hello-info-container,
-  .business-card-container,
-  .quotes-grid {
+  .request-box {
     width: 100%;
     max-width: 100%;
     min-width: 0;
   }
-
-  .project-category span,
-  .quote-item,
-  .hello-action-btn,
-  .btn,
-  .filter-btn,
-  .journey-toggle,
-  .view-certificates-btn {
-    max-width: 100%;
-    white-space: normal;
-  }
-
   .timeline-controls,
   .exam-certificates-container {
     max-width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
-
-  .business-card {
-    width: 100%;
-  }
 }
 
-@media (max-width: 480px) {
-  .content {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-  }
-
-  .container {
-    padding-left: 0.65rem;
-    padding-right: 0.65rem;
-  }
-}
-
-/* ===== FINAL MOBILE HEADER CONTROLS ===== */
+/* Final mobile header controls */
 @media (max-width: 768px) {
   header {
     overflow: visible !important;
     z-index: 3000;
   }
-
-  header .container,
-  .header-content {
+  header .container, .header-content {
     overflow: visible !important;
   }
-
   .header-content {
     min-height: 54px;
     align-items: center;
   }
-
   .brand {
     align-items: center;
     padding-top: 0.65rem;
@@ -3479,24 +3115,20 @@ footer {
     position: relative;
     z-index: 1;
   }
-
   .avatar {
     width: 34px;
     height: 34px;
     font-size: 14px;
     z-index: 1;
   }
-
   .brand-text h1 {
     font-size: 1rem;
     line-height: 1.1;
   }
-
   .brand-text p {
     font-size: 0.62rem !important;
     line-height: 1.1;
   }
-
   .menu-toggle {
     position: absolute !important;
     top: 12px !important;
@@ -3512,7 +3144,6 @@ footer {
     border: 1px solid var(--btn-border);
     border-radius: 10px;
   }
-
   .theme-toggle {
     position: absolute !important;
     top: 12px !important;
@@ -3525,7 +3156,6 @@ footer {
     border-radius: 50%;
     backdrop-filter: blur(5px);
   }
-
   nav {
     display: none;
     position: absolute !important;
@@ -3543,11 +3173,9 @@ footer {
     z-index: 25 !important;
     overflow: visible !important;
   }
-
   nav.active {
     display: flex !important;
   }
-
   .nav-btn {
     width: 100%;
     max-width: 100%;
@@ -3558,52 +3186,44 @@ footer {
   .header-content {
     min-height: 52px;
   }
-
   .brand {
     padding-top: 0.7rem;
     padding-right: 5rem;
   }
-
   .avatar {
     width: 32px;
     height: 32px;
     font-size: 13px;
   }
-
   .brand-text h1 {
     font-size: 0.9rem;
   }
-
   .brand-text p {
     font-size: 0.56rem !important;
   }
-
   .menu-toggle {
     top: 12px !important;
   }
-
   .theme-toggle {
     top: 12px !important;
   }
 }
-/* ===== MOBILE MENU + MOON FIXED, HIDDEN ON SCROLL ===== */
+
+/* Mobile menu fixed */
 @media (max-width: 768px) {
   header {
     overflow: visible !important;
     z-index: 3000;
   }
-
   .header-content {
     min-height: 56px;
     align-items: center;
   }
-
   .brand {
     padding-top: 0.7rem;
     padding-right: 5.5rem;
     align-items: center;
   }
-
   .menu-toggle {
     position: fixed !important;
     top: 12px !important;
@@ -3621,7 +3241,6 @@ footer {
     border: 1px solid var(--btn-border);
     border-radius: 10px;
   }
-
   .theme-toggle {
     position: fixed !important;
     top: 12px !important;
@@ -3636,7 +3255,6 @@ footer {
     border-radius: 50%;
     backdrop-filter: blur(5px);
   }
-
   nav {
     display: none;
     position: fixed !important;
@@ -3653,11 +3271,9 @@ footer {
     gap: 0.5rem;
     z-index: 9050 !important;
   }
-
   nav.active {
     display: flex !important;
   }
-
   body.scrolled-mobile .menu-toggle,
   body.scrolled-mobile .theme-toggle,
   body.scrolled-mobile nav {
