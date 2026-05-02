@@ -884,6 +884,36 @@ main {
   margin: 1.5rem 0;
 }
 
+/* MODIFICARE: My Journey - aranjament special pe laptop pentru a evita spațiile goale */
+@media (min-width: 993px) {
+  .hero:has(#journey.active) .journey-cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+  
+  /* Cardurile se aranjează în ordinea: 
+     1. IT Step Academy
+     2. Academic competitions
+     3. Professional training & workshops
+     4. Robotics (alături de Professional training)
+     5. Science & technology events
+     6. University technical sessions
+     7. Camps
+     8. Volunteering
+     9. Volunteering (al doilea)
+  */
+  .journey-cards-container {
+    grid-auto-flow: row dense;
+  }
+  
+  /* Forțează cardurile să se așeze frumos */
+  .journey-cards-container .journey-card:nth-child(3),
+  .journey-cards-container .journey-card:nth-child(4) {
+    align-self: start;
+  }
+}
+
 .journey-card {
   background: var(--journey-card-bg);
   backdrop-filter: blur(12px);
@@ -1408,36 +1438,36 @@ main {
   }
 }
 
-/* Mobil - containere mai scurte, distanță redusă */
+/* Mobil - containere mai mici, text mai mare */
 @media (max-width: 768px) {
   .stat-card {
-    min-height: 48px;
+    min-height: 44px;
     padding: 0.2rem;
   }
   .stat-number {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 1.1;
   }
   .stat-card div:last-child {
-    font-size: 0.6rem;
-    margin-top: 0.05rem;
+    font-size: 0.65rem;
+    margin-top: 0.02rem;
     line-height: 1.2;
   }
 }
 
-/* Ecran foarte mic - și mai scurt */
+/* Ecran foarte mic - și mai mic */
 @media (max-width: 480px) {
   .stat-card {
-    min-height: 40px;
+    min-height: 38px;
     padding: 0.15rem;
   }
   .stat-number {
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 1;
   }
   .stat-card div:last-child {
     font-size: 0.55rem;
-    margin-top: 0.02rem;
+    margin-top: 0;
   }
 }
 
@@ -2886,18 +2916,18 @@ footer {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
   }
-  /* Mobil - containerele stats mai scurte, distanță redusă */
+  /* Mobil - containerele stats mai mici, text mai mare */
   .stat-card {
-    min-height: 48px;
+    min-height: 44px;
     padding: 0.25rem;
   }
   .stat-number {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 1.1;
   }
   .stat-card div:last-child {
-    font-size: 0.6rem;
-    margin-top: 0.05rem;
+    font-size: 0.65rem;
+    margin-top: 0.02rem;
   }
   .project-category {
     padding: 0.8rem;
@@ -3059,10 +3089,10 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 0.2rem 0.6rem;
-    min-height: 40px;
+    min-height: 38px;
   }
   .stat-number {
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 1;
   }
   .stat-card div:last-child {
@@ -3344,7 +3374,7 @@ footer {
   }
 }
 
-/* Journey cards on laptop */
+/* Journey cards on laptop - aranjament îmbunătățit */
 @media (min-width: 993px) {
   .hero:has(#journey.active) {
     grid-template-columns: 1fr;
