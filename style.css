@@ -3586,4 +3586,56 @@ footer {
     gap: 1rem !important;
   }
 }
+/* Featured projects: lighter cards + readable tags */
+#projects .featured-projects-grid .featured-project:nth-child(1) {
+  background: linear-gradient(145deg, #8794dd, #b2bcf2) !important;
+}
+
+#projects .featured-projects-grid .featured-project:nth-child(2) {
+  background: linear-gradient(145deg, #72bdca, #a7dfe7) !important;
+}
+
+#projects .featured-projects-grid .featured-project:nth-child(3) {
+  background: linear-gradient(145deg, #7fc0a5, #b3dec7) !important;
+}
+
+#projects .featured-projects-grid .featured-project:nth-child(4) {
+  background: linear-gradient(145deg, #dda08d, #f0b8aa) !important;
+}
+
+#projects .featured-projects-grid .featured-project span {
+  font-size: 0.64rem !important;
+  padding: 0.18rem 0.55rem !important;
+}
+
+
+/* Mobile project stats: shorter, compact 2x2 */
+@media (max-width: 768px) {
+  #projects .projects-stats {
+    grid-template-columns: repeat(2, minmax(0, 120px)) !important;
+    justify-content: center;
+    gap: 0.55rem !important;
+  }
+
+  #projects .stat-card {
+    min-height: 58px !important;
+    padding: 0.35rem 0.5rem !important;
+    border-radius: 12px;
+  }
+
+  #projects .stat-number {
+    font-size: 1.1rem !important;
+  }
+
+  #projects .stat-card div:last-child {
+    font-size: 0.58rem !important;
+    line-height: 1.1;
+  }
+}
+
+@media (max-width: 380px) {
+  #projects .projects-stats {
+    grid-template-columns: repeat(2, minmax(0, 105px)) !important;
+  }
+}
 
