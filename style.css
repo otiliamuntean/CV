@@ -3506,3 +3506,14 @@ footer {
   display: flex;
   align-items: center;
 }
+#projects .featured-projects-grid .featured-project span {
+  font-size: 0.58rem !important;
+  padding: 0.14rem 0.45rem !important;
+  line-height: 1.1 !important;
+  border-radius: 999px !important;
+}
+
+#projects .featured-projects-grid .featured-project p {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
