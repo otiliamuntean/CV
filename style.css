@@ -1404,35 +1404,40 @@ main {
   }
   .stat-card div:last-child {
     font-size: 0.75rem;
+    margin-top: 0.2rem;
   }
 }
 
-/* Mobil - containere mai scurte */
+/* Mobil - containere mai scurte, distanță redusă */
 @media (max-width: 768px) {
   .stat-card {
-    min-height: 50px;
+    min-height: 48px;
     padding: 0.2rem;
   }
   .stat-number {
     font-size: 1.2rem;
+    line-height: 1.1;
   }
   .stat-card div:last-child {
     font-size: 0.6rem;
     margin-top: 0.05rem;
+    line-height: 1.2;
   }
 }
 
 /* Ecran foarte mic - și mai scurt */
 @media (max-width: 480px) {
   .stat-card {
-    min-height: 42px;
+    min-height: 40px;
     padding: 0.15rem;
   }
   .stat-number {
     font-size: 1rem;
+    line-height: 1;
   }
   .stat-card div:last-child {
     font-size: 0.55rem;
+    margin-top: 0.02rem;
   }
 }
 
@@ -1462,7 +1467,6 @@ main {
 .stat-number {
   font-weight: 900;
   color: white;
-  line-height: 1.2;
 }
 
 .stat-card div:last-child {
@@ -1475,6 +1479,7 @@ main {
   color: white;
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
   vertical-align: middle;
+  font-size: inherit;
 }
 
 #projects h3 {
@@ -1786,7 +1791,7 @@ main {
 }
 
 
-/* ===== FEATURED PROJECTS - CULORI MODERN + ELEMENTE GRATICE FADED ===== */
+/* ===== FEATURED PROJECTS - CULORI MODERNE + TEXT MAI MARE ===== */
 .featured-projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1957,7 +1962,7 @@ main {
   transform: translateY(-5px);
 }
 
-/* ===== CULORI MODERNE (verde-azuriu deschis pentru cardul 1) ===== */
+/* ===== CULORI MODERNE ===== */
 #projects .featured-projects-grid .featured-project:nth-child(1) {
   background: linear-gradient(135deg, #14b8a6 0%, #2dd4bf 50%, #5eead4 100%) !important;
   box-shadow: 0 10px 30px rgba(20, 184, 166, 0.35);
@@ -1998,10 +2003,10 @@ main {
   z-index: 2;
 }
 
-/* Titlul în colțul sus - dimensiune mai mare */
+/* Titlul - TEXT MAI MARE */
 .featured-projects-grid .featured-project h4,
 .featured-projects-grid .featured-project h5 {
-  font-size: 1.2rem !important;
+  font-size: 1.3rem !important;
   font-weight: 800 !important;
   margin: 0 0 0.6rem 0 !important;
   padding: 0 !important;
@@ -2027,19 +2032,19 @@ main {
   background: rgba(0, 0, 0, 0.35) !important;
   backdrop-filter: blur(4px) !important;
   border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  padding: 0.25rem 0.7rem !important;
-  font-size: 0.7rem !important;
+  padding: 0.3rem 0.8rem !important;
+  font-size: 0.75rem !important;
   border-radius: 30px !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   color: white !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
 }
 
-/* Descrierea - dimensiune mai mare */
+/* Descrierea - TEXT MAI MARE */
 .featured-projects-grid .featured-project p {
-  font-size: 0.85rem !important;
+  font-size: 0.9rem !important;
   line-height: 1.5 !important;
   margin: 0 0 1rem 0 !important;
   color: rgba(255, 255, 255, 0.92) !important;
@@ -2049,8 +2054,8 @@ main {
 }
 
 .featured-projects-grid .featured-project .btn {
-  padding: 0.45rem 1rem !important;
-  font-size: 0.75rem !important;
+  padding: 0.5rem 1.1rem !important;
+  font-size: 0.8rem !important;
   align-self: flex-start !important;
   margin-top: auto !important;
   background: rgba(255, 255, 255, 0.2) !important;
@@ -2080,10 +2085,10 @@ main {
   }
   .featured-projects-grid .featured-project h4,
   .featured-projects-grid .featured-project h5 {
-    font-size: 1.3rem !important;
+    font-size: 1.4rem !important;
   }
   .featured-projects-grid .featured-project p {
-    font-size: 0.9rem !important;
+    font-size: 0.95rem !important;
   }
 }
 
@@ -2097,14 +2102,14 @@ main {
   }
   .featured-projects-grid .featured-project h4,
   .featured-projects-grid .featured-project h5 {
-    font-size: 1.1rem !important;
+    font-size: 1.2rem !important;
   }
   #projects .featured-projects-grid .featured-project span {
-    padding: 0.15rem 0.5rem !important;
-    font-size: 0.6rem !important;
+    padding: 0.2rem 0.6rem !important;
+    font-size: 0.65rem !important;
   }
   .featured-projects-grid .featured-project p {
-    font-size: 0.8rem !important;
+    font-size: 0.85rem !important;
   }
 }
 
@@ -2881,13 +2886,14 @@ footer {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
   }
-  /* Mobil - containere mai scurte pentru stats */
+  /* Mobil - containerele stats mai scurte, distanță redusă */
   .stat-card {
-    min-height: 50px;
-    padding: 0.3rem;
+    min-height: 48px;
+    padding: 0.25rem;
   }
   .stat-number {
     font-size: 1.2rem;
+    line-height: 1.1;
   }
   .stat-card div:last-child {
     font-size: 0.6rem;
@@ -3052,11 +3058,12 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0.3rem 0.6rem;
-    min-height: 42px;
+    padding: 0.2rem 0.6rem;
+    min-height: 40px;
   }
   .stat-number {
     font-size: 1rem;
+    line-height: 1;
   }
   .stat-card div:last-child {
     margin-top: 0;
