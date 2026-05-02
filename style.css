@@ -1649,6 +1649,8 @@ main {
 .featured-project p {
   font-size: 0.75rem;
 }
+/* ===== PROIECTE - MODIFICĂRI COMPLETE ===== */
+
 .featured-projects-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1662,51 +1664,17 @@ main {
   padding: 1.2rem;
   border-radius: 18px;
   overflow: hidden;
-  background: linear-gradient(145deg, #8b5cf6, #6d28d9);
   box-shadow: 0 15px 30px rgba(139, 92, 246, 0.3);
 }
 
-.featured-projects-grid .featured-project > div:first-child {
-  height: 70px !important;
-  border-radius: 14px;
-  margin-bottom: 1rem;
-}
-
-.featured-projects-grid .featured-project > div:last-child {
-  padding: 0 !important;
-}
-
-/* MODIFICARE: Titlurile cardurilor în colțul de sus */
-.featured-projects-grid .featured-project h5 {
-  font-size: 1.1rem !important;
-  margin-top: 0 !important;
-  margin-bottom: 0.4rem;
-}
-
-.featured-projects-grid .featured-project p {
-  font-size: 0.8rem;
-  line-height: 1.4;
-}
-
-.featured-projects-grid .featured-project .btn {
-  padding: 0.45rem 0.9rem !important;
-  font-size: 0.75rem !important;
-}
-
-@media (max-width: 768px) {
-  .featured-projects-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-}
-
-/* MODIFICARE: Culori diferite pentru cardurile Featured Projects (inclusiv Figma) */
+/* Culori pentru fiecare card Featured Projects */
 #projects .featured-projects-grid .featured-project:nth-child(1) {
   background: linear-gradient(145deg, #4f46e5, #6d5dfc) !important;
 }
 
+/* Cardul Figma Projects - AZURIU/CYAN */
 #projects .featured-projects-grid .featured-project:nth-child(2) {
-  background: linear-gradient(145deg, #0891b2, #22b8cf) !important;
+  background: linear-gradient(145deg, #06b6d4, #3b82f6) !important;
 }
 
 #projects .featured-projects-grid .featured-project:nth-child(3) {
@@ -1717,14 +1685,31 @@ main {
   background: linear-gradient(145deg, #ea580c, #f43f5e) !important;
 }
 
-/* MODIFICARE: Badge-uri de aceeași mărime - uniformizate */
-#projects .featured-projects-grid .featured-project span,
-.project-category span,
-.journey-period,
-.exam-certificate-grade {
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
+/* Tot textul pe alb */
+.featured-projects-grid .featured-project h5,
+.featured-projects-grid .featured-project p,
+.featured-projects-grid .featured-project span,
+.featured-projects-grid .featured-project div:not(.btn) {
+  color: #ffffff !important;
+}
+
+.featured-projects-grid .featured-project p {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+.featured-projects-grid .featured-project .btn {
+  color: white !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.featured-projects-grid .featured-project .btn:hover {
+  background: rgba(255, 255, 255, 0.35) !important;
+  transform: translateY(-2px);
+}
+
+/* Badge-uri uniforme pe toate cardurile */
+#projects .featured-projects-grid .featured-project span {
   background: rgba(255, 255, 255, 0.18) !important;
   color: #ffffff !important;
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -1733,22 +1718,32 @@ main {
   font-size: 0.7rem;
   border-radius: 30px;
   min-height: 32px;
-  height: auto;
-  line-height: 1.2;
-  white-space: nowrap;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Adaptare pentru mobile - badge-uri să nu se rupă */
-@media (max-width: 480px) {
-  #projects .featured-projects-grid .featured-project span,
-  .project-category span {
-    white-space: normal;
+/* Titlurile în colțul de sus */
+.featured-projects-grid .featured-project h5 {
+  margin-top: 0 !important;
+  margin-bottom: 0.4rem !important;
+  font-size: 1.1rem !important;
+  font-weight: 700;
+}
+
+/* Responsive mobil */
+@media (max-width: 768px) {
+  .featured-projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  #projects .featured-projects-grid .featured-project span {
+    min-height: 28px;
     font-size: 0.65rem;
     padding: 0.2rem 0.6rem;
-    min-height: 28px;
   }
 }
-
 #projects .featured-projects-grid .featured-project:nth-child(1) span {
   color: #eef2ff !important;
 }
