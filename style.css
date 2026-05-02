@@ -1565,53 +1565,95 @@ main {
   height: 100%;
   border-radius: 3px;
   width: 0%;
-  animation: fillProgress 3s ease-in-out infinite;
   background-size: 200% auto;
 }
 
-/* ANIMAȚIE NOUĂ PROGRESS BAR - se umple la 100% și revine */
-@keyframes fillProgress {
-  0% { width: 0%; }
-  50% { width: 100%; }
-  100% { width: 0%; }
-}
-
-/* ===== PROGRESS BAR DIFERIT PENTRU FIECARE HORIZON ITEM (culori light) ===== */
+/* ANIMAȚIE PROGRESS BAR - fiecare are delay diferit și pornește de la procentajul specific */
 .horizon-item:nth-child(1) .progress-fill {
-  background: linear-gradient(90deg, #a78bfa, #c4b5fd, #ddd6fe);
+  background: linear-gradient(90deg, #c4b5fd, #a78bfa, #8b5cf6);
+  animation: fillProgressSlow 4s ease-in-out infinite;
   animation-delay: 0s;
 }
+.horizon-item:nth-child(1) {
+  --start-width: 75%;
+}
+
 .horizon-item:nth-child(2) .progress-fill {
-  background: linear-gradient(90deg, #7dd3fc, #bae6fd, #e0f2fe);
-  animation-delay: 0.2s;
+  background: linear-gradient(90deg, #7dd3fc, #38bdf8, #0ea5e9);
+  animation: fillProgressSlow 4s ease-in-out infinite;
+  animation-delay: 0.3s;
 }
+.horizon-item:nth-child(2) {
+  --start-width: 60%;
+}
+
 .horizon-item:nth-child(3) .progress-fill {
-  background: linear-gradient(90deg, #f9a8d4, #fbcfe8, #fce7f3);
-  animation-delay: 0.4s;
-}
-.horizon-item:nth-child(4) .progress-fill {
-  background: linear-gradient(90deg, #6ee7b7, #a7f3d0, #d1fae5);
+  background: linear-gradient(90deg, #f9a8d4, #f472b6, #ec4899);
+  animation: fillProgressSlow 4s ease-in-out infinite;
   animation-delay: 0.6s;
 }
+.horizon-item:nth-child(3) {
+  --start-width: 45%;
+}
+
+.horizon-item:nth-child(4) .progress-fill {
+  background: linear-gradient(90deg, #6ee7b7, #34d399, #10b981);
+  animation: fillProgressSlow 4s ease-in-out infinite;
+  animation-delay: 0.9s;
+}
+.horizon-item:nth-child(4) {
+  --start-width: 70%;
+}
+
 .horizon-item:nth-child(5) .progress-fill {
-  background: linear-gradient(90deg, #fde047, #fef08a, #fef9c3);
-  animation-delay: 0.8s;
-}
-.horizon-item:nth-child(6) .progress-fill {
-  background: linear-gradient(90deg, #fca5a5, #fecaca, #fee2e2);
-  animation-delay: 1s;
-}
-.horizon-item:nth-child(7) .progress-fill {
-  background: linear-gradient(90deg, #67e8f9, #a5f3fc, #cffafe);
+  background: linear-gradient(90deg, #fde047, #fbbf24, #f59e0b);
+  animation: fillProgressSlow 4s ease-in-out infinite;
   animation-delay: 1.2s;
 }
-.horizon-item:nth-child(8) .progress-fill {
-  background: linear-gradient(90deg, #bef264, #d9f99d, #ecfccb);
-  animation-delay: 1.4s;
+.horizon-item:nth-child(5) {
+  --start-width: 50%;
 }
+
+.horizon-item:nth-child(6) .progress-fill {
+  background: linear-gradient(90deg, #fca5a5, #f87171, #ef4444);
+  animation: fillProgressSlow 4s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+.horizon-item:nth-child(6) {
+  --start-width: 85%;
+}
+
+.horizon-item:nth-child(7) .progress-fill {
+  background: linear-gradient(90deg, #67e8f9, #22d3ee, #06b6d4);
+  animation: fillProgressSlow 4s ease-in-out infinite;
+  animation-delay: 1.8s;
+}
+.horizon-item:nth-child(7) {
+  --start-width: 55%;
+}
+
+.horizon-item:nth-child(8) .progress-fill {
+  background: linear-gradient(90deg, #bef264, #a3e635, #84cc16);
+  animation: fillProgressSlow 4s ease-in-out infinite;
+  animation-delay: 2.1s;
+}
+.horizon-item:nth-child(8) {
+  --start-width: 40%;
+}
+
 .horizon-item:nth-child(9) .progress-fill {
-  background: linear-gradient(90deg, #c4b5fd, #ddd6fe, #ede9fe);
-  animation-delay: 1.6s;
+  background: linear-gradient(90deg, #ddd6fe, #c4b5fd, #a78bfa);
+  animation: fillProgressSlow 4s ease-in-out infinite;
+  animation-delay: 2.4s;
+}
+.horizon-item:nth-child(9) {
+  --start-width: 80%;
+}
+
+@keyframes fillProgressSlow {
+  0% { width: var(--start-width, 50%); }
+  50% { width: 100%; }
+  100% { width: var(--start-width, 50%); }
 }
 
 @keyframes dynamicIconVerySlow {
@@ -1706,7 +1748,7 @@ main {
 }
 
 
-/* ===== FEATURED PROJECTS - CORECTAT ===== */
+/* ===== FEATURED PROJECTS - CULORI PASTEL MODERNE ===== */
 .featured-projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1733,7 +1775,7 @@ main {
   right: -20%;
   width: 150px;
   height: 150px;
-  background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
   animation: morphShape 12s ease-in-out infinite;
@@ -1746,7 +1788,7 @@ main {
   left: -15%;
   width: 120px;
   height: 120px;
-  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
   border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
   pointer-events: none;
   animation: morphShape2 10s ease-in-out infinite;
@@ -1768,31 +1810,31 @@ main {
   transform: translateY(-5px);
 }
 
-/* ===== CULORI MAI LIGHT ȘI INTERESANTE PENTRU FEATURED PROJECTS ===== */
+/* ===== CULORI PASTEL, MODERNE, LIGHT ===== */
 #projects .featured-projects-grid .featured-project:nth-child(1) {
-  background: linear-gradient(135deg, #f43f5e 0%, #e11d48 50%, #be123c 100%) !important;
-  box-shadow: 0 10px 30px rgba(244, 63, 94, 0.3);
+  background: linear-gradient(135deg, #fbcfe8 0%, #f9a8d4 50%, #f472b6 100%) !important;
+  box-shadow: 0 10px 30px rgba(244, 114, 182, 0.25);
 }
 #projects .featured-projects-grid .featured-project:nth-child(2) {
-  background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #c2410c 100%) !important;
-  box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
+  background: linear-gradient(135deg, #bfdbfe 0%, #93c5fd 50%, #60a5fa 100%) !important;
+  box-shadow: 0 10px 30px rgba(96, 165, 250, 0.25);
 }
 #projects .featured-projects-grid .featured-project:nth-child(3) {
-  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #0369a1 100%) !important;
-  box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
+  background: linear-gradient(135deg, #ccfbf1 0%, #99f6e4 50%, #5eead4 100%) !important;
+  box-shadow: 0 10px 30px rgba(94, 234, 212, 0.25);
 }
 #projects .featured-projects-grid .featured-project:nth-child(4) {
-  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 50%, #6d28d9 100%) !important;
-  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+  background: linear-gradient(135deg, #e9d5ff 0%, #d8b4fe 50%, #c084fc 100%) !important;
+  box-shadow: 0 10px 30px rgba(192, 132, 252, 0.25);
 }
 
 /* Animație subtilă pentru gradient */
 #projects .featured-projects-grid .featured-project {
   background-size: 200% 200% !important;
-  animation: gradientShift 8s ease infinite alternate;
+  animation: gradientShiftPastel 10s ease infinite alternate;
 }
 
-@keyframes gradientShift {
+@keyframes gradientShiftPastel {
   0% { background-position: 0% 0%; }
   100% { background-position: 100% 100%; }
 }
@@ -1816,7 +1858,7 @@ main {
   font-weight: 800 !important;
   margin: 0 0 0.5rem 0 !important;
   padding: 0 !important;
-  color: white !important;
+  color: #1e293b !important;
   text-align: left !important;
   position: relative;
   z-index: 2;
@@ -1834,27 +1876,28 @@ main {
 }
 
 #projects .featured-projects-grid .featured-project span {
-  background: rgba(0, 0, 0, 0.35) !important;
+  background: rgba(0, 0, 0, 0.25) !important;
   backdrop-filter: blur(4px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
   padding: 0.25rem 0.7rem !important;
   font-size: 0.7rem !important;
   border-radius: 30px !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  color: white !important;
-  font-weight: 500 !important;
+  color: #1e293b !important;
+  font-weight: 600 !important;
 }
 
 .featured-projects-grid .featured-project p {
   font-size: 0.8rem !important;
   line-height: 1.45 !important;
   margin: 0 0 1rem 0 !important;
-  color: rgba(255, 255, 255, 0.92) !important;
+  color: #334155 !important;
   text-align: left !important;
   position: relative;
   z-index: 2;
+  font-weight: 500;
 }
 
 .featured-projects-grid .featured-project .btn {
@@ -1862,18 +1905,19 @@ main {
   font-size: 0.7rem !important;
   align-self: flex-start !important;
   margin-top: auto !important;
-  background: rgba(255, 255, 255, 0.2) !important;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  background: rgba(0, 0, 0, 0.15) !important;
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
   border-radius: 10px !important;
-  color: white !important;
+  color: #1e293b !important;
   cursor: pointer !important;
   transition: all 0.2s ease !important;
   position: relative;
   z-index: 2;
+  font-weight: 600;
 }
 
 .featured-projects-grid .featured-project .btn:hover {
-  background: rgba(255, 255, 255, 0.35) !important;
+  background: rgba(0, 0, 0, 0.25) !important;
   transform: translateY(-2px);
 }
 
