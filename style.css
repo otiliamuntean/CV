@@ -3500,142 +3500,26 @@ footer {
   position: relative !important;
 }
 
+/* Featured projects: modern light palette + matching tags */
 #projects .featured-projects-grid .featured-project:nth-child(1) {
-  background: linear-gradient(145deg, #6f7fc7, #9aa7e8) !important;
+  background: linear-gradient(145deg, #8b7cf6, #60a5fa) !important;
 }
 
 #projects .featured-projects-grid .featured-project:nth-child(2) {
-  background: linear-gradient(145deg, #5aa9ba, #8fd0dc) !important;
+  background: linear-gradient(145deg, #38bdf8, #22d3ee) !important;
 }
 
 #projects .featured-projects-grid .featured-project:nth-child(3) {
-  background: linear-gradient(145deg, #68a88f, #9bd2b6) !important;
+  background: linear-gradient(145deg, #34d399, #2dd4bf) !important;
 }
 
 #projects .featured-projects-grid .featured-project:nth-child(4) {
-  background: linear-gradient(145deg, #c98770, #eba38f) !important;
-}
-
-
-#projects .featured-projects-grid .featured-project > div:first-child {
-  height: 38px !important;
-  min-height: 38px !important;
-  margin-bottom: 0.65rem !important;
-  border-radius: 14px !important;
-  background: transparent !important;
-}
-
-#projects .featured-projects-grid .featured-project > div:first-child > div {
-  top: 0 !important;
-  right: 0 !important;
-  padding: 0.18rem 0.52rem !important;
-  font-size: 0.56rem !important;
-  line-height: 1.1 !important;
-  background: rgba(255, 255, 255, 0.18) !important;
-  color: #ffffff !important;
-}
-
-#projects .featured-projects-grid .featured-project > div:last-child {
-  padding: 0 !important;
-}
-
-#projects .featured-projects-grid .featured-project h5 {
-  margin-top: -2.7rem !important;
-  padding-right: 5.2rem !important;
-  min-height: 2rem !important;
-  display: flex !important;
-  align-items: center !important;
-  color: #ffffff !important;
-  font-size: 1.05rem !important;
-}
-
-#projects .featured-projects-grid .featured-project p {
-  color: #ffffff !important;
-  opacity: 0.92 !important;
-  font-size: 0.78rem !important;
-  line-height: 1.4 !important;
+  background: linear-gradient(145deg, #fb923c, #fb7185) !important;
 }
 
 #projects .featured-projects-grid .featured-project span {
-  background: rgba(255, 255, 255, 0.16) !important;
-  color: #f8fafc !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  font-size: 0.56rem !important;
-  padding: 0.14rem 0.45rem !important;
-  line-height: 1.1 !important;
-  border-radius: 999px !important;
-  font-weight: 700 !important;
+  font-size: 0.65rem !important;
+  padding: 0.25rem 0.7rem !important;
+  border-radius: 30px !important;
+  line-height: normal !important;
 }
-
-#projects .featured-projects-grid .featured-project a.btn {
-  background: rgba(255, 255, 255, 0.18) !important;
-  color: #ffffff !important;
-  border: 1px solid rgba(255, 255, 255, 0.28) !important;
-  padding: 0.45rem 0.9rem !important;
-  font-size: 0.72rem !important;
-  box-shadow: none !important;
-}
-
-#projects .featured-projects-grid .featured-project a.btn:hover {
-  background: rgba(255, 255, 255, 0.28) !important;
-}
-
-@media (max-width: 768px) {
-  #projects .featured-projects-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1rem !important;
-  }
-}
-/* Featured projects: lighter cards + readable tags */
-#projects .featured-projects-grid .featured-project:nth-child(1) {
-  background: linear-gradient(145deg, #8794dd, #b2bcf2) !important;
-}
-
-#projects .featured-projects-grid .featured-project:nth-child(2) {
-  background: linear-gradient(145deg, #72bdca, #a7dfe7) !important;
-}
-
-#projects .featured-projects-grid .featured-project:nth-child(3) {
-  background: linear-gradient(145deg, #7fc0a5, #b3dec7) !important;
-}
-
-#projects .featured-projects-grid .featured-project:nth-child(4) {
-  background: linear-gradient(145deg, #dda08d, #f0b8aa) !important;
-}
-
-#projects .featured-projects-grid .featured-project span {
-  font-size: 0.64rem !important;
-  padding: 0.18rem 0.55rem !important;
-}
-
-
-/* Mobile project stats: shorter, compact 2x2 */
-@media (max-width: 768px) {
-  #projects .projects-stats {
-    grid-template-columns: repeat(2, minmax(0, 120px)) !important;
-    justify-content: center;
-    gap: 0.55rem !important;
-  }
-
-  #projects .stat-card {
-    min-height: 58px !important;
-    padding: 0.35rem 0.5rem !important;
-    border-radius: 12px;
-  }
-
-  #projects .stat-number {
-    font-size: 1.1rem !important;
-  }
-
-  #projects .stat-card div:last-child {
-    font-size: 0.58rem !important;
-    line-height: 1.1;
-  }
-}
-
-@media (max-width: 380px) {
-  #projects .projects-stats {
-    grid-template-columns: repeat(2, minmax(0, 105px)) !important;
-  }
-}
-
