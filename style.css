@@ -86,7 +86,7 @@ body.light-mode {
   --hello-subtitle-color: #eef2f6;
 }
 
-/* ===== THEME TOGGLE (Luna/Soare) ===== */
+/* ===== THEME TOGGLE ===== */
 .theme-toggle {
   position: fixed;
   top: 20px;
@@ -104,8 +104,7 @@ body.light-mode {
   transform: scale(1.05);
 }
 
-.sun,
-.moon {
+.sun, .moon {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -122,18 +121,6 @@ body.light-mode {
   transform: scale(0.8);
 }
 
-.sun::after {
-  content: '';
-  position: absolute;
-  top: -8px;
-  left: -8px;
-  right: -8px;
-  bottom: -8px;
-  background: radial-gradient(circle, rgba(253,184,19,0.25) 0%, transparent 70%);
-  border-radius: 50%;
-  z-index: -1;
-}
-
 .moon {
   background: #e2e8f0;
   box-shadow: inset -6px -6px 10px #a0aec0, 0 0 20px #94a3b8;
@@ -141,32 +128,6 @@ body.light-mode {
   overflow: hidden;
   opacity: 1;
   transform: scale(1);
-}
-
-.moon::before {
-  content: '';
-  position: absolute;
-  width: 35%;
-  height: 35%;
-  background: #cbd5e1;
-  border-radius: 50%;
-  top: 15%;
-  left: 20%;
-  box-shadow: 
-    10px 25px 0 -2px #cbd5e1,
-    -15px 35px 0 -5px #b0c4de,
-    25px 15px 0 -4px #b0c4de,
-    -5px 45px 0 -3px #cbd5e1;
-  opacity: 0.6;
-}
-
-.moon::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 50%, transparent 40%, rgba(0,0,0,0.2) 80%);
 }
 
 body.light-mode .sun {
@@ -177,23 +138,6 @@ body.light-mode .sun {
 body.light-mode .moon {
   opacity: 0;
   transform: scale(0.8);
-}
-
-.theme-toggle.pulled {
-  transform: rotate(15deg) scale(0.9);
-  transition: transform 0.15s;
-}
-
-/* ===== BACKGROUND EFFECTS ===== */
-.noise-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: -1;
 }
 
 /* ===== HEADER & NAVIGATION ===== */
@@ -402,17 +346,17 @@ main {
   animation: fadeIn 1s ease-out;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 /* Sidebar-ul dispare pe paginile care nu sunt About */
 .hero:has(.section.active:not(#about)) {
   grid-template-columns: 1fr;
 }
 .hero:has(.section.active:not(#about)) .sidebar {
   display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ===== SIDEBAR ===== */
@@ -591,7 +535,7 @@ main {
   transform: translateY(-8px);
 }
 
-/* ===== SKILLS GRID - CONTAINERE MAI MICI ===== */
+/* ===== SKILLS GRID ===== */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(130px, 130px));
@@ -1416,7 +1360,7 @@ main {
   }
 }
 
-/* Mobil - containere mici, orientare pe orizontală, 2 coloane */
+/* Mobil - containere mici, reorientate pentru a încăpea */
 @media (max-width: 768px) {
   .projects-stats {
     display: grid !important;
@@ -1424,14 +1368,14 @@ main {
     gap: 0.5rem !important;
   }
   .stat-card {
-    min-height: 50px !important;
-    padding: 0.3rem !important;
+    min-height: 55px !important;
+    padding: 0.3rem 0.5rem !important;
     flex-direction: row !important;
     justify-content: space-between !important;
     align-items: center !important;
   }
   .stat-number {
-    font-size: 1.4rem !important;
+    font-size: 1.3rem !important;
     line-height: 1.1 !important;
     margin-bottom: 0 !important;
   }
@@ -1441,7 +1385,7 @@ main {
     text-align: right !important;
   }
   .stat-number .infinity-symbol {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 }
 
@@ -1452,11 +1396,11 @@ main {
     gap: 0.4rem !important;
   }
   .stat-card {
-    min-height: 45px !important;
+    min-height: 48px !important;
     padding: 0.25rem 0.6rem !important;
   }
   .stat-number {
-    font-size: 1.3rem !important;
+    font-size: 1.2rem !important;
   }
   .stat-card div:last-child {
     font-size: 0.6rem !important;
@@ -1832,7 +1776,7 @@ main {
   position: relative;
 }
 
-/* Elemente decorative fade vectoriale */
+/* Elemente decorative fade vectoriale pentru carduri */
 .featured-projects-grid .featured-project::before {
   content: '';
   position: absolute;
@@ -1919,7 +1863,7 @@ main {
 /* Titlul */
 .featured-projects-grid .featured-project h4,
 .featured-projects-grid .featured-project h5 {
-  font-size: 1.3rem !important;
+  font-size: 1.2rem !important;
   font-weight: 800 !important;
   margin: 0 0 0.6rem 0 !important;
   padding: 0 !important;
@@ -1998,7 +1942,7 @@ main {
   }
   .featured-projects-grid .featured-project h4,
   .featured-projects-grid .featured-project h5 {
-    font-size: 1.4rem !important;
+    font-size: 1.3rem !important;
   }
   .featured-projects-grid .featured-project p {
     font-size: 0.95rem !important;
@@ -2015,7 +1959,7 @@ main {
   }
   .featured-projects-grid .featured-project h4,
   .featured-projects-grid .featured-project h5 {
-    font-size: 1.2rem !important;
+    font-size: 1.1rem !important;
   }
   #projects .featured-projects-grid .featured-project span {
     padding: 0.2rem 0.6rem !important;
