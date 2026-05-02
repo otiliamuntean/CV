@@ -3459,22 +3459,79 @@ footer {
     pointer-events: none !important;
   }
 }
-/* ===== PROJECT CATEGORIES 2 x 2 ON LAPTOP ===== */
-.project-categories {
+/* ===== FEATURED PROJECTS AS 2x2 COMPACT QUADRANTS ===== */
+#projects .featured-projects-grid {
   display: grid !important;
   grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   gap: 2rem !important;
-  margin-bottom: 3rem;
+  width: 100% !important;
 }
 
-.project-categories .project-category {
+#projects .featured-projects-grid .featured-project {
   width: 100% !important;
-  max-width: none !important;
+  min-height: 220px !important;
   margin: 0 !important;
+  padding: 1.2rem !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+  border: none !important;
+  box-shadow: 0 15px 30px rgba(139, 92, 246, 0.3) !important;
+}
+
+#projects .featured-projects-grid .featured-project:nth-child(1) {
+  background: linear-gradient(145deg, #8b5cf6, #6d28d9) !important;
+}
+
+#projects .featured-projects-grid .featured-project:nth-child(2) {
+  background: linear-gradient(145deg, #0ea5e9, #0284c7) !important;
+}
+
+#projects .featured-projects-grid .featured-project:nth-child(3) {
+  background: linear-gradient(145deg, #10b981, #0ea5e9) !important;
+}
+
+#projects .featured-projects-grid .featured-project:nth-child(4) {
+  background: linear-gradient(145deg, #f97316, #dc2626) !important;
+}
+
+#projects .featured-projects-grid .featured-project > div:first-child {
+  height: 58px !important;
+  min-height: 58px !important;
+  border-radius: 14px !important;
+  margin-bottom: 1rem !important;
+  background: rgba(255, 255, 255, 0.18) !important;
+}
+
+#projects .featured-projects-grid .featured-project > div:first-child > div {
+  top: 12px !important;
+  right: 12px !important;
+  padding: 0.25rem 0.7rem !important;
+  font-size: 0.65rem !important;
+}
+
+#projects .featured-projects-grid .featured-project > div:last-child {
+  padding: 0 !important;
+}
+
+#projects .featured-projects-grid .featured-project h5 {
+  font-size: 1.05rem !important;
+  margin-bottom: 0.4rem !important;
+}
+
+#projects .featured-projects-grid .featured-project p {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 0.78rem !important;
+  line-height: 1.4 !important;
+}
+
+#projects .featured-projects-grid .featured-project a.btn {
+  padding: 0.45rem 0.9rem !important;
+  font-size: 0.72rem !important;
+  box-shadow: none !important;
 }
 
 @media (max-width: 768px) {
-  .project-categories {
+  #projects .featured-projects-grid {
     grid-template-columns: 1fr !important;
     gap: 1rem !important;
   }
