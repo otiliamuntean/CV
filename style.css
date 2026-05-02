@@ -3557,4 +3557,29 @@ footer {
     gap: 1rem !important;
   }
 }
+#projects .featured-projects-grid .featured-project {
+  position: relative !important;
+  padding-top: 1rem !important;
+}
+
+#projects .featured-projects-grid .featured-project > div:first-child {
+  height: 38px !important;
+  min-height: 38px !important;
+  margin-bottom: 0.65rem !important;
+  background: transparent !important;
+}
+
+#projects .featured-projects-grid .featured-project > div:first-child > div {
+  top: 0 !important;
+  right: 0 !important;
+}
+
+#projects .featured-projects-grid .featured-project h5 {
+  margin-top: -2.7rem !important;
+  padding-right: 6rem !important;
+  min-height: 2rem;
+  display: flex;
+  align-items: center;
+}
+
 
