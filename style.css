@@ -1483,44 +1483,6 @@ main {
   }
 }
 
-/* ===== PROGRESS BAR DIFERIT PENTRU FIECARE HORIZON ITEM ===== */
-.horizon-item:nth-child(1) .progress-fill {
-  background: linear-gradient(90deg, #8b5cf6, #a78bfa) !important;
-  width: 75%;
-}
-.horizon-item:nth-child(2) .progress-fill {
-  background: linear-gradient(90deg, #0ea5e9, #38bdf8) !important;
-  width: 60%;
-}
-.horizon-item:nth-child(3) .progress-fill {
-  background: linear-gradient(90deg, #ec4899, #f472b6) !important;
-  width: 45%;
-}
-.horizon-item:nth-child(4) .progress-fill {
-  background: linear-gradient(90deg, #10b981, #34d399) !important;
-  width: 70%;
-}
-.horizon-item:nth-child(5) .progress-fill {
-  background: linear-gradient(90deg, #f59e0b, #fbbf24) !important;
-  width: 50%;
-}
-.horizon-item:nth-child(6) .progress-fill {
-  background: linear-gradient(90deg, #ef4444, #f87171) !important;
-  width: 85%;
-}
-.horizon-item:nth-child(7) .progress-fill {
-  background: linear-gradient(90deg, #06b6d4, #22d3ee) !important;
-  width: 55%;
-}
-.horizon-item:nth-child(8) .progress-fill {
-  background: linear-gradient(90deg, #84cc16, #a3e635) !important;
-  width: 40%;
-}
-.horizon-item:nth-child(9) .progress-fill {
-  background: linear-gradient(90deg, #8b5cf6, #c084fc) !important;
-  width: 80%;
-}
-
 .rotate-logo {
   background: linear-gradient(135deg, #8b5cf6, #ec4899);
   width: 40px;
@@ -1556,18 +1518,58 @@ main {
   width: 100%;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 3px;
+  margin-top: 0.5rem;
 }
 
 .progress-fill {
   height: 100%;
   border-radius: 3px;
-  animation: loading 2s infinite;
+  animation: loading 2.5s ease-in-out infinite;
+  background-size: 200% auto;
+}
+
+/* ===== PROGRESS BAR DIFERIT PENTRU FIECARE HORIZON ITEM ===== */
+.horizon-item:nth-child(1) .progress-fill {
+  background: linear-gradient(90deg, #8b5cf6, #c084fc, #a78bfa);
+  width: 75%;
+}
+.horizon-item:nth-child(2) .progress-fill {
+  background: linear-gradient(90deg, #0ea5e9, #38bdf8, #7dd3fc);
+  width: 60%;
+}
+.horizon-item:nth-child(3) .progress-fill {
+  background: linear-gradient(90deg, #ec4899, #f472b6, #f9a8d4);
+  width: 45%;
+}
+.horizon-item:nth-child(4) .progress-fill {
+  background: linear-gradient(90deg, #10b981, #34d399, #6ee7b7);
+  width: 70%;
+}
+.horizon-item:nth-child(5) .progress-fill {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24, #fcd34d);
+  width: 50%;
+}
+.horizon-item:nth-child(6) .progress-fill {
+  background: linear-gradient(90deg, #ef4444, #f87171, #fca5a5);
+  width: 85%;
+}
+.horizon-item:nth-child(7) .progress-fill {
+  background: linear-gradient(90deg, #06b6d4, #22d3ee, #67e8f9);
+  width: 55%;
+}
+.horizon-item:nth-child(8) .progress-fill {
+  background: linear-gradient(90deg, #84cc16, #a3e635, #bef264);
+  width: 40%;
+}
+.horizon-item:nth-child(9) .progress-fill {
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa, #c4b5fd);
+  width: 80%;
 }
 
 @keyframes loading {
-  0% { opacity: 0.7; }
+  0% { opacity: 0.5; }
   50% { opacity: 1; }
-  100% { opacity: 0.7; }
+  100% { opacity: 0.5; }
 }
 
 @keyframes dynamicIconVerySlow {
@@ -1684,18 +1686,18 @@ main {
   transform: translateY(-5px);
 }
 
-/* ===== CULORILE CERUTE ===== */
+/* ===== CULORI GRADIENTALE PENTRU FEATURED PROJECTS ===== */
 #projects .featured-projects-grid .featured-project:nth-child(1) {
-  background: linear-gradient(145deg, #dc2626, #b91c1c) !important;
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 50%, #7f1d1d 100%) !important;
 }
 #projects .featured-projects-grid .featured-project:nth-child(2) {
-  background: linear-gradient(145deg, #f97316, #ea580c) !important;
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #9a3412 100%) !important;
 }
 #projects .featured-projects-grid .featured-project:nth-child(3) {
-  background: linear-gradient(145deg, #3b82f6, #2563eb) !important;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1e3a8a 100%) !important;
 }
 #projects .featured-projects-grid .featured-project:nth-child(4) {
-  background: linear-gradient(145deg, #8b5cf6, #7c3aed) !important;
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 50%, #4c1d95 100%) !important;
 }
 
 .featured-projects-grid .featured-project > div:first-child {
@@ -1719,7 +1721,7 @@ main {
   text-align: left !important;
 }
 
-/* Badge-urile - la fel ca la cardurile de mai sus (jos, nu în dreapta sus) */
+/* Badge-urile - la fel ca la cardurile de mai sus */
 .featured-projects-grid .featured-project > div:last-child > div:first-of-type {
   display: flex !important;
   flex-wrap: wrap !important;
