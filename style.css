@@ -1417,36 +1417,7 @@ main {
   }
 }
 
-/* Mobil - containere mici, orientare pe orizontală */
-@media (max-width: 768px) {
-  .projects-stats {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-  }
-  .stat-card {
-    min-height: 50px;
-    padding: 0.3rem;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .stat-number {
-    font-size: 1.4rem;
-    line-height: 1.1;
-    margin-bottom: 0;
-  }
-  .stat-card div:last-child {
-    font-size: 0.65rem;
-    margin-top: 0;
-    text-align: right;
-  }
-  .stat-number .infinity-symbol {
-    font-size: 1.1rem;
-  }
-}
-
-/* ===== STATS - ARANJARE 2 COLOANE PE MOBIL ===== */
+/* Mobil - containere mici, orientare pe orizontală, 2 coloane */
 @media (max-width: 768px) {
   .projects-stats {
     display: grid !important;
@@ -1470,8 +1441,12 @@ main {
     margin-top: 0 !important;
     text-align: right !important;
   }
+  .stat-number .infinity-symbol {
+    font-size: 1.1rem;
+  }
 }
 
+/* Ecran foarte mic - 1 coloană */
 @media (max-width: 480px) {
   .projects-stats {
     grid-template-columns: 1fr !important;
@@ -2930,28 +2905,7 @@ footer {
   .skill-tag::before {
     display: none;
   }
-  /* Mobil - stats aranjate pe 2 coloane, containere mici */
-  .projects-stats {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-  }
-  .stat-card {
-    min-height: 50px;
-    padding: 0.3rem;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .stat-number {
-    font-size: 1.4rem;
-    line-height: 1.1;
-    margin-bottom: 0;
-  }
-  .stat-card div:last-child {
-    font-size: 0.65rem;
-    margin-top: 0;
-    text-align: right;
-  }
+  /* Mobil - stats deja aranjate în secțiunea .projects-stats */
   .project-category {
     padding: 0.8rem;
   }
@@ -3101,20 +3055,6 @@ footer {
   .typewriter-text {
     font-size: 1rem;
     min-height: 55px;
-  }
-  .projects-stats {
-    grid-template-columns: 1fr;
-    gap: 0.4rem;
-  }
-  .stat-card {
-    min-height: 45px;
-    padding: 0.25rem 0.6rem;
-  }
-  .stat-number {
-    font-size: 1.3rem;
-  }
-  .stat-card div:last-child {
-    font-size: 0.6rem;
   }
   .skills-grid {
     grid-template-columns: repeat(2, 130px);
@@ -3452,7 +3392,7 @@ footer {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
-  /* Mobil - stats aranjate pe 2 coloane */
+  /* Asigură stats pe 2 coloane pe mobil */
   .projects-stats {
     grid-template-columns: repeat(2, 1fr) !important;
   }
