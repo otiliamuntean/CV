@@ -1391,7 +1391,28 @@ main {
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 90px;
+  overflow: hidden;
+}
+
+/* Laptop - containere mai înalte */
+@media (min-width: 769px) {
+  .stat-card {
+    min-height: 90px;
+  }
+}
+
+/* Mobil - containere mai scurte, fără tăiere */
+@media (max-width: 768px) {
+  .stat-card {
+    min-height: 65px;
+    padding: 0.3rem;
+  }
+  .stat-number {
+    font-size: 1.2rem;
+  }
+  .stat-card div:last-child {
+    font-size: 0.65rem;
+  }
 }
 
 .stat-card:nth-child(2) {
@@ -1411,9 +1432,9 @@ main {
 
 @keyframes floatDynamic {
   0% { transform: translateY(0) scale(1); }
-  25% { transform: translateY(-5px) scale(1.01); }
+  25% { transform: translateY(-5px) scale(1.02); }
   50% { transform: translateY(0) scale(1); }
-  75% { transform: translateY(3px) scale(0.99); }
+  75% { transform: translateY(3px) scale(0.98); }
   100% { transform: translateY(0) scale(1); }
 }
 
@@ -1748,7 +1769,7 @@ main {
 }
 
 
-/* ===== FEATURED PROJECTS - CULORI PASTEL MODERNE ===== */
+/* ===== FEATURED PROJECTS - CULORI SOLIDE, MODERNE ===== */
 .featured-projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1775,7 +1796,7 @@ main {
   right: -20%;
   width: 150px;
   height: 150px;
-  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
   animation: morphShape 12s ease-in-out infinite;
@@ -1788,7 +1809,7 @@ main {
   left: -15%;
   width: 120px;
   height: 120px;
-  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
   border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
   pointer-events: none;
   animation: morphShape2 10s ease-in-out infinite;
@@ -1810,31 +1831,31 @@ main {
   transform: translateY(-5px);
 }
 
-/* ===== CULORI PASTEL, MODERNE, LIGHT ===== */
+/* ===== CULORI SOLIDE (nu pastel) ===== */
 #projects .featured-projects-grid .featured-project:nth-child(1) {
-  background: linear-gradient(135deg, #fbcfe8 0%, #f9a8d4 50%, #f472b6 100%) !important;
-  box-shadow: 0 10px 30px rgba(244, 114, 182, 0.25);
+  background: linear-gradient(135deg, #e11d48 0%, #be123c 50%, #881337 100%) !important;
+  box-shadow: 0 10px 30px rgba(225, 29, 72, 0.4);
 }
 #projects .featured-projects-grid .featured-project:nth-child(2) {
-  background: linear-gradient(135deg, #bfdbfe 0%, #93c5fd 50%, #60a5fa 100%) !important;
-  box-shadow: 0 10px 30px rgba(96, 165, 250, 0.25);
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 50%, #7c2d12 100%) !important;
+  box-shadow: 0 10px 30px rgba(234, 88, 12, 0.4);
 }
 #projects .featured-projects-grid .featured-project:nth-child(3) {
-  background: linear-gradient(135deg, #ccfbf1 0%, #99f6e4 50%, #5eead4 100%) !important;
-  box-shadow: 0 10px 30px rgba(94, 234, 212, 0.25);
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 50%, #082f49 100%) !important;
+  box-shadow: 0 10px 30px rgba(2, 132, 199, 0.4);
 }
 #projects .featured-projects-grid .featured-project:nth-child(4) {
-  background: linear-gradient(135deg, #e9d5ff 0%, #d8b4fe 50%, #c084fc 100%) !important;
-  box-shadow: 0 10px 30px rgba(192, 132, 252, 0.25);
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 50%, #4c1d95 100%) !important;
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.4);
 }
 
 /* Animație subtilă pentru gradient */
 #projects .featured-projects-grid .featured-project {
   background-size: 200% 200% !important;
-  animation: gradientShiftPastel 10s ease infinite alternate;
+  animation: gradientShiftSolid 8s ease infinite alternate;
 }
 
-@keyframes gradientShiftPastel {
+@keyframes gradientShiftSolid {
   0% { background-position: 0% 0%; }
   100% { background-position: 100% 100%; }
 }
@@ -1858,8 +1879,9 @@ main {
   font-weight: 800 !important;
   margin: 0 0 0.5rem 0 !important;
   padding: 0 !important;
-  color: #1e293b !important;
+  color: white !important;
   text-align: left !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 2;
 }
@@ -1876,28 +1898,27 @@ main {
 }
 
 #projects .featured-projects-grid .featured-project span {
-  background: rgba(0, 0, 0, 0.25) !important;
+  background: rgba(0, 0, 0, 0.35) !important;
   backdrop-filter: blur(4px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
   padding: 0.25rem 0.7rem !important;
   font-size: 0.7rem !important;
   border-radius: 30px !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  color: #1e293b !important;
-  font-weight: 600 !important;
+  color: white !important;
+  font-weight: 500 !important;
 }
 
 .featured-projects-grid .featured-project p {
   font-size: 0.8rem !important;
   line-height: 1.45 !important;
   margin: 0 0 1rem 0 !important;
-  color: #334155 !important;
+  color: rgba(255, 255, 255, 0.92) !important;
   text-align: left !important;
   position: relative;
   z-index: 2;
-  font-weight: 500;
 }
 
 .featured-projects-grid .featured-project .btn {
@@ -1905,19 +1926,18 @@ main {
   font-size: 0.7rem !important;
   align-self: flex-start !important;
   margin-top: auto !important;
-  background: rgba(0, 0, 0, 0.15) !important;
-  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
   border-radius: 10px !important;
-  color: #1e293b !important;
+  color: white !important;
   cursor: pointer !important;
   transition: all 0.2s ease !important;
   position: relative;
   z-index: 2;
-  font-weight: 600;
 }
 
 .featured-projects-grid .featured-project .btn:hover {
-  background: rgba(0, 0, 0, 0.25) !important;
+  background: rgba(255, 255, 255, 0.35) !important;
   transform: translateY(-2px);
 }
 
@@ -2731,15 +2751,17 @@ footer {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
   }
+  /* Mobil - containere mai scurte pentru stats */
   .stat-card {
-    min-height: 70px;
-    padding: 0.4rem;
+    min-height: 65px;
+    padding: 0.3rem;
   }
   .stat-number {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
   .stat-card div:last-child {
     font-size: 0.65rem;
+    margin-top: 0.1rem;
   }
   .project-category {
     padding: 0.8rem;
@@ -2900,15 +2922,15 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 0.8rem;
-    min-height: auto;
+    padding: 0.4rem 0.8rem;
+    min-height: 50px;
   }
   .stat-number {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   .stat-card div:last-child {
     margin-top: 0;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
   }
   .skills-grid {
     grid-template-columns: repeat(2, 130px);
