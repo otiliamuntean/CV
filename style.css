@@ -884,33 +884,12 @@ main {
   margin: 1.5rem 0;
 }
 
-/* MODIFICARE: My Journey - aranjament special pe laptop pentru a evita spațiile goale */
+/* MODIFICARE: My Journey - aranjament pe laptop */
 @media (min-width: 993px) {
   .hero:has(#journey.active) .journey-cards-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.2rem;
-  }
-  
-  /* Cardurile se aranjează în ordinea: 
-     1. IT Step Academy
-     2. Academic competitions
-     3. Professional training & workshops
-     4. Robotics (alături de Professional training)
-     5. Science & technology events
-     6. University technical sessions
-     7. Camps
-     8. Volunteering
-     9. Volunteering (al doilea)
-  */
-  .journey-cards-container {
-    grid-auto-flow: row dense;
-  }
-  
-  /* Forțează cardurile să se așeze frumos */
-  .journey-cards-container .journey-card:nth-child(3),
-  .journey-cards-container .journey-card:nth-child(4) {
-    align-self: start;
   }
 }
 
@@ -1438,36 +1417,50 @@ main {
   }
 }
 
-/* Mobil - containere mai mici, text mai mare */
+/* Mobil - containere mici, orientare pe orizontală */
 @media (max-width: 768px) {
+  .projects-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
   .stat-card {
-    min-height: 44px;
-    padding: 0.2rem;
+    min-height: 50px;
+    padding: 0.3rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
   .stat-number {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     line-height: 1.1;
+    margin-bottom: 0;
   }
   .stat-card div:last-child {
     font-size: 0.65rem;
-    margin-top: 0.02rem;
-    line-height: 1.2;
+    margin-top: 0;
+    text-align: right;
+  }
+  .stat-number .infinity-symbol {
+    font-size: 1.1rem;
   }
 }
 
-/* Ecran foarte mic - și mai mic */
+/* Ecran foarte mic */
 @media (max-width: 480px) {
+  .projects-stats {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
   .stat-card {
-    min-height: 38px;
-    padding: 0.15rem;
+    min-height: 45px;
+    padding: 0.25rem 0.6rem;
   }
   .stat-number {
-    font-size: 1.1rem;
-    line-height: 1;
+    font-size: 1.3rem;
   }
   .stat-card div:last-child {
-    font-size: 0.55rem;
-    margin-top: 0;
+    font-size: 0.6rem;
   }
 }
 
@@ -2912,22 +2905,27 @@ footer {
   .skill-tag::before {
     display: none;
   }
+  /* Mobil - stats aranjate pe 2 coloane, containere mici */
   .projects-stats {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
   }
-  /* Mobil - containerele stats mai mici, text mai mare */
   .stat-card {
-    min-height: 44px;
-    padding: 0.25rem;
+    min-height: 50px;
+    padding: 0.3rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
   .stat-number {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     line-height: 1.1;
+    margin-bottom: 0;
   }
   .stat-card div:last-child {
     font-size: 0.65rem;
-    margin-top: 0.02rem;
+    margin-top: 0;
+    text-align: right;
   }
   .project-category {
     padding: 0.8rem;
@@ -3084,20 +3082,14 @@ footer {
     gap: 0.4rem;
   }
   .stat-card {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.2rem 0.6rem;
-    min-height: 38px;
+    min-height: 45px;
+    padding: 0.25rem 0.6rem;
   }
   .stat-number {
-    font-size: 1.1rem;
-    line-height: 1;
+    font-size: 1.3rem;
   }
   .stat-card div:last-child {
-    margin-top: 0;
-    font-size: 0.55rem;
+    font-size: 0.6rem;
   }
   .skills-grid {
     grid-template-columns: repeat(2, 130px);
@@ -3374,7 +3366,7 @@ footer {
   }
 }
 
-/* Journey cards on laptop - aranjament îmbunătățit */
+/* Journey cards on laptop */
 @media (min-width: 993px) {
   .hero:has(#journey.active) {
     grid-template-columns: 1fr;
@@ -3434,6 +3426,10 @@ footer {
     max-width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+  }
+  /* Mobil - stats aranjate pe 2 coloane */
+  .projects-stats {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
 
