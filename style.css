@@ -3495,120 +3495,152 @@ footer {
   width: 100% !important;
   min-height: 220px !important;
   margin: 0 !important;
-  padding: 1.05rem 1.2rem 1.2rem !important;
+  padding: 1.5rem 1.5rem 1.5rem !important;
   border-radius: 18px !important;
   overflow: hidden !important;
   border: none !important;
   box-shadow: 0 15px 30px rgba(15, 23, 42, 0.24) !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
-/* Nuante moderne mai deschise */
+/* Culori moderne și armonioase */
 #projects .featured-projects-grid .featured-project:nth-child(1) {
-  background: linear-gradient(145deg, #a78bfa, #60a5fa) !important;
+  background: linear-gradient(145deg, #6366f1, #8b5cf6) !important;
 }
 
 #projects .featured-projects-grid .featured-project:nth-child(2) {
-  background: linear-gradient(145deg, #67e8f9, #38bdf8) !important;
+  background: linear-gradient(145deg, #06b6d4, #3b82f6) !important;
 }
 
 #projects .featured-projects-grid .featured-project:nth-child(3) {
-  background: linear-gradient(145deg, #86efac, #2dd4bf) !important;
+  background: linear-gradient(145deg, #10b981, #14b8a6) !important;
 }
 
 #projects .featured-projects-grid .featured-project:nth-child(4) {
-  background: linear-gradient(145deg, #fdba74, #fb7185) !important;
+  background: linear-gradient(145deg, #f59e0b, #ef4444) !important;
 }
 
-/* Banda de sus devine doar suport pentru badge */
-#projects .featured-projects-grid .featured-project > div:first-child {
-  height: 0 !important;
-  min-height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  background: transparent !important;
-  overflow: visible !important;
-  position: static !important;
+/* Container pentru titlu și badge - aliniere pe același nivel */
+#projects .featured-projects-grid .featured-project .featured-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  margin-bottom: 1rem !important;
+  gap: 1rem !important;
 }
 
-#projects .featured-projects-grid .featured-project > div:first-child > div {
-  position: absolute !important;
-  top: 1rem !important;
-  right: 1rem !important;
-  padding: 0.25rem 0.7rem !important;
-  font-size: 0.65rem !important;
-  line-height: 1.1 !important;
-  border-radius: 30px !important;
+/* Badge-ul din colț */
+#projects .featured-projects-grid .featured-project .featured-badge {
   background: rgba(255, 255, 255, 0.22) !important;
   color: #ffffff !important;
   border: 1px solid rgba(255, 255, 255, 0.28) !important;
+  padding: 0.3rem 0.8rem !important;
+  border-radius: 30px !important;
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  line-height: 1.2 !important;
 }
 
-/* Continutul cardului */
-#projects .featured-projects-grid .featured-project > div:last-child {
-  padding: 0 !important;
-}
-
+/* Titlul cardului */
 #projects .featured-projects-grid .featured-project h5 {
-  margin: 0 0 0.6rem !important;
-  padding-right: 6.5rem !important;
-  min-height: 2rem !important;
-  display: flex !important;
-  align-items: center !important;
+  margin: 0 !important;
   color: #ffffff !important;
-  font-size: 1.05rem !important;
+  font-size: 1.2rem !important;
+  font-weight: 800 !important;
+  line-height: 1.3 !important;
+  flex: 1 !important;
 }
 
+/* Descrierea */
 #projects .featured-projects-grid .featured-project p {
   color: #ffffff !important;
-  opacity: 0.92 !important;
-  font-size: 0.8rem !important;
-  line-height: 1.4 !important;
+  opacity: 0.95 !important;
+  font-size: 0.85rem !important;
+  line-height: 1.5 !important;
+  margin-bottom: 1rem !important;
+  flex: 1 !important;
 }
 
-/* Hashtagurile de jos */
+/* Container pentru tehnologii */
+#projects .featured-projects-grid .featured-project .featured-tech {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Hashtagurile de tehnologii */
 #projects .featured-projects-grid .featured-project span {
   background: rgba(255, 255, 255, 0.2) !important;
   color: #ffffff !important;
   border: 1px solid rgba(255, 255, 255, 0.25) !important;
-  font-size: 0.65rem !important;
-  padding: 0.25rem 0.7rem !important;
+  font-size: 0.7rem !important;
+  padding: 0.3rem 0.75rem !important;
   border-radius: 30px !important;
   line-height: normal !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
 }
 
+/* Butonul */
 #projects .featured-projects-grid .featured-project a.btn {
   background: rgba(255, 255, 255, 0.2) !important;
   color: #ffffff !important;
   border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  padding: 0.45rem 0.9rem !important;
-  font-size: 0.72rem !important;
+  padding: 0.5rem 1rem !important;
+  font-size: 0.8rem !important;
   box-shadow: none !important;
+  align-self: flex-start !important;
+  margin-top: auto !important;
 }
 
-/* Telefon: unul sub altul, curat */
+#projects .featured-projects-grid .featured-project a.btn:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* ===== VERSIUNEA MOBILĂ: CARDURI UNA SUB ALTA ===== */
 @media (max-width: 768px) {
   #projects .featured-projects-grid {
     grid-template-columns: 1fr !important;
-    gap: 1rem !important;
+    gap: 1.2rem !important;
   }
 
   #projects .featured-projects-grid .featured-project {
     min-height: auto !important;
-    padding: 1rem !important;
+    padding: 1.2rem !important;
   }
 
-  #projects .featured-projects-grid .featured-project > div:first-child > div {
-    position: static !important;
-    display: inline-flex !important;
-    margin-bottom: 0.75rem !important;
+  #projects .featured-projects-grid .featured-project .featured-header {
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 0.8rem !important;
   }
 
   #projects .featured-projects-grid .featured-project h5 {
-    padding-right: 0 !important;
-    min-height: auto !important;
-    display: block !important;
-    margin-bottom: 0.55rem !important;
+    font-size: 1.1rem !important;
+    flex: 1 !important;
+  }
+
+  #projects .featured-projects-grid .featured-project .featured-badge {
+    font-size: 0.65rem !important;
+    padding: 0.25rem 0.7rem !important;
+  }
+
+  #projects .featured-projects-grid .featured-project p {
+    font-size: 0.8rem !important;
+  }
+}
+
+/* Pentru ecrane foarte mici */
+@media (max-width: 480px) {
+  #projects .featured-projects-grid .featured-project {
+    padding: 1rem !important;
+  }
+
+  #projects .featured-projects-grid .featured-project h5 {
+    font-size: 1rem !important;
   }
 }
 
