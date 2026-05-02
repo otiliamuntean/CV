@@ -1681,7 +1681,7 @@ main {
   flex: 1;
 }
 
-/* Titlul - în stânga sus, dar în interior */
+/* Titlul */
 .featured-projects-grid .featured-project h4 {
   font-size: 1.15rem !important;
   font-weight: 800 !important;
@@ -1691,7 +1691,7 @@ main {
   text-align: left !important;
 }
 
-/* Badge-urile - în dreapta sus, dar în interior */
+/* Badge-urile */
 .featured-projects-grid .featured-project > div:last-child > div:first-of-type {
   display: flex !important;
   flex-wrap: wrap !important;
@@ -1839,58 +1839,6 @@ main {
   
   .featured-projects-grid .featured-project .btn {
     padding: 0.35rem 0.7rem !important;
-    font-size: 0.65rem !important;
-  }
-}
-
-/* ===== VERSIUNEA TABLETĂ (769px - 992px) ===== */
-@media (min-width: 769px) and (max-width: 992px) {
-  .featured-projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.2rem;
-  }
-  
-  .featured-projects-grid .featured-project {
-    min-height: 240px;
-  }
-  
-  .featured-projects-grid .featured-project h4 {
-    font-size: 1.1rem !important;
-  }
-  
-  #projects .featured-projects-grid .featured-project span {
-    padding: 0.2rem 0.6rem !important;
-    font-size: 0.6rem !important;
-    min-height: 24px !important;
-  }
-  
-  .featured-projects-grid .featured-project p {
-    font-size: 0.75rem !important;
-  }
-}
-
-/* ===== ECRANE FOARTE MICI (≤ 480px) ===== */
-@media (max-width: 480px) {
-  .featured-projects-grid .featured-project {
-    padding: 0.8rem !important;
-  }
-  
-  .featured-projects-grid .featured-project h4 {
-    font-size: 0.9rem !important;
-  }
-  
-  #projects .featured-projects-grid .featured-project span {
-    min-height: 18px !important;
-    font-size: 0.5rem !important;
-    padding: 0.1rem 0.35rem !important;
-  }
-  
-  .featured-projects-grid .featured-project p {
-    font-size: 0.7rem !important;
-  }
-  
-  .featured-projects-grid .featured-project .btn {
-    padding: 0.3rem 0.7rem !important;
     font-size: 0.65rem !important;
   }
 }
