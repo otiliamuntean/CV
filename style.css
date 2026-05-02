@@ -1624,7 +1624,7 @@ main {
 }
 
 
-/* ===== FEATURED PROJECTS - MODIFICĂRI COMPLETE ===== */
+/* ===== FEATURED PROJECTS - VERSIUNE CURATĂ ===== */
 
 .featured-projects-grid {
   display: grid;
@@ -1635,99 +1635,107 @@ main {
 
 .featured-projects-grid .featured-project {
   width: 100%;
-  min-height: 260px;
-  margin-bottom: 0;
-  padding: 1.2rem;
   border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 15px 30px rgba(139, 92, 246, 0.3);
+  padding: 1.2rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
+  overflow: hidden;
 }
 
 .featured-projects-grid .featured-project:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.4);
 }
 
-/* Containerul pentru conținut */
+/* ===== CULORILE CERUTE ===== */
+/* Card 1 - ROȘU */
+#projects .featured-projects-grid .featured-project:nth-child(1) {
+  background: linear-gradient(145deg, #dc2626, #b91c1c) !important;
+}
+
+/* Card 2 - PORTOCALIU (Figma Projects) */
+#projects .featured-projects-grid .featured-project:nth-child(2) {
+  background: linear-gradient(145deg, #f97316, #ea580c) !important;
+}
+
+/* Card 3 - ALBASTRU */
+#projects .featured-projects-grid .featured-project:nth-child(3) {
+  background: linear-gradient(145deg, #3b82f6, #2563eb) !important;
+}
+
+/* Card 4 - VIOLET */
+#projects .featured-projects-grid .featured-project:nth-child(4) {
+  background: linear-gradient(145deg, #8b5cf6, #7c3aed) !important;
+}
+
+/* ===== STRUCTURA CARDULUI ===== */
+.featured-projects-grid .featured-project > div:first-child {
+  display: none;
+}
+
 .featured-projects-grid .featured-project > div:last-child {
-  padding: 0 !important;
   display: flex;
   flex-direction: column;
+  height: 100%;
   flex: 1;
-  position: relative;
-  z-index: 2;
 }
 
-/* ===== TITLUL ÎN COLȚUL SUS-STÂNGA (în interiorul cardului) ===== */
+/* Titlul - în stânga sus, dar în interior */
 .featured-projects-grid .featured-project h4 {
-  font-size: 1.2rem !important;
+  font-size: 1.15rem !important;
   font-weight: 800 !important;
-  margin: 0 0 0.6rem 0 !important;
+  margin: 0 0 0.5rem 0 !important;
   padding: 0 !important;
+  color: white !important;
   text-align: left !important;
-  color: #ffffff !important;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
-  line-height: 1.2 !important;
-  word-break: break-word !important;
-  position: relative !important;
-  top: auto !important;
-  left: auto !important;
 }
 
-/* ===== BADGE-URI MICI, ÎN COLȚUL DREAPTA-SUS (în interiorul cardului) ===== */
+/* Badge-urile - în dreapta sus, dar în interior */
 .featured-projects-grid .featured-project > div:last-child > div:first-of-type {
   display: flex !important;
-  gap: 6px !important;
   flex-wrap: wrap !important;
-  justify-content: flex-end !important;
-  margin-bottom: 0.5rem !important;
-  position: relative !important;
-  top: auto !important;
-  right: auto !important;
+  justify-content: flex-start !important;
+  gap: 0.5rem !important;
+  margin-bottom: 0.75rem !important;
 }
 
-/* Badge-uri reduse ca dimensiune */
+/* Stil badge-uri */
 #projects .featured-projects-grid .featured-project span {
-  background: rgba(0, 0, 0, 0.5) !important;
+  background: rgba(0, 0, 0, 0.4) !important;
   backdrop-filter: blur(4px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  padding: 0.2rem 0.6rem !important;
-  font-size: 0.65rem !important;
-  border-radius: 20px !important;
-  min-height: 24px !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  padding: 0.25rem 0.7rem !important;
+  font-size: 0.7rem !important;
+  border-radius: 30px !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  color: #ffffff !important;
+  color: white !important;
   font-weight: 500 !important;
-  letter-spacing: 0.3px !important;
-  white-space: nowrap !important;
 }
 
+/* Descrierea */
 .featured-projects-grid .featured-project p {
-  font-size: 0.8rem;
-  line-height: 1.45;
-  margin: 0.5rem 0 0.8rem 0;
-  color: rgba(255, 255, 255, 0.92) !important;
+  font-size: 0.8rem !important;
+  line-height: 1.5 !important;
+  margin: 0 0 1rem 0 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-align: left !important;
 }
 
+/* Butonul */
 .featured-projects-grid .featured-project .btn {
-  padding: 0.45rem 0.9rem !important;
+  padding: 0.5rem 1rem !important;
   font-size: 0.75rem !important;
-  align-self: flex-start;
-  margin-top: auto;
+  align-self: flex-start !important;
+  margin-top: auto !important;
   background: rgba(255, 255, 255, 0.2) !important;
   border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 12px !important;
   color: white !important;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: fit-content;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
 }
 
 .featured-projects-grid .featured-project .btn:hover {
@@ -1735,35 +1743,7 @@ main {
   transform: translateY(-2px);
 }
 
-/* ===== CULORI NOI PENTRU FIECARE CARD ===== */
-/* Card 1 - Violet spre Albastru */
-#projects .featured-projects-grid .featured-project:nth-child(1) {
-  background: linear-gradient(145deg, #6d28d9, #3b82f6) !important;
-}
-
-/* Card 2 (Figma Projects) - Albastru spre Cyan */
-#projects .featured-projects-grid .featured-project:nth-child(2) {
-  background: linear-gradient(145deg, #0ea5e9, #0284c7) !important;
-}
-
-/* Card 3 - Cyan spre Turcoaz */
-#projects .featured-projects-grid .featured-project:nth-child(3) {
-  background: linear-gradient(145deg, #0d9488, #14b8a6) !important;
-}
-
-/* Card 4 - Albastru închis spre Albastru mediu */
-#projects .featured-projects-grid .featured-project:nth-child(4) {
-  background: linear-gradient(145deg, #1e3a8a, #2563eb) !important;
-}
-
-/* Text alb pentru tot */
-.featured-projects-grid .featured-project h4,
-.featured-projects-grid .featured-project p,
-.featured-projects-grid .featured-project span {
-  color: #ffffff !important;
-}
-
-/* ===== VERSIUNEA LAPTOP (≥ 993px) ===== */
+/* ===== LAPTOP (≥ 993px) ===== */
 @media (min-width: 993px) {
   .featured-projects-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1772,6 +1752,7 @@ main {
   
   .featured-projects-grid .featured-project {
     min-height: 260px;
+    padding: 1.5rem;
   }
   
   .featured-projects-grid .featured-project h4 {
@@ -1779,13 +1760,12 @@ main {
   }
   
   #projects .featured-projects-grid .featured-project span {
-    padding: 0.25rem 0.7rem !important;
+    padding: 0.3rem 0.8rem !important;
     font-size: 0.7rem !important;
-    min-height: 28px !important;
   }
 }
 
-/* ===== VERSIUNEA MOBIL (≤ 768px) ===== */
+/* ===== MOBIL (max 768px) ===== */
 @media (max-width: 768px) {
   .featured-projects-grid {
     grid-template-columns: 1fr !important;
@@ -1793,36 +1773,73 @@ main {
   }
   
   .featured-projects-grid .featured-project {
-    min-height: auto !important;
     padding: 1rem !important;
   }
   
   .featured-projects-grid .featured-project h4 {
     font-size: 1rem !important;
-    margin-bottom: 0.4rem !important;
+    margin-bottom: 0.35rem !important;
   }
   
   .featured-projects-grid .featured-project > div:last-child > div:first-of-type {
-    gap: 4px !important;
-    margin-bottom: 0.4rem !important;
+    gap: 0.35rem !important;
+    margin-bottom: 0.5rem !important;
   }
   
   #projects .featured-projects-grid .featured-project span {
-    min-height: 20px !important;
-    font-size: 0.55rem !important;
-    padding: 0.15rem 0.45rem !important;
-    white-space: nowrap !important;
+    padding: 0.2rem 0.5rem !important;
+    font-size: 0.6rem !important;
   }
   
   .featured-projects-grid .featured-project p {
     font-size: 0.75rem !important;
-    margin: 0.3rem 0 0.6rem 0 !important;
-    line-height: 1.4 !important;
+    margin-bottom: 0.75rem !important;
   }
   
   .featured-projects-grid .featured-project .btn {
-    padding: 0.35rem 0.8rem !important;
+    padding: 0.4rem 0.8rem !important;
     font-size: 0.7rem !important;
+  }
+}
+
+/* ===== TABLETĂ (769px - 992px) ===== */
+@media (min-width: 769px) and (max-width: 992px) {
+  .featured-projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+  
+  .featured-projects-grid .featured-project {
+    padding: 1.2rem;
+  }
+  
+  .featured-projects-grid .featured-project h4 {
+    font-size: 1.05rem !important;
+  }
+}
+
+/* ===== FOARTE MIC (max 480px) ===== */
+@media (max-width: 480px) {
+  .featured-projects-grid .featured-project {
+    padding: 0.8rem !important;
+  }
+  
+  .featured-projects-grid .featured-project h4 {
+    font-size: 0.9rem !important;
+  }
+  
+  #projects .featured-projects-grid .featured-project span {
+    padding: 0.15rem 0.4rem !important;
+    font-size: 0.55rem !important;
+  }
+  
+  .featured-projects-grid .featured-project p {
+    font-size: 0.7rem !important;
+  }
+  
+  .featured-projects-grid .featured-project .btn {
+    padding: 0.35rem 0.7rem !important;
+    font-size: 0.65rem !important;
   }
 }
 
