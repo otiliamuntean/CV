@@ -1552,7 +1552,7 @@ main {
   margin-bottom: 1rem;
 }
 
-.project-category:nth-child(2) { background: linear-gradient(145deg, #0ea5e9, #0284c7); }
+.project-category:nth-child(2) { background: linear-gradient(145deg, #2563eb, #06b6d4); }
 .project-category:nth-child(3) { background: linear-gradient(145deg, #f59e0b, #d97706); }
 .project-category:nth-child(4) { background: linear-gradient(145deg, #ea672b, #cd5210); }
 
