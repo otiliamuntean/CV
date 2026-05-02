@@ -3480,7 +3480,9 @@ footer {
     pointer-events: none !important;
   }
 }
-/* ===== FINAL FEATURED PROJECTS OVERRIDES ===== */
+/* ===== FINAL CLEAN FEATURED PROJECTS FIX ===== */
+
+/* Desktop/laptop: 2x2 cadrane */
 #projects .featured-projects-grid {
   display: grid !important;
   grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
@@ -3489,45 +3491,125 @@ footer {
 }
 
 #projects .featured-projects-grid .featured-project {
+  position: relative !important;
   width: 100% !important;
   min-height: 220px !important;
   margin: 0 !important;
-  padding: 1rem 1.2rem 1.2rem !important;
+  padding: 1.05rem 1.2rem 1.2rem !important;
   border-radius: 18px !important;
   overflow: hidden !important;
   border: none !important;
   box-shadow: 0 15px 30px rgba(15, 23, 42, 0.24) !important;
-  position: relative !important;
 }
 
-/* Featured projects: modern light palette + matching tags */
+/* Nuante moderne mai deschise */
 #projects .featured-projects-grid .featured-project:nth-child(1) {
-  background: linear-gradient(145deg, #8b7cf6, #60a5fa) !important;
+  background: linear-gradient(145deg, #a78bfa, #60a5fa) !important;
 }
 
 #projects .featured-projects-grid .featured-project:nth-child(2) {
-  background: linear-gradient(145deg, #38bdf8, #22d3ee) !important;
+  background: linear-gradient(145deg, #67e8f9, #38bdf8) !important;
 }
 
 #projects .featured-projects-grid .featured-project:nth-child(3) {
-  background: linear-gradient(145deg, #34d399, #2dd4bf) !important;
+  background: linear-gradient(145deg, #86efac, #2dd4bf) !important;
 }
 
 #projects .featured-projects-grid .featured-project:nth-child(4) {
-  background: linear-gradient(145deg, #fb923c, #fb7185) !important;
+  background: linear-gradient(145deg, #fdba74, #fb7185) !important;
 }
 
+/* Banda de sus devine doar suport pentru badge */
+#projects .featured-projects-grid .featured-project > div:first-child {
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  overflow: visible !important;
+  position: static !important;
+}
+
+#projects .featured-projects-grid .featured-project > div:first-child > div {
+  position: absolute !important;
+  top: 1rem !important;
+  right: 1rem !important;
+  padding: 0.25rem 0.7rem !important;
+  font-size: 0.65rem !important;
+  line-height: 1.1 !important;
+  border-radius: 30px !important;
+  background: rgba(255, 255, 255, 0.22) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+}
+
+/* Continutul cardului */
+#projects .featured-projects-grid .featured-project > div:last-child {
+  padding: 0 !important;
+}
+
+#projects .featured-projects-grid .featured-project h5 {
+  margin: 0 0 0.6rem !important;
+  padding-right: 6.5rem !important;
+  min-height: 2rem !important;
+  display: flex !important;
+  align-items: center !important;
+  color: #ffffff !important;
+  font-size: 1.05rem !important;
+}
+
+#projects .featured-projects-grid .featured-project p {
+  color: #ffffff !important;
+  opacity: 0.92 !important;
+  font-size: 0.8rem !important;
+  line-height: 1.4 !important;
+}
+
+/* Hashtagurile de jos */
 #projects .featured-projects-grid .featured-project span {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
   font-size: 0.65rem !important;
   padding: 0.25rem 0.7rem !important;
   border-radius: 30px !important;
   line-height: normal !important;
+  font-weight: 700 !important;
 }
-#projects .featured-projects-grid .featured-project h5 {
-  margin-top: -3rem !important;
-  padding-right: 6rem !important;
-  min-height: 2rem !important;
-  display: flex !important;
-  align-items: center !important;
+
+#projects .featured-projects-grid .featured-project a.btn {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  padding: 0.45rem 0.9rem !important;
+  font-size: 0.72rem !important;
+  box-shadow: none !important;
 }
+
+/* Telefon: unul sub altul, curat */
+@media (max-width: 768px) {
+  #projects .featured-projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  #projects .featured-projects-grid .featured-project {
+    min-height: auto !important;
+    padding: 1rem !important;
+  }
+
+  #projects .featured-projects-grid .featured-project > div:first-child > div {
+    position: static !important;
+    display: inline-flex !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  #projects .featured-projects-grid .featured-project h5 {
+    padding-right: 0 !important;
+    min-height: auto !important;
+    display: block !important;
+    margin-bottom: 0.55rem !important;
+  }
+}
+
 
