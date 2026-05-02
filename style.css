@@ -1399,28 +1399,34 @@ main {
   .stat-card {
     min-height: 85px;
   }
+  .stat-number {
+    font-size: 1.8rem;
+  }
+  .stat-card div:last-child {
+    font-size: 0.75rem;
+  }
 }
 
 /* Mobil - containere mai scurte */
 @media (max-width: 768px) {
   .stat-card {
-    min-height: 55px;
-    padding: 0.25rem;
+    min-height: 50px;
+    padding: 0.2rem;
   }
   .stat-number {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
   .stat-card div:last-child {
     font-size: 0.6rem;
-    margin-top: 0.1rem;
+    margin-top: 0.05rem;
   }
 }
 
 /* Ecran foarte mic - și mai scurt */
 @media (max-width: 480px) {
   .stat-card {
-    min-height: 48px;
-    padding: 0.2rem;
+    min-height: 42px;
+    padding: 0.15rem;
   }
   .stat-number {
     font-size: 1rem;
@@ -1454,21 +1460,17 @@ main {
 }
 
 .stat-number {
-  font-size: 1.6rem;
   font-weight: 900;
   color: white;
   line-height: 1.2;
 }
 
 .stat-card div:last-child {
-  font-size: 0.7rem;
   font-weight: 800;
   color: rgba(255, 255, 255, 0.95);
-  margin-top: 0.15rem;
 }
 
 .stat-number .infinity-symbol {
-  font-size: 1.1rem;
   display: inline-block;
   color: white;
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
@@ -1955,10 +1957,10 @@ main {
   transform: translateY(-5px);
 }
 
-/* ===== CULORI MODERNE (verde-azuriu înlocuiește roșul) ===== */
+/* ===== CULORI MODERNE (verde-azuriu deschis pentru cardul 1) ===== */
 #projects .featured-projects-grid .featured-project:nth-child(1) {
-  background: linear-gradient(135deg, #0d9488 0%, #0f766e 50%, #0f172a 100%) !important;
-  box-shadow: 0 10px 30px rgba(13, 148, 136, 0.35);
+  background: linear-gradient(135deg, #14b8a6 0%, #2dd4bf 50%, #5eead4 100%) !important;
+  box-shadow: 0 10px 30px rgba(20, 184, 166, 0.35);
 }
 #projects .featured-projects-grid .featured-project:nth-child(2) {
   background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #c2410c 100%) !important;
@@ -1996,7 +1998,7 @@ main {
   z-index: 2;
 }
 
-/* Titlul în colțul sus - DIMENSIUNE MAI MARE */
+/* Titlul în colțul sus - dimensiune mai mare */
 .featured-projects-grid .featured-project h4,
 .featured-projects-grid .featured-project h5 {
   font-size: 1.2rem !important;
@@ -2035,7 +2037,7 @@ main {
   font-weight: 500 !important;
 }
 
-/* Descrierea - DIMENSIUNE MAI MARE */
+/* Descrierea - dimensiune mai mare */
 .featured-projects-grid .featured-project p {
   font-size: 0.85rem !important;
   line-height: 1.5 !important;
@@ -2881,15 +2883,15 @@ footer {
   }
   /* Mobil - containere mai scurte pentru stats */
   .stat-card {
-    min-height: 55px;
+    min-height: 50px;
     padding: 0.3rem;
   }
   .stat-number {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
   .stat-card div:last-child {
     font-size: 0.6rem;
-    margin-top: 0.1rem;
+    margin-top: 0.05rem;
   }
   .project-category {
     padding: 0.8rem;
@@ -3051,10 +3053,10 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 0.3rem 0.6rem;
-    min-height: 45px;
+    min-height: 42px;
   }
   .stat-number {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
   .stat-card div:last-child {
     margin-top: 0;
