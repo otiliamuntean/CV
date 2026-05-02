@@ -884,15 +884,6 @@ main {
   margin: 1.5rem 0;
 }
 
-/* MODIFICARE: My Journey - aranjament pe laptop */
-@media (min-width: 993px) {
-  .hero:has(#journey.active) .journey-cards-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.2rem;
-  }
-}
-
 .journey-card {
   background: var(--journey-card-bg);
   backdrop-filter: blur(12px);
@@ -2905,7 +2896,6 @@ footer {
   .skill-tag::before {
     display: none;
   }
-  /* Mobil - stats deja aranjate în secțiunea .projects-stats */
   .project-category {
     padding: 0.8rem;
   }
