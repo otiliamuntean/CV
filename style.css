@@ -1394,24 +1394,39 @@ main {
   overflow: hidden;
 }
 
-/* Laptop - containere mai înalte */
+/* Laptop - containere normal */
 @media (min-width: 769px) {
   .stat-card {
-    min-height: 90px;
+    min-height: 85px;
   }
 }
 
-/* Mobil - containere mai scurte, fără tăiere */
+/* Mobil - containere mai scurte */
 @media (max-width: 768px) {
   .stat-card {
-    min-height: 65px;
-    padding: 0.3rem;
+    min-height: 55px;
+    padding: 0.25rem;
   }
   .stat-number {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   .stat-card div:last-child {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
+    margin-top: 0.1rem;
+  }
+}
+
+/* Ecran foarte mic - și mai scurt */
+@media (max-width: 480px) {
+  .stat-card {
+    min-height: 48px;
+    padding: 0.2rem;
+  }
+  .stat-number {
+    font-size: 1rem;
+  }
+  .stat-card div:last-child {
+    font-size: 0.55rem;
   }
 }
 
@@ -1432,28 +1447,28 @@ main {
 
 @keyframes floatDynamic {
   0% { transform: translateY(0) scale(1); }
-  25% { transform: translateY(-5px) scale(1.02); }
+  25% { transform: translateY(-3px) scale(1.01); }
   50% { transform: translateY(0) scale(1); }
-  75% { transform: translateY(3px) scale(0.98); }
+  75% { transform: translateY(2px) scale(0.99); }
   100% { transform: translateY(0) scale(1); }
 }
 
 .stat-number {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 900;
   color: white;
   line-height: 1.2;
 }
 
 .stat-card div:last-child {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 800;
   color: rgba(255, 255, 255, 0.95);
-  margin-top: 0.2rem;
+  margin-top: 0.15rem;
 }
 
 .stat-number .infinity-symbol {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   display: inline-block;
   color: white;
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
@@ -1589,10 +1604,10 @@ main {
   background-size: 200% auto;
 }
 
-/* ANIMAȚIE PROGRESS BAR - fiecare are delay diferit și pornește de la procentajul specific */
+/* ANIMAȚIE PROGRESS BAR - MAI LENTĂ (6 secunde) */
 .horizon-item:nth-child(1) .progress-fill {
   background: linear-gradient(90deg, #c4b5fd, #a78bfa, #8b5cf6);
-  animation: fillProgressSlow 4s ease-in-out infinite;
+  animation: fillProgressSlow 6s ease-in-out infinite;
   animation-delay: 0s;
 }
 .horizon-item:nth-child(1) {
@@ -1601,7 +1616,7 @@ main {
 
 .horizon-item:nth-child(2) .progress-fill {
   background: linear-gradient(90deg, #7dd3fc, #38bdf8, #0ea5e9);
-  animation: fillProgressSlow 4s ease-in-out infinite;
+  animation: fillProgressSlow 6s ease-in-out infinite;
   animation-delay: 0.3s;
 }
 .horizon-item:nth-child(2) {
@@ -1610,7 +1625,7 @@ main {
 
 .horizon-item:nth-child(3) .progress-fill {
   background: linear-gradient(90deg, #f9a8d4, #f472b6, #ec4899);
-  animation: fillProgressSlow 4s ease-in-out infinite;
+  animation: fillProgressSlow 6s ease-in-out infinite;
   animation-delay: 0.6s;
 }
 .horizon-item:nth-child(3) {
@@ -1619,7 +1634,7 @@ main {
 
 .horizon-item:nth-child(4) .progress-fill {
   background: linear-gradient(90deg, #6ee7b7, #34d399, #10b981);
-  animation: fillProgressSlow 4s ease-in-out infinite;
+  animation: fillProgressSlow 6s ease-in-out infinite;
   animation-delay: 0.9s;
 }
 .horizon-item:nth-child(4) {
@@ -1628,7 +1643,7 @@ main {
 
 .horizon-item:nth-child(5) .progress-fill {
   background: linear-gradient(90deg, #fde047, #fbbf24, #f59e0b);
-  animation: fillProgressSlow 4s ease-in-out infinite;
+  animation: fillProgressSlow 6s ease-in-out infinite;
   animation-delay: 1.2s;
 }
 .horizon-item:nth-child(5) {
@@ -1637,7 +1652,7 @@ main {
 
 .horizon-item:nth-child(6) .progress-fill {
   background: linear-gradient(90deg, #fca5a5, #f87171, #ef4444);
-  animation: fillProgressSlow 4s ease-in-out infinite;
+  animation: fillProgressSlow 6s ease-in-out infinite;
   animation-delay: 1.5s;
 }
 .horizon-item:nth-child(6) {
@@ -1646,7 +1661,7 @@ main {
 
 .horizon-item:nth-child(7) .progress-fill {
   background: linear-gradient(90deg, #67e8f9, #22d3ee, #06b6d4);
-  animation: fillProgressSlow 4s ease-in-out infinite;
+  animation: fillProgressSlow 6s ease-in-out infinite;
   animation-delay: 1.8s;
 }
 .horizon-item:nth-child(7) {
@@ -1655,7 +1670,7 @@ main {
 
 .horizon-item:nth-child(8) .progress-fill {
   background: linear-gradient(90deg, #bef264, #a3e635, #84cc16);
-  animation: fillProgressSlow 4s ease-in-out infinite;
+  animation: fillProgressSlow 6s ease-in-out infinite;
   animation-delay: 2.1s;
 }
 .horizon-item:nth-child(8) {
@@ -1664,7 +1679,7 @@ main {
 
 .horizon-item:nth-child(9) .progress-fill {
   background: linear-gradient(90deg, #ddd6fe, #c4b5fd, #a78bfa);
-  animation: fillProgressSlow 4s ease-in-out infinite;
+  animation: fillProgressSlow 6s ease-in-out infinite;
   animation-delay: 2.4s;
 }
 .horizon-item:nth-child(9) {
@@ -1769,7 +1784,7 @@ main {
 }
 
 
-/* ===== FEATURED PROJECTS - CULORI SOLIDE, MODERNE ===== */
+/* ===== FEATURED PROJECTS - CULORI MAI LUMINOASE ===== */
 .featured-projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1831,31 +1846,31 @@ main {
   transform: translateY(-5px);
 }
 
-/* ===== CULORI SOLIDE (nu pastel) ===== */
+/* ===== CULORI MAI LUMINOASE (nu pastel, nu prea solide) ===== */
 #projects .featured-projects-grid .featured-project:nth-child(1) {
-  background: linear-gradient(135deg, #e11d48 0%, #be123c 50%, #881337 100%) !important;
-  box-shadow: 0 10px 30px rgba(225, 29, 72, 0.4);
+  background: linear-gradient(135deg, #f43f5e 0%, #e11d48 50%, #be123c 100%) !important;
+  box-shadow: 0 10px 30px rgba(244, 63, 94, 0.35);
 }
 #projects .featured-projects-grid .featured-project:nth-child(2) {
-  background: linear-gradient(135deg, #ea580c 0%, #c2410c 50%, #7c2d12 100%) !important;
-  box-shadow: 0 10px 30px rgba(234, 88, 12, 0.4);
+  background: linear-gradient(135deg, #fb923c 0%, #f97316 50%, #ea580c 100%) !important;
+  box-shadow: 0 10px 30px rgba(251, 146, 60, 0.35);
 }
 #projects .featured-projects-grid .featured-project:nth-child(3) {
-  background: linear-gradient(135deg, #0284c7 0%, #0369a1 50%, #082f49 100%) !important;
-  box-shadow: 0 10px 30px rgba(2, 132, 199, 0.4);
+  background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 50%, #0284c7 100%) !important;
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.35);
 }
 #projects .featured-projects-grid .featured-project:nth-child(4) {
-  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 50%, #4c1d95 100%) !important;
-  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.4);
+  background: linear-gradient(135deg, #c084fc 0%, #a855f7 50%, #9333ea 100%) !important;
+  box-shadow: 0 10px 30px rgba(192, 132, 252, 0.35);
 }
 
 /* Animație subtilă pentru gradient */
 #projects .featured-projects-grid .featured-project {
   background-size: 200% 200% !important;
-  animation: gradientShiftSolid 8s ease infinite alternate;
+  animation: gradientShiftBright 8s ease infinite alternate;
 }
 
-@keyframes gradientShiftSolid {
+@keyframes gradientShiftBright {
   0% { background-position: 0% 0%; }
   100% { background-position: 100% 100%; }
 }
@@ -1872,10 +1887,10 @@ main {
   z-index: 2;
 }
 
-/* Titlul în colțul sus */
+/* Titlul în colțul sus - aceeași dimensiune ca la cardurile de mai sus */
 .featured-projects-grid .featured-project h4,
 .featured-projects-grid .featured-project h5 {
-  font-size: 1.15rem !important;
+  font-size: 1rem !important;
   font-weight: 800 !important;
   margin: 0 0 0.5rem 0 !important;
   padding: 0 !important;
@@ -1923,7 +1938,7 @@ main {
 
 .featured-projects-grid .featured-project .btn {
   padding: 0.45rem 1rem !important;
-  font-size: 0.7rem !important;
+  font-size: 0.75rem !important;
   align-self: flex-start !important;
   margin-top: auto !important;
   background: rgba(255, 255, 255, 0.2) !important;
@@ -1953,7 +1968,7 @@ main {
   }
   .featured-projects-grid .featured-project h4,
   .featured-projects-grid .featured-project h5 {
-    font-size: 1.2rem !important;
+    font-size: 1.1rem !important;
   }
 }
 
@@ -1967,7 +1982,7 @@ main {
   }
   .featured-projects-grid .featured-project h4,
   .featured-projects-grid .featured-project h5 {
-    font-size: 1rem !important;
+    font-size: 0.95rem !important;
   }
   #projects .featured-projects-grid .featured-project span {
     padding: 0.15rem 0.5rem !important;
@@ -2753,14 +2768,14 @@ footer {
   }
   /* Mobil - containere mai scurte pentru stats */
   .stat-card {
-    min-height: 65px;
+    min-height: 55px;
     padding: 0.3rem;
   }
   .stat-number {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   .stat-card div:last-child {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     margin-top: 0.1rem;
   }
   .project-category {
@@ -2922,15 +2937,15 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0.4rem 0.8rem;
-    min-height: 50px;
+    padding: 0.3rem 0.6rem;
+    min-height: 45px;
   }
   .stat-number {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
   .stat-card div:last-child {
     margin-top: 0;
-    font-size: 0.65rem;
+    font-size: 0.55rem;
   }
   .skills-grid {
     grid-template-columns: repeat(2, 130px);
