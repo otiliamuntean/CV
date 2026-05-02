@@ -3501,20 +3501,21 @@ footer {
 }
 
 #projects .featured-projects-grid .featured-project:nth-child(1) {
-  background: linear-gradient(145deg, #465a86, #6f7fb2) !important;
+  background: linear-gradient(145deg, #6f7fc7, #9aa7e8) !important;
 }
 
 #projects .featured-projects-grid .featured-project:nth-child(2) {
-  background: linear-gradient(145deg, #3d7f8f, #68a9b8) !important;
+  background: linear-gradient(145deg, #5aa9ba, #8fd0dc) !important;
 }
 
 #projects .featured-projects-grid .featured-project:nth-child(3) {
-  background: linear-gradient(145deg, #3f7b68, #75aa8d) !important;
+  background: linear-gradient(145deg, #68a88f, #9bd2b6) !important;
 }
 
 #projects .featured-projects-grid .featured-project:nth-child(4) {
-  background: linear-gradient(145deg, #9a6a56, #c77d67) !important;
+  background: linear-gradient(145deg, #c98770, #eba38f) !important;
 }
+
 
 #projects .featured-projects-grid .featured-project > div:first-child {
   height: 38px !important;
