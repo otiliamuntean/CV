@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('downloadCVHello')?.addEventListener('click', () => {
     showToast("📄 Preparing CV download...");
     const link = document.createElement('a');
-    link.href = 'otiliamunteancv.pdf';
+    link.href = 'Muntean Otilia-CV.pdf';
     link.download = 'Otilia_Muntean_CV.pdf';
     document.body.appendChild(link);
     link.click();
