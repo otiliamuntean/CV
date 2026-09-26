@@ -349,7 +349,6 @@ main {
   animation: fadeIn 1s ease-out;
 }
 
-/* Sidebar-ul dispare pe paginile care nu sunt About */
 .hero:has(.section.active:not(#about)) {
   grid-template-columns: 1fr;
 }
@@ -1349,7 +1348,6 @@ main {
   overflow: hidden;
 }
 
-/* Laptop - containere normal */
 @media (min-width: 769px) {
   .stat-card {
     min-height: 85px;
@@ -1363,7 +1361,6 @@ main {
   }
 }
 
-/* Mobil - containere mici, reorientate pentru a încăpea */
 @media (max-width: 768px) {
   .projects-stats {
     display: grid !important;
@@ -1392,7 +1389,6 @@ main {
   }
 }
 
-/* Ecran foarte mic - 1 coloană */
 @media (max-width: 480px) {
   .projects-stats {
     grid-template-columns: 1fr !important;
@@ -1486,7 +1482,6 @@ main {
   overflow: hidden;
 }
 
-/* MODIFICARE: Tech Horizons - 3 pe coloană pe laptop */
 @media (min-width: 993px) {
   #horizons-container {
     display: grid !important;
@@ -1521,7 +1516,6 @@ main {
   overflow: hidden;
 }
 
-/* Elemente decorative fade vectoriale */
 .horizon-item::before {
   content: '';
   position: absolute;
@@ -1580,87 +1574,68 @@ main {
   background-size: 200% auto;
 }
 
-/* ANIMAȚIE PROGRESS BAR - SUPER SLOW (10 secunde) */
 .horizon-item:nth-child(1) .progress-fill {
   background: linear-gradient(90deg, #c4b5fd, #a78bfa, #8b5cf6);
   animation: fillProgressSuperSlow 10s ease-in-out infinite;
   animation-delay: 0s;
 }
-.horizon-item:nth-child(1) {
-  --start-width: 75%;
-}
+.horizon-item:nth-child(1) { --start-width: 75%; }
 
 .horizon-item:nth-child(2) .progress-fill {
   background: linear-gradient(90deg, #7dd3fc, #38bdf8, #0ea5e9);
   animation: fillProgressSuperSlow 10s ease-in-out infinite;
   animation-delay: 0.5s;
 }
-.horizon-item:nth-child(2) {
-  --start-width: 60%;
-}
+.horizon-item:nth-child(2) { --start-width: 60%; }
 
 .horizon-item:nth-child(3) .progress-fill {
   background: linear-gradient(90deg, #f9a8d4, #f472b6, #ec4899);
   animation: fillProgressSuperSlow 10s ease-in-out infinite;
   animation-delay: 1s;
 }
-.horizon-item:nth-child(3) {
-  --start-width: 45%;
-}
+.horizon-item:nth-child(3) { --start-width: 45%; }
 
 .horizon-item:nth-child(4) .progress-fill {
   background: linear-gradient(90deg, #6ee7b7, #34d399, #10b981);
   animation: fillProgressSuperSlow 10s ease-in-out infinite;
   animation-delay: 1.5s;
 }
-.horizon-item:nth-child(4) {
-  --start-width: 70%;
-}
+.horizon-item:nth-child(4) { --start-width: 70%; }
 
 .horizon-item:nth-child(5) .progress-fill {
   background: linear-gradient(90deg, #fde047, #fbbf24, #f59e0b);
   animation: fillProgressSuperSlow 10s ease-in-out infinite;
   animation-delay: 2s;
 }
-.horizon-item:nth-child(5) {
-  --start-width: 50%;
-}
+.horizon-item:nth-child(5) { --start-width: 50%; }
 
 .horizon-item:nth-child(6) .progress-fill {
   background: linear-gradient(90deg, #fca5a5, #f87171, #ef4444);
   animation: fillProgressSuperSlow 10s ease-in-out infinite;
   animation-delay: 2.5s;
 }
-.horizon-item:nth-child(6) {
-  --start-width: 85%;
-}
+.horizon-item:nth-child(6) { --start-width: 85%; }
 
 .horizon-item:nth-child(7) .progress-fill {
   background: linear-gradient(90deg, #67e8f9, #22d3ee, #06b6d4);
   animation: fillProgressSuperSlow 10s ease-in-out infinite;
   animation-delay: 3s;
 }
-.horizon-item:nth-child(7) {
-  --start-width: 55%;
-}
+.horizon-item:nth-child(7) { --start-width: 55%; }
 
 .horizon-item:nth-child(8) .progress-fill {
   background: linear-gradient(90deg, #bef264, #a3e635, #84cc16);
   animation: fillProgressSuperSlow 10s ease-in-out infinite;
   animation-delay: 3.5s;
 }
-.horizon-item:nth-child(8) {
-  --start-width: 40%;
-}
+.horizon-item:nth-child(8) { --start-width: 40%; }
 
 .horizon-item:nth-child(9) .progress-fill {
   background: linear-gradient(90deg, #ddd6fe, #c4b5fd, #a78bfa);
   animation: fillProgressSuperSlow 10s ease-in-out infinite;
   animation-delay: 4s;
 }
-.horizon-item:nth-child(9) {
-  --start-width: 80%;
-}
+.horizon-item:nth-child(9) { --start-width: 80%; }
 
 @keyframes fillProgressSuperSlow {
   0% { width: var(--start-width, 50%); }
@@ -1714,7 +1689,6 @@ main {
   background: rgba(255,255,255,0.3);
 }
 
-/* MODIFICARE: Titlurile cardurilor în colțul de sus */
 .project-category h4 {
   font-size: 1rem;
   margin-top: 0;
@@ -1779,7 +1753,6 @@ main {
   position: relative;
 }
 
-/* Elemente decorative fade vectoriale pentru carduri */
 .featured-projects-grid .featured-project::before {
   content: '';
   position: absolute;
@@ -1822,7 +1795,6 @@ main {
   transform: translateY(-5px);
 }
 
-/* ===== CULORI ===== */
 #projects .featured-projects-grid .featured-project:nth-child(1) {
   background: linear-gradient(135deg, #14b8a6 0%, #2dd4bf 50%, #5eead4 100%) !important;
   box-shadow: 0 10px 30px rgba(20, 184, 166, 0.35);
@@ -1840,7 +1812,6 @@ main {
   box-shadow: 0 10px 30px rgba(168, 85, 247, 0.35);
 }
 
-/* Animație subtilă pentru gradient */
 #projects .featured-projects-grid .featured-project {
   background-size: 200% 200% !important;
   animation: gradientShiftModern 10s ease infinite alternate;
@@ -1863,7 +1834,6 @@ main {
   z-index: 2;
 }
 
-/* Titlul */
 .featured-projects-grid .featured-project h4,
 .featured-projects-grid .featured-project h5 {
   font-size: 1.2rem !important;
@@ -1877,7 +1847,6 @@ main {
   z-index: 2;
 }
 
-/* Badge-urile */
 .featured-projects-grid .featured-project > div:last-child > div:first-of-type {
   display: flex !important;
   flex-wrap: wrap !important;
@@ -1902,7 +1871,6 @@ main {
   font-weight: 600 !important;
 }
 
-/* Descrierea */
 .featured-projects-grid .featured-project p {
   font-size: 0.9rem !important;
   line-height: 1.5 !important;
@@ -1933,7 +1901,6 @@ main {
   transform: translateY(-2px);
 }
 
-/* ===== RESPONSIVE ===== */
 @media (min-width: 993px) {
   .featured-projects-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -2649,7 +2616,6 @@ main {
   font-weight: 700;
 }
 
-/* FINAL BOOK PREVIEW POLISH */
 .book-preview-shell {
   background:
     radial-gradient(circle at 16% 18%, rgba(36, 128, 137, 0.38), transparent 34%),
@@ -2843,7 +2809,6 @@ main {
   margin-bottom: 0.35rem;
 }
 
-/* NOUL PANEL DREAPTA */
 .book-side-panel {
   position: relative;
   z-index: 2;
@@ -2918,7 +2883,6 @@ main {
   }
 }
 
-/* NOUL CSS PENTRU REAL BOOK COVER */
 .real-book-cover {
   width: 100%;
   height: 100%;
@@ -3515,7 +3479,6 @@ footer {
   }
 }
 
-/* Preventie overflow */
 * {
   max-width: 100%;
   box-sizing: border-box;
@@ -3547,7 +3510,6 @@ body {
   }
 }
 
-/* Journey pe laptop: carduri mai curate */
 @media (min-width: 993px) {
   .hero:has(#journey.active) .content {
     width: 100%;
@@ -3581,7 +3543,6 @@ body {
   }
 }
 
-/* Mobile header fix */
 @media (max-width: 768px) {
   header {
     padding: 0.25rem 0;
@@ -3654,7 +3615,6 @@ body {
   }
 }
 
-/* Global width fix */
 html, body {
   width: 100%;
   min-width: 100%;
@@ -3699,7 +3659,6 @@ footer {
   }
 }
 
-/* Projects 2 cards per row on laptop */
 @media (min-width: 993px) {
   .hero:has(#projects.active) {
     grid-template-columns: 1fr;
@@ -3721,7 +3680,6 @@ footer {
   }
 }
 
-/* Mobile width constraint fix */
 @media (max-width: 768px) {
   html, body {
     width: 100%;
@@ -3762,13 +3720,11 @@ footer {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
-  /* Asigură stats pe 2 coloane pe mobil */
   .projects-stats {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 }
 
-/* Final mobile header controls */
 @media (max-width: 768px) {
   header {
     overflow: visible !important;
@@ -3882,7 +3838,6 @@ footer {
   }
 }
 
-/* Mobile menu fixed */
 @media (max-width: 768px) {
   header {
     overflow: visible !important;
@@ -3953,5 +3908,194 @@ footer {
     opacity: 0 !important;
     visibility: hidden !important;
     pointer-events: none !important;
+  }
+}
+
+/* ==================== PROFESSIONAL CERTIFICATIONS ==================== */
+.certifications-section {
+  margin: 1.2rem 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.certifications-section h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cert-provider {
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--border-light);
+  transition: var(--transition);
+}
+
+.cert-provider:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  background: rgba(139, 92, 246, 0.08);
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.15);
+}
+
+.cert-provider-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed var(--border-light);
+}
+
+/* ===== PEARSON LOGO (albastru cu P alb) ===== */
+.cert-provider-logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 1.1rem;
+  color: white;
+  flex-shrink: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  letter-spacing: -1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pearson-logo {
+  background: #005A9C;
+  box-shadow: 0 3px 8px rgba(0, 90, 156, 0.4);
+  font-style: italic;
+  color: white;
+}
+
+/* ===== GOOGLE LOGO (fundal alb cu G multicolor) ===== */
+.google-logo {
+  background: white;
+  box-shadow: 0 3px 8px rgba(66, 133, 244, 0.3);
+  font-family: 'Product Sans', 'Inter', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 0;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(
+    135deg,
+    #4285F4 0%,
+    #4285F4 16%,
+    #EA4335 16%,
+    #EA4335 33%,
+    #FBBC05 33%,
+    #FBBC05 50%,
+    #4285F4 50%,
+    #4285F4 66%,
+    #34A853 66%,
+    #34A853 83%,
+    #EA4335 83%,
+    #EA4335 100%
+  );
+  position: relative;
+  border-radius: 6px;
+}
+
+.google-logo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: white;
+  border-radius: 6px;
+  z-index: -1;
+}
+
+.cert-provider-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  letter-spacing: 0.3px;
+}
+
+.cert-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.cert-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.45rem 0.55rem;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  cursor: default;
+}
+
+.cert-item:hover {
+  background: rgba(139, 92, 246, 0.12);
+  transform: translateX(4px);
+}
+
+.cert-icon {
+  color: var(--primary-light);
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.cert-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.cert-name {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.35;
+  word-wrap: break-word;
+}
+
+body.light-mode .cert-provider {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+body.light-mode .cert-provider:hover {
+  background: rgba(139, 92, 246, 0.15);
+}
+
+body.light-mode .cert-name {
+  color: #eef2f6;
+}
+
+@media (max-width: 768px) {
+  .cert-provider {
+    padding: 0.6rem 0.7rem;
+  }
+
+  .cert-provider-logo {
+    width: 26px;
+    height: 26px;
+    font-size: 0.85rem;
+  }
+
+  .cert-provider-name {
+    font-size: 0.85rem;
+  }
+
+  .cert-name {
+    font-size: 0.75rem;
+  }
+
+  .cert-icon {
+    font-size: 0.9rem;
   }
 }
